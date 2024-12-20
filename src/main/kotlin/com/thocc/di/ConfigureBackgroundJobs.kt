@@ -23,7 +23,7 @@ fun Application.configureBackgroundJobs() {
     //    while (isActive) {
     //        try {
     //            //TODO("Убрать когда закончу")
-    //            //geekhackCheckerService.checkGeekhackFeeds()
+    //            geekhackCheckerService.checkGeekhackFeeds()
     //        } catch (e: Exception) {
     //            logger.error("Some error appeared in Background Job: ${e.message}")
     //        }
