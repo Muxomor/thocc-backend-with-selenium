@@ -1,0 +1,1027 @@
+2025-01-28 14:53:10 INFO  [main] io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-01-28 14:53:10 INFO  [main] [Koin] - Started 5 definitions in 0.9015 ms
+2025-01-28 14:53:11 INFO  [main] org.ktorm.database - Connected to jdbc:postgresql://thocc-project-db-mxmr.db-msk0.amvera.tech:5432/postgres, productName: PostgreSQL, productVersion: 16.3 (Debian 16.3-1.pgdg110+1), logger: org.ktorm.logging.Slf4jLoggerAdapter@2e179f3e, dialect: org.ktorm.support.postgresql.PostgreSqlDialect@16e7b402
+2025-01-28 14:53:11 INFO  [DefaultDispatcher-worker-1] i.k.server.application.Application - zfrontier checker background job started!
+2025-01-28 14:53:11 INFO  [main] io.ktor.server.Application - Application started in 2.528 seconds.
+2025-01-28 14:53:12 INFO  [DefaultDispatcher-worker-5] io.ktor.server.Application - Responding at http://127.0.0.1:8080
+2025-01-28 14:53:13 DEBUG [AsyncHttpClient-5-2] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0x105b2126, L:/127.0.0.1:57512 - R:localhost/127.0.0.1:14680]' for 'POST' to '/session'
+2025-01-28 14:53:13 DEBUG [AsyncHttpClient-5-2] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:14680
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:13 GMT
+
+2025-01-28 14:53:13 DEBUG [AsyncHttpClient-5-2] o.a.netty.channel.ChannelManager - Adding key: http://localhost:14680 for channel [id: 0x105b2126, L:/127.0.0.1:57512 - R:localhost/127.0.0.1:14680]
+2025-01-28 14:53:13 DEBUG [AsyncHttpClient-5-2] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0x105b2126, L:/127.0.0.1:57512 - R:localhost/127.0.0.1:14680]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:13 DEBUG [AsyncHttpClient-5-2] o.a.netty.channel.ChannelManager - Closing Channel [id: 0x105b2126, L:/127.0.0.1:57512 - R:localhost/127.0.0.1:14680] 
+2025-01-28 14:53:13 DEBUG [AsyncHttpClient-5-2] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0x105b2126, L:/127.0.0.1:57512 ! R:localhost/127.0.0.1:14680] with attribute DISCARD
+2025-01-28 14:53:13 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:13 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:13 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-3] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0xa4f5c173, L:/127.0.0.1:57515 - R:localhost/127.0.0.1:43435]' for 'POST' to '/session'
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-3] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:43435
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:14 GMT
+
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-3] o.a.netty.channel.ChannelManager - Adding key: http://localhost:43435 for channel [id: 0xa4f5c173, L:/127.0.0.1:57515 - R:localhost/127.0.0.1:43435]
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-3] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0xa4f5c173, L:/127.0.0.1:57515 - R:localhost/127.0.0.1:43435]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-3] o.a.netty.channel.ChannelManager - Closing Channel [id: 0xa4f5c173, L:/127.0.0.1:57515 - R:localhost/127.0.0.1:43435] 
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-3] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0xa4f5c173, L:/127.0.0.1:57515 ! R:localhost/127.0.0.1:43435] with attribute DISCARD
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:14680 : 1
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:43435 : 1
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0x105b2126, L:/127.0.0.1:57512 ! R:localhost/127.0.0.1:14680] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0x105b2126, L:/127.0.0.1:57512 ! R:localhost/127.0.0.1:14680]
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0xa4f5c173, L:/127.0.0.1:57515 ! R:localhost/127.0.0.1:43435] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0xa4f5c173, L:/127.0.0.1:57515 ! R:localhost/127.0.0.1:43435]
+2025-01-28 14:53:14 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closed 2 connections out of 2 in 1 ms
+2025-01-28 14:53:14 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:14 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:14 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-4] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0x63905cf8, L:/127.0.0.1:57518 - R:localhost/127.0.0.1:28227]' for 'POST' to '/session'
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-4] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:28227
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:15 GMT
+
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-4] o.a.netty.channel.ChannelManager - Adding key: http://localhost:28227 for channel [id: 0x63905cf8, L:/127.0.0.1:57518 - R:localhost/127.0.0.1:28227]
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-4] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0x63905cf8, L:/127.0.0.1:57518 - R:localhost/127.0.0.1:28227]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-4] o.a.netty.channel.ChannelManager - Closing Channel [id: 0x63905cf8, L:/127.0.0.1:57518 - R:localhost/127.0.0.1:28227] 
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-4] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0x63905cf8, L:/127.0.0.1:57518 ! R:localhost/127.0.0.1:28227] with attribute DISCARD
+2025-01-28 14:53:15 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:15 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:15 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:28227 : 1
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0x63905cf8, L:/127.0.0.1:57518 ! R:localhost/127.0.0.1:28227] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0x63905cf8, L:/127.0.0.1:57518 ! R:localhost/127.0.0.1:28227]
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closed 1 connections out of 1 in 1 ms
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-5] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0xc5d1209c, L:/127.0.0.1:57521 - R:localhost/127.0.0.1:15193]' for 'POST' to '/session'
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-5] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:15193
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:15 GMT
+
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-5] o.a.netty.channel.ChannelManager - Adding key: http://localhost:15193 for channel [id: 0xc5d1209c, L:/127.0.0.1:57521 - R:localhost/127.0.0.1:15193]
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-5] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0xc5d1209c, L:/127.0.0.1:57521 - R:localhost/127.0.0.1:15193]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-5] o.a.netty.channel.ChannelManager - Closing Channel [id: 0xc5d1209c, L:/127.0.0.1:57521 - R:localhost/127.0.0.1:15193] 
+2025-01-28 14:53:15 DEBUG [AsyncHttpClient-5-5] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0xc5d1209c, L:/127.0.0.1:57521 ! R:localhost/127.0.0.1:15193] with attribute DISCARD
+2025-01-28 14:53:15 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:15 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:15 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-6] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0x41415a52, L:/127.0.0.1:57525 - R:localhost/127.0.0.1:15762]' for 'POST' to '/session'
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-6] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:15762
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:16 GMT
+
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-6] o.a.netty.channel.ChannelManager - Adding key: http://localhost:15762 for channel [id: 0x41415a52, L:/127.0.0.1:57525 - R:localhost/127.0.0.1:15762]
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-6] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0x41415a52, L:/127.0.0.1:57525 - R:localhost/127.0.0.1:15762]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-6] o.a.netty.channel.ChannelManager - Closing Channel [id: 0x41415a52, L:/127.0.0.1:57525 - R:localhost/127.0.0.1:15762] 
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-6] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0x41415a52, L:/127.0.0.1:57525 ! R:localhost/127.0.0.1:15762] with attribute DISCARD
+2025-01-28 14:53:16 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:16 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:16 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:15193 : 1
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:15762 : 1
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0xc5d1209c, L:/127.0.0.1:57521 ! R:localhost/127.0.0.1:15193] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0xc5d1209c, L:/127.0.0.1:57521 ! R:localhost/127.0.0.1:15193]
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0x41415a52, L:/127.0.0.1:57525 ! R:localhost/127.0.0.1:15762] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0x41415a52, L:/127.0.0.1:57525 ! R:localhost/127.0.0.1:15762]
+2025-01-28 14:53:16 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closed 2 connections out of 2 in 0 ms
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-7] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0xf50d8908, L:/127.0.0.1:57528 - R:localhost/127.0.0.1:27293]' for 'POST' to '/session'
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-7] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:27293
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:17 GMT
+
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-7] o.a.netty.channel.ChannelManager - Adding key: http://localhost:27293 for channel [id: 0xf50d8908, L:/127.0.0.1:57528 - R:localhost/127.0.0.1:27293]
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-7] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0xf50d8908, L:/127.0.0.1:57528 - R:localhost/127.0.0.1:27293]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-7] o.a.netty.channel.ChannelManager - Closing Channel [id: 0xf50d8908, L:/127.0.0.1:57528 - R:localhost/127.0.0.1:27293] 
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-7] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0xf50d8908, L:/127.0.0.1:57528 ! R:localhost/127.0.0.1:27293] with attribute DISCARD
+2025-01-28 14:53:17 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:17 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:17 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-8] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0x07d20cdc, L:/127.0.0.1:57531 - R:localhost/127.0.0.1:33020]' for 'POST' to '/session'
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-8] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:33020
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:17 GMT
+
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-8] o.a.netty.channel.ChannelManager - Adding key: http://localhost:33020 for channel [id: 0x07d20cdc, L:/127.0.0.1:57531 - R:localhost/127.0.0.1:33020]
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-8] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0x07d20cdc, L:/127.0.0.1:57531 - R:localhost/127.0.0.1:33020]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-8] o.a.netty.channel.ChannelManager - Closing Channel [id: 0x07d20cdc, L:/127.0.0.1:57531 - R:localhost/127.0.0.1:33020] 
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-8] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0x07d20cdc, L:/127.0.0.1:57531 ! R:localhost/127.0.0.1:33020] with attribute DISCARD
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:33020 : 1
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:27293 : 1
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0x07d20cdc, L:/127.0.0.1:57531 ! R:localhost/127.0.0.1:33020] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0x07d20cdc, L:/127.0.0.1:57531 ! R:localhost/127.0.0.1:33020]
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0xf50d8908, L:/127.0.0.1:57528 ! R:localhost/127.0.0.1:27293] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0xf50d8908, L:/127.0.0.1:57528 ! R:localhost/127.0.0.1:27293]
+2025-01-28 14:53:17 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closed 2 connections out of 2 in 0 ms
+2025-01-28 14:53:17 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:17 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:17 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-9] o.a.n.channel.NettyConnectListener - Using new Channel '[id: 0xe4ef7657, L:/127.0.0.1:57534 - R:localhost/127.0.0.1:5931]' for 'POST' to '/session'
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-9] o.a.netty.handler.HttpHandler - 
+
+Request DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
+POST /session HTTP/1.1
+User-Agent: selenium/4.10.0 (java windows)
+Content-Length: 352
+Content-Type: application/json; charset=utf-8
+host: localhost:5931
+accept: */*
+
+Response DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 500 Internal Server Error
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 245
+date: Tue, 28 Jan 2025 11:53:18 GMT
+
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-9] o.a.netty.channel.ChannelManager - Adding key: http://localhost:5931 for channel [id: 0xe4ef7657, L:/127.0.0.1:57534 - R:localhost/127.0.0.1:5931]
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-9] o.a.netty.handler.HttpHandler - Unexpected I/O exception on channel [id: 0xe4ef7657, L:/127.0.0.1:57534 - R:localhost/127.0.0.1:5931]
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-9] o.a.netty.channel.ChannelManager - Closing Channel [id: 0xe4ef7657, L:/127.0.0.1:57534 - R:localhost/127.0.0.1:5931] 
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-9] o.a.netty.handler.HttpHandler - Channel Closed: [id: 0xe4ef7657, L:/127.0.0.1:57534 ! R:localhost/127.0.0.1:5931] with attribute DISCARD
+2025-01-28 14:53:18 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']': org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'WIN-OCBMINB2NJE', ip: '192.168.0.104'
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [-headless], prefs: {permissions.default.image: 2}}}]}]
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:227)
+	org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:154)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:146)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
+	org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$10(AppModule.kt:55)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:18 INFO  [DefaultDispatcher-worker-1] [Koin] - * Instance creation error : could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']': org.koin.core.error.InstanceCreationException: Could not create instance for '[Singleton:'org.openqa.selenium.firefox.FirefoxDriver']'
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:57)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.AppModuleKt.seleniumModule$lambda$12$lambda$11(AppModule.kt:168)
+	org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	org.koin.core.scope.Scope.get(Scope.kt:213)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$$inlined$inject$default$1.invoke(ApplicationExt.kt:91)
+	kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:74)
+	com.thocc.di.ConfigureBackgroundJobsKt.configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:19)
+	com.thocc.di.ConfigureBackgroundJobsKt.access$configureBackgroundJobs$lambda$0(ConfigureBackgroundJobs.kt:1)
+	com.thocc.di.ConfigureBackgroundJobsKt$configureBackgroundJobs$1.invokeSuspend(ConfigureBackgroundJobs.kt:37)
+	kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+2025-01-28 14:53:18 ERROR [DefaultDispatcher-worker-1] i.k.server.application.Application - some error appeared in background job:Could not create instance for '[Singleton:'com.thocc.services.ZFrontierCheckerService']'
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Entry count for : http://localhost:5931 : 1
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0xe4ef7657, L:/127.0.0.1:57534 ! R:localhost/127.0.0.1:5931] isIdleTimeoutExpired=false isRemotelyClosed=true isTtlExpired=false
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0xe4ef7657, L:/127.0.0.1:57534 ! R:localhost/127.0.0.1:5931]
+2025-01-28 14:53:18 DEBUG [AsyncHttpClient-5-1] o.a.netty.channel.DefaultChannelPool - Closed 1 connections out of 1 in 1 ms

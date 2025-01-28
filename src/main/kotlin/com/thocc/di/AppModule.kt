@@ -50,6 +50,7 @@ val networkModule = module {
 val seleniumModule = module {
     val firefoxOptions = FirefoxOptions()
     firefoxOptions.addArguments("-headless")
+    firefoxOptions.addPreference("permissions.default.image", 2)
     single<FirefoxDriver> {
         FirefoxDriver(firefoxOptions).apply {
             logger.info("firefox starting...")

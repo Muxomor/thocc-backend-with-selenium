@@ -34,49 +34,53 @@ class ZFrontierCheckerService(
     private val browser: FirefoxDriver,
 ) {
     companion object {
-        const val CACHE_CLEAR_INTERVAL_HOURS = 24
+        const val CACHE_CLEAR_INTERVAL_HOURS = 4 * 24
     }
 
     private val cache = ConcurrentHashMap.newKeySet<String>()
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
     private suspend fun getDocumentFromURL(url: String): Document {
-        return try {
+        try {
             logger.info("zf checker page loading...")
             browser.get(url)
-            delay(30000L)
+            delay(60000L)
             val response = browser.pageSource
             logger.info("zf page loaded!")
             logger.info("navigating to google.com")
             browser.get("https://www.google.com/")
             return Jsoup.parse(response.toString())
         } catch (e: Exception) {
-            logger.error("failed to get document from URL: ${url}", e)
+            logger.error("failed to get document from URL: $url", e)
             throw e
         }
     }
 
-    suspend fun zFrontierChecker() {
+    private suspend fun zFrontierChecker() {
         val document = getDocumentFromURL("https://www.zfrontier.com/app/#info")
         logger.info("main function receiver answer from ZF")
         val listOfElements = document.select("div.right").toList()
         for (item in listOfElements) {
-            var name = item.selectFirst("div.article-title.f-16.fw-b")?.ownText()?.trim() ?: "Error"
-            if (name == "Error" || !checkNameInCacheAndDB(name)) {
+            val name = item.selectFirst("div.article-title.f-16.fw-b")?.ownText()?.trim() ?: "Error"
+            val link =
+                (BASE_URL + item.selectFirst("div.right > a")?.attr("href")?.trim())
+            if (name == "Error" || !checkNameInCacheAndDB(name) || !checkLinkInDB(link)) {
+                logger.info("skipped $name - $link")
                 continue
             }
-            var link =
-                (BASE_URL + item.selectFirst("div.right > a")?.attr("href")?.trim()) ?: "Error"
-            var rawTimestamp =
+            logger.info(
+                "passed $link"
+            )
+            val rawTimestamp =
                 item.selectFirst("div.right > div.user-line.f-16.flex-center-v > span")?.ownText()
                     ?.trim() ?: "Error"
             val listOfPhotoLinks = item.select("a > div.pic-grid.multiple img").toList()
-            var photoLinks: MutableList<String> = mutableListOf()
+            val photoLinks: MutableList<String> = mutableListOf()
             for (photos in listOfPhotoLinks) {
-                photoLinks.add(photos.attr("data-src")?.trim() ?: "Error")
+                photoLinks.add(photos.attr("data-src").trim())
             }
             val translatedName = translateString(name)
-            logger.info("${name} - ${link} - ${convertRawTimeToDateTime(rawTimestamp)}")
+            logger.info("$name - $link - ${convertRawTimeToDateTime(rawTimestamp)}")
             val request =
                 NewsRequest(translatedName, name, link, 2, convertRawTimeToDateTime(rawTimestamp))
             delay(10000L)
@@ -98,7 +102,7 @@ class ZFrontierCheckerService(
             } catch (e: Exception) {
                 logger.error("some error has occurred in ZF checker: $e")
             }
-            logger.info("job done, waiting for 4 hours")
+            logger.info("job done, waiting for 2 hours")
             delay(JOB_INTERVAL_2_H)
         }
     }
@@ -114,6 +118,14 @@ class ZFrontierCheckerService(
                 cache.add(name)
                 return true
             }
+        }
+    }
+
+    private fun checkLinkInDB(link: String): Boolean {
+        if (newsService.findNewsByLink(link) != null) {
+            return false
+        } else {
+            return true
         }
     }
 
@@ -139,38 +151,81 @@ class ZFrontierCheckerService(
     }
 
     private suspend fun translateString(nameToTranslate: String): String {
-        val response = client.get("https://ftapi.pythonanywhere.com/translate") {
-            parameter("dl", "en")
-            parameter("text", nameToTranslate)
+        return try {
+            val response = client.get("https://ftapi.pythonanywhere.com/translate") {
+                parameter("dl", "en")
+                parameter("text", nameToTranslate)
+            }
+            json.decodeFromString<DestinationTextResponse>(response.bodyAsText()).destinationText
+        } catch (e: Exception) {
+            logger.error("Failed to translate string: ${e.message}")
+            nameToTranslate
         }
-        return json.decodeFromString<DestinationTextResponse>(response.bodyAsText()).destinationText
     }
 
     private suspend fun postNewsToTelegramm(newsRequest: NewsRequest, photosList: List<String>) {
-        if (photosList.isNotEmpty()) {
-            val mediaGroup = photosList.mapIndexed { index, photoUrl ->
-                MediaItem(
-                    type = "photo",
-                    media = photoUrl,
-                    caption = if (index == 0) "[ZF] ${newsRequest.name} - ${newsRequest.link}" else ""
-                )
-            }
-            val requestBody = MediaGroupRequest(
-                chat_id = "@TopreThoc",
-                media = mediaGroup
-            )
-            logger.info("request body: ${requestBody.toString()}")
-            val response =
-                client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup") {
-                    contentType(ContentType.Application.Json)
-                    setBody(requestBody)
+        val chatId = "@TopreThoc"
+        val caption = "[ZF] ${newsRequest.name} - ${newsRequest.link}"
+
+        when {
+            photosList.size > 1 -> {
+                val mediaGroup = photosList.mapIndexed { index, photoUrl ->
+                    MediaItem(
+                        type = "photo",
+                        media = photoUrl,
+                        caption = if (index == 0) caption else null
+                    )
                 }
-            logger.info(response.bodyAsText())
+                val requestBody = MediaGroupRequest(
+                    chat_id = chatId,
+                    media = mediaGroup
+                )
+                logger.info("Sending media group: $requestBody")
+                val response =
+                    client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup") {
+                        contentType(ContentType.Application.Json)
+                        setBody(requestBody)
+                    }
+                logger.info("Media group response: ${response.bodyAsText()}")
+            }
+
+            photosList.size == 1 -> {
+                val requestBody = mapOf(
+                    "chat_id" to chatId,
+                    "photo" to photosList[0],
+                    "caption" to caption
+                )
+                logger.info("Sending single photo: $requestBody")
+                val response =
+                    client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendPhoto") {
+                        contentType(ContentType.Application.Json)
+                        setBody(requestBody)
+                    }
+                logger.info("Single photo response: ${response.bodyAsText()}")
+            }
+
+            else -> {
+                val requestBody = mapOf(
+                    "chat_id" to chatId,
+                    "text" to caption
+                )
+                logger.info("Sending text message: $requestBody")
+                val response =
+                    client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage") {
+                        contentType(ContentType.Application.Json)
+                        setBody(requestBody)
+                    }
+                logger.info("Text message response: ${response.bodyAsText()}")
+            }
         }
     }
 
-    private suspend fun postNewsToDB(newsRequest: NewsRequest) {
-        newsService.createNews(newsRequest)
+    private fun postNewsToDB(newsRequest: NewsRequest) {
+        try {
+            newsService.createNews(newsRequest)
+        } catch (e: Exception) {
+            logger.error("Failed to save news to DB: ${e.message}")
+        }
     }
 }
 

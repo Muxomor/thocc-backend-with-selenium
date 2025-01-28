@@ -21,8 +21,10 @@ class NewsService(private val db: Database) {
         val newNews = News {
             name = if (newsRequest.sourceId == 1) {
                 "[GH]" + newsRequest.name
-            } else {
+            } else if (newsRequest.sourceId == 2) {
                 "[ZF]" + newsRequest.name
+            } else {
+                "[Other]" + newsRequest.name
             }
             originalName = newsRequest.originalName
             timestamp = newsRequest.timestamp
@@ -35,9 +37,12 @@ class NewsService(private val db: Database) {
         logger.info("Check DB! News: ${newNews.name} must appeared")
         return affectedRecordsNumber == 1
     }
+
     fun selectAllNews(): Set<News> = db.sequenceOf(Newses).toSet()
-    fun findNewsByName(name: String, sourceId:Int): News? =
+    fun findNewsByName(name: String, sourceId: Int): News? =
         db.sequenceOf(Newses).find { x -> x.originalName eq name and (x.sourceId eq sourceId) }
 
     fun selectNewsById(id: Int): News? = db.sequenceOf(Newses).find { x -> x.id eq id }
+
+    fun findNewsByLink(link: String): News? = db.sequenceOf(Newses).find { x -> x.link eq link }
 }

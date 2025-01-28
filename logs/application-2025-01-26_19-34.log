@@ -1,0 +1,9 @@
+2025-01-26 19:34:39 INFO  [main] io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-01-26 19:34:39 INFO  [main] [Koin] - Started 5 definitions in 1.0039 ms
+2025-01-26 19:34:40 INFO  [main] org.ktorm.database - Connected to jdbc:postgresql://thocc-project-db-mxmr.db-msk0.amvera.tech:5432/postgres, productName: PostgreSQL, productVersion: 16.3 (Debian 16.3-1.pgdg110+1), logger: org.ktorm.logging.Slf4jLoggerAdapter@3ce53f6a, dialect: org.ktorm.support.postgresql.PostgreSqlDialect@2d82408
+2025-01-26 19:34:40 INFO  [main] io.ktor.server.Application - Application started in 3.152 seconds.
+2025-01-26 19:34:40 INFO  [DefaultDispatcher-worker-1] i.k.server.application.Application - zfrontier checker background job started!
+2025-01-26 19:34:41 INFO  [DefaultDispatcher-worker-3] io.ktor.server.Application - Responding at http://127.0.0.1:8080
+2025-01-26 19:34:44 INFO  [DefaultDispatcher-worker-1] [Koin] - firefox starting...
+2025-01-26 19:34:44 INFO  [DefaultDispatcher-worker-1] [Koin] - firefox initialized
+2025-01-26 19:34:44 INFO  [DefaultDispatcher-worker-1] c.t.services.ZFrontierCheckerService - zf checker page loading...
