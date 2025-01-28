@@ -61,7 +61,10 @@ class ZFrontierCheckerService(
         logger.info("main function receiver answer from ZF")
         val listOfElements = document.select("div.right").toList()
         for (item in listOfElements) {
-            val name = item.selectFirst("div.article-title.f-16.fw-b")?.ownText()?.trim() ?: "Error"
+            var name = item.selectFirst("div.article-title.f-16.fw-b")?.ownText()?.trim() ?: "Error"
+            if(name == "Error"){
+                name = item.selectFirst("div.f-15.fw-b.ellipsis_4.short-flow-article")?.ownText()?.trim() ?: "Error"
+            }
             val link =
                 (BASE_URL + item.selectFirst("div.right > a")?.attr("href")?.trim())
             if (name == "Error" || !checkNameInCacheAndDB(name) || !checkLinkInDB(link)) {
@@ -74,7 +77,10 @@ class ZFrontierCheckerService(
             val rawTimestamp =
                 item.selectFirst("div.right > div.user-line.f-16.flex-center-v > span")?.ownText()
                     ?.trim() ?: "Error"
-            val listOfPhotoLinks = item.select("a > div.pic-grid.multiple img").toList()
+            var listOfPhotoLinks = item.select("a > div.pic-grid.multiple img").toList()
+            if(listOfPhotoLinks.isEmpty()) {
+                listOfPhotoLinks = item.select("a > div.pic-grid img").toList()
+            }
             val photoLinks: MutableList<String> = mutableListOf()
             for (photos in listOfPhotoLinks) {
                 photoLinks.add(photos.attr("data-src").trim())
