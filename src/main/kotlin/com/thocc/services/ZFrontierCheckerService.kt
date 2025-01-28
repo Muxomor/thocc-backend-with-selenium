@@ -173,7 +173,7 @@ class ZFrontierCheckerService(
                     MediaItem(
                         type = "photo",
                         media = photoUrl,
-                        caption = if (index == 0) caption else null
+                        caption = if (index == 0) caption else ""
                     )
                 }
                 val requestBody = MediaGroupRequest(
