@@ -15,21 +15,21 @@ private const val JOB_INTERVAL_2_H = 2 * 60 * 60 * 1000L
 
 fun Application.configureBackgroundJobs() {
 
-    //val geekhackCheckerService: GeekhackCheckerService by inject<GeekhackCheckerService>()
+    val geekhackCheckerService: GeekhackCheckerService by inject<GeekhackCheckerService>()
     val zFrontierCheckerService: ZFrontierCheckerService by inject<ZFrontierCheckerService>()
     val logger: Logger = LoggerFactory.getLogger(this::class.java)
-    //launch {
-    //    logger.info("geekhack checker background job started!")
-    //    while (isActive) {
-    //        try {
-    //            //TODO("Убрать когда закончу")
-    //            geekhackCheckerService.checkGeekhackFeeds()
-    //        } catch (e: Exception) {
-    //            logger.error("Some error appeared in Background Job: ${e.message}")
-    //        }
-    //        delay(JOB_INTERVAL_5_M)
-    //    }
-    //}
+    launch {
+        logger.info("geekhack checker background job started!")
+        while (isActive) {
+            try {
+                //TODO("Убрать когда закончу")
+                geekhackCheckerService.checkGeekhackFeeds()
+            } catch (e: Exception) {
+                logger.error("Some error appeared in Background Job: ${e.message}")
+            }
+            delay(JOB_INTERVAL_5_M)
+        }
+    }
     launch {
         logger.info("zfrontier checker background job started!")
         while (isActive) {

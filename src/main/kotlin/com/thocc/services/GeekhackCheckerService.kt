@@ -5,6 +5,9 @@ import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.bodyAsText
 import io.ktor.http.ContentType
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.slf4j.Logger
@@ -30,13 +33,20 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
             throw e
         }
     }
-
-    internal suspend fun sendNewDataToTelegram(newsRequest: NewsRequest) {
-        val response =
-            client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage") {
+    private suspend fun sendNewDataToTelegram(newsRequest: NewsRequest){
+        val json = Json{ignoreUnknownKeys = true}
+        val response = client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage") {
+            parameter("chat_id", "@TopreThoc")
+            parameter("text", "[GH] ${newsRequest.name} - ${newsRequest.link}")
+        }
+        val responseSerialized = json.decodeFromString<SendMessageResponse>(response.bodyAsText())
+        if(responseSerialized.ok){
+            client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage"){
                 parameter("chat_id", "@TopreThoc")
-                parameter("text", "[GH] ${newsRequest.name} - ${newsRequest.link}")
+                parameter("message_id",responseSerialized.result?.messageId)
+                parameter("disable_notification", true)
             }
+        }
     }
 
     private suspend fun geekhackRssChecker(rssUrl: String, boardType: String) {
@@ -46,7 +56,7 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
                 val news = NewsRequest(
                     name = rssItem.selectFirst("title")?.text()?.trim() ?: "Error",
                     originalName = rssItem.selectFirst("title")?.text()?.trim() ?: "Error",
-                    link = rssItem.selectFirst("guid")?.text()?.trim() ?: "Error",
+                    link = rssItem.selectFirst("guid")?.ownText()?.trim() ?: "Error",
                     sourceId = 1,
                     timestamp = convertDateToOtherFormat(
                         rssItem.selectFirst("pubDate")?.text()?.trim() ?: "Error"
@@ -58,10 +68,12 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
             }
         }
     }
+
     suspend fun checkGeekhackFeeds() {
         geekhackRssChecker("https://geekhack.org/index.php?board=132.0;action=.xml;type=rss", "IC")
         geekhackRssChecker("https://geekhack.org/index.php?board=70.0;action=.xml;type=rss", "GB")
     }
+
     private fun checkItemTitle(title: String?): Boolean {
         if (title != null) {
             if (title.startsWith("Re:")) {
@@ -87,3 +99,21 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
         return targetedTimeZone.format(outputFormat)
     }
 }
+
+@Serializable
+data class MessageResult(
+    @SerialName("message_id")
+    val messageId: Int,
+    val chat: Chat,
+    val text: String? = null
+)
+@Serializable
+data class SendMessageResponse(
+    val ok: Boolean,
+    val result: MessageResult? = null
+)
+@Serializable
+data class Chat(
+    val id: Long,
+    val type: String
+)

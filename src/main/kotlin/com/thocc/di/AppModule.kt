@@ -45,7 +45,7 @@ val networkModule = module {
             }
         }
     }
-    //single { GeekhackCheckerService(get(), get()) }
+    single { GeekhackCheckerService(get(), get()) }
 }
 val seleniumModule = module {
     val firefoxOptions = FirefoxOptions()
