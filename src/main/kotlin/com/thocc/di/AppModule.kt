@@ -21,12 +21,11 @@ import java.time.Duration
 
 val appModule = module {
     single {
-        //TODO("Надо убрать это отсюда")
         Database.connect(
-            url = "jdbc:postgresql://thocc-project-db-mxmr.db-msk0.amvera.tech:5432/postgres",
+            url = "jdbc:postgresql://192.168.0.105:5432/postgres",
             driver = "org.postgresql.Driver",
             user = "postgres",
-            password = "fuckyouintheass",
+            password = "postgres",
         )
     }
     single { NewsService(get()) }

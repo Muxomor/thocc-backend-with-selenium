@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7895:7895"
+    environment:
+      - SELENIUM_REMOTE_URL=http://selenium:4444/wd/hub
+    depends_on:
+      - selenium
+    networks:
+      - ktor-network
+
+  selenium:
+    image: selenium/standalone-firefox:latest
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+    networks:
+      - ktor-network
+    shm_size: 2gb
+
+networks:
+  ktor-network:
+    driver: bridge
