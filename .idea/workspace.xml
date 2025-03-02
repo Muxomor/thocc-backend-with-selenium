@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d0f5ff0-6512-4956-8436-028abb4d583b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amvera.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/di/AppModule.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +192,7 @@
       <workItem from="1738342739421" duration="32000" />
       <workItem from="1738343131360" duration="713000" />
       <workItem from="1740500499413" duration="2459000" />
-      <workItem from="1740927153223" duration="1989000" />
+      <workItem from="1740927153223" duration="2832000" />
     </task>
     <servers />
   </component>
