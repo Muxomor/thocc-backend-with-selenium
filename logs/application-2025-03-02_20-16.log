@@ -1,0 +1,10 @@
+2025-03-02 20:16:58 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:16:58 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:16:58 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss.
+2025-03-02 20:16:58 TRACE [DefaultDispatcher-worker-2] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:16:58 INFO  [DefaultDispatcher-worker-1] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END

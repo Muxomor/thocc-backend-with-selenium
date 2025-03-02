@@ -1,4 +1,4 @@
-FROM gradle:7.6-jdk17-alpine as builder
+FROM gradle:7.6-jdk17-jammy as builder
 
 WORKDIR /app
 COPY build.gradle.kts .

@@ -1,0 +1,423 @@
+2025-03-02 20:06:05 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - Sending media group: MediaGroupRequest(chat_id=@TopreThoc, media=[MediaItem(type=photo, media=https://img.zfrontier.com/post/lo-C-gx9jaGnMbBWQ8GETpiNOoep.jpg-cover360.webp, caption=[ZF] 【IC】win shop detachable one-to-four handmade 8k line - https://www.zfrontier.com/app/flow/WWExxKXAk0l3), MediaItem(type=photo, media=https://img.zfrontier.com/post/lhgUArhrALimrMYPDPeWYyadH9_E.jpg-cover360.webp, caption=), MediaItem(type=photo, media=https://img.zfrontier.com/post/lsfwCQoI6ZUWJkj-U70O3n3k2ppr.jpg-cover360.webp, caption=)])
+2025-03-02 20:06:05 TRACE [DefaultDispatcher-worker-3] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:05 TRACE [DefaultDispatcher-worker-3] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:05 TRACE [DefaultDispatcher-worker-3] i.k.c.p.c.ContentNegotiation - Converted request body using io.ktor.serialization.kotlinx.KotlinxSerializationConverter@b5d1ce4 for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:05 TRACE [DefaultDispatcher-worker-3] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:05 TRACE [DefaultDispatcher-worker-3] i.k.c.plugins.defaultTransformers - Transformed with default transformers request body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup from class io.ktor.http.content.TextContent
+2025-03-02 20:06:05 INFO  [DefaultDispatcher-worker-10] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+METHOD: HttpMethod(value=POST)
+BODY Content-Type: application/json
+BODY START
+{"chat_id":"@TopreThoc","media":[{"type":"photo","media":"https://img.zfrontier.com/post/lo-C-gx9jaGnMbBWQ8GETpiNOoep.jpg-cover360.webp","caption":"[ZF] 【IC】win shop detachable one-to-four handmade 8k line - https://www.zfrontier.com/app/flow/WWExxKXAk0l3"},{"type":"photo","media":"https://img.zfrontier.com/post/lhgUArhrALimrMYPDPeWYyadH9_E.jpg-cover360.webp","caption":""},{"type":"photo","media":"https://img.zfrontier.com/post/lsfwCQoI6ZUWJkj-U70O3n3k2ppr.jpg-cover360.webp","caption":""}]}
+BODY END
+2025-03-02 20:06:07 TRACE [DefaultDispatcher-worker-6] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:07 TRACE [DefaultDispatcher-worker-6] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:07 TRACE [DefaultDispatcher-worker-6] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup to class kotlinx.io.Source
+2025-03-02 20:06:07 INFO  [DefaultDispatcher-worker-6] c.t.services.ZFrontierCheckerService - Media group response: {"ok":true,"result":[{"message_id":1849,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935167,"media_group_id":"13927481342786594","photo":[{"file_id":"AgACAgQAAxUHZ8SP_9mZ-3CKv_CqgPr0D-jOKUsAAqy4MRvPzi1SBMlK6gXi_Y0BAAMCAANzAAM2BA","file_unique_id":"AQADrLgxG8_OLVJ4","file_size":1919,"width":67,"height":90},{"file_id":"AgACAgQAAxUHZ8SP_9mZ-3CKv_CqgPr0D-jOKUsAAqy4MRvPzi1SBMlK6gXi_Y0BAAMCAANtAAM2BA","file_unique_id":"AQADrLgxG8_OLVJy","file_size":27200,"width":240,"height":320},{"file_id":"AgACAgQAAxUHZ8SP_9mZ-3CKv_CqgPr0D-jOKUsAAqy4MRvPzi1SBMlK6gXi_Y0BAAMCAAN4AAM2BA","file_unique_id":"AQADrLgxG8_OLVJ9","file_size":47466,"width":360,"height":480}],"caption":"[ZF] \u3010IC\u3011win shop detachable one-to-four handmade 8k line - https://www.zfrontier.com/app/flow/WWExxKXAk0l3","caption_entities":[{"offset":60,"length":47,"type":"url"}]},{"message_id":1850,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935167,"media_group_id":"13927481342786594","photo":[{"file_id":"AgACAgQAAxUHZ8SP_-fPQNwfugHffq3gG0UMuKUAAn24MRv-CCxSpW-MAe7gNDQBAAMCAANzAAM2BA","file_unique_id":"AQADfbgxG_4ILFJ4","file_size":1740,"width":67,"height":90},{"file_id":"AgACAgQAAxUHZ8SP_-fPQNwfugHffq3gG0UMuKUAAn24MRv-CCxSpW-MAe7gNDQBAAMCAANtAAM2BA","file_unique_id":"AQADfbgxG_4ILFJy","file_size":27748,"width":240,"height":320},{"file_id":"AgACAgQAAxUHZ8SP_-fPQNwfugHffq3gG0UMuKUAAn24MRv-CCxSpW-MAe7gNDQBAAMCAAN4AAM2BA","file_unique_id":"AQADfbgxG_4ILFJ9","file_size":48367,"width":360,"height":480}]},{"message_id":1851,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935167,"media_group_id":"13927481342786594","photo":[{"file_id":"AgACAgQAAxUHZ8SP_29q8YDUtJkhsGe5g1tAxQADq7gxG3cHLVLosi25Cto7NwEAAwIAA3MAAzYE","file_unique_id":"AQADq7gxG3cHLVJ4","file_size":1759,"width":90,"height":67},{"file_id":"AgACAgQAAxUHZ8SP_29q8YDUtJkhsGe5g1tAxQADq7gxG3cHLVLosi25Cto7NwEAAwIAA20AAzYE","file_unique_id":"AQADq7gxG3cHLVJy","file_size":26901,"width":320,"height":240},{"file_id":"AgACAgQAAxUHZ8SP_29q8YDUtJkhsGe5g1tAxQADq7gxG3cHLVLosi25Cto7NwEAAwIAA3gAAzYE","file_unique_id":"AQADq7gxG3cHLVJ9","file_size":30717,"width":360,"height":270}]}]}
+2025-03-02 20:06:07 INFO  [DefaultDispatcher-worker-7] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=POST)
+FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+BODY Content-Type: application/json
+BODY START
+{"ok":true,"result":[{"message_id":1849,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935167,"media_group_id":"13927481342786594","photo":[{"file_id":"AgACAgQAAxUHZ8SP_9mZ-3CKv_CqgPr0D-jOKUsAAqy4MRvPzi1SBMlK6gXi_Y0BAAMCAANzAAM2BA","file_unique_id":"AQADrLgxG8_OLVJ4","file_size":1919,"width":67,"height":90},{"file_id":"AgACAgQAAxUHZ8SP_9mZ-3CKv_CqgPr0D-jOKUsAAqy4MRvPzi1SBMlK6gXi_Y0BAAMCAANtAAM2BA","file_unique_id":"AQADrLgxG8_OLVJy","file_size":27200,"width":240,"height":320},{"file_id":"AgACAgQAAxUHZ8SP_9mZ-3CKv_CqgPr0D-jOKUsAAqy4MRvPzi1SBMlK6gXi_Y0BAAMCAAN4AAM2BA","file_unique_id":"AQADrLgxG8_OLVJ9","file_size":47466,"width":360,"height":480}],"caption":"[ZF] \u3010IC\u3011win shop detachable one-to-four handmade 8k line - https://www.zfrontier.com/app/flow/WWExxKXAk0l3","caption_entities":[{"offset":60,"length":47,"type":"url"}]},{"message_id":1850,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935167,"media_group_id":"13927481342786594","photo":[{"file_id":"AgACAgQAAxUHZ8SP_-fPQNwfugHffq3gG0UMuKUAAn24MRv-CCxSpW-MAe7gNDQBAAMCAANzAAM2BA","file_unique_id":"AQADfbgxG_4ILFJ4","file_size":1740,"width":67,"height":90},{"file_id":"AgACAgQAAxUHZ8SP_-fPQNwfugHffq3gG0UMuKUAAn24MRv-CCxSpW-MAe7gNDQBAAMCAANtAAM2BA","file_unique_id":"AQADfbgxG_4ILFJy","file_size":27748,"width":240,"height":320},{"file_id":"AgACAgQAAxUHZ8SP_-fPQNwfugHffq3gG0UMuKUAAn24MRv-CCxSpW-MAe7gNDQBAAMCAAN4AAM2BA","file_unique_id":"AQADfbgxG_4ILFJ9","file_size":48367,"width":360,"height":480}]},{"message_id":1851,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935167,"media_group_id":"13927481342786594","photo":[{"file_id":"AgACAgQAAxUHZ8SP_29q8YDUtJkhsGe5g1tAxQADq7gxG3cHLVLosi25Cto7NwEAAwIAA3MAAzYE","file_unique_id":"AQADq7gxG3cHLVJ4","file_size":1759,"width":90,"height":67},{"file_id":"AgACAgQAAxUHZ8SP_29q8YDUtJkhsGe5g1tAxQADq7gxG3cHLVLosi25Cto7NwEAAwIAA20AAzYE","file_unique_id":"AQADq7gxG3cHLVJy","file_size":26901,"width":320,"height":240},{"file_id":"AgACAgQAAxUHZ8SP_29q8YDUtJkhsGe5g1tAxQADq7gxG3cHLVLosi25Cto7NwEAAwIAA3gAAzYE","file_unique_id":"AQADq7gxG3cHLVJ9","file_size":30717,"width":360,"height":270}]}]}
+BODY END
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: insert into news ("name", originalname, source_id, link, "timestamp") values (?, ?, ?, ?, ?) 
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [[ZF]【IC】win shop detachable one-to-four handmade 8k line(text), 【IC】win shop 可分离式一拖四手工8k线(text), 2(int), https://www.zfrontier.com/app/flow/WWExxKXAk0l3(text), 2025.03.01 20:05 UTC+3(text)]
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Effects: 1
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Generated Key: 8
+2025-03-02 20:06:07 INFO  [DefaultDispatcher-worker-6] com.thocc.services.NewsService - Check DB! News: [ZF]【IC】win shop detachable one-to-four handmade 8k line must appeared
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [MOO·OON 个性键帽(text), 2(int), 1(int)]
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Results: 0
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b(text), 1(int)]
+2025-03-02 20:06:07 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Results: 0
+2025-03-02 20:06:07 INFO  [DefaultDispatcher-worker-6] c.t.services.ZFrontierCheckerService - passed https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b
+2025-03-02 20:06:07 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:07 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:07 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD.
+2025-03-02 20:06:07 TRACE [DefaultDispatcher-worker-6] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:07 INFO  [DefaultDispatcher-worker-6] io.ktor.client.HttpClient - REQUEST: https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:06:08 TRACE [DefaultDispatcher-worker-1] i.k.client.plugins.HttpCallValidator - Validating response for request https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:08 TRACE [DefaultDispatcher-worker-1] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:08 INFO  [DefaultDispatcher-worker-1] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+BODY Content-Type: application/json
+BODY START
+{"source-language": "zh-CN", "source-text": "MOO\u00b7OON \u4e2a\u6027\u952e\u5e3d", "destination-language": "en", "destination-text": "MOO\u00b7OON Personalized Keycaps", "pronunciation": {"source-text-phonetic": "MOO\u00b7OON g\u00e8x\u00ecng ji\u00e0n m\u00e0o", "source-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=zh-CN&q=MOO\u00b7OON%20\u4e2a\u6027\u952e\u5e3d", "destination-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=en&q=MOO\u00b7OON%20Personalized%20Keycaps"}, "translations": {"all-translations": null, "possible-translations": ["MOO\u00b7OON Personalized Keycaps"], "possible-mistakes": null}, "definitions": null, "see-also": null}
+BODY END
+2025-03-02 20:06:08 TRACE [DefaultDispatcher-worker-1] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://ftapi.pythonanywhere.com/translate?dl=en&text=MOO%C2%B7OON+%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD to class kotlinx.io.Source
+2025-03-02 20:06:08 INFO  [DefaultDispatcher-worker-1] c.t.services.ZFrontierCheckerService - MOO·OON 个性键帽 - https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b - 2025.02.28 20:06 UTC+3
+2025-03-02 20:06:18 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - Sending media group: MediaGroupRequest(chat_id=@TopreThoc, media=[MediaItem(type=photo, media=https://img.zfrontier.com/post/Fl3VLdhMzYgCBHsuf4yUH_d5bQq3.jpg-cover360.webp, caption=[ZF] MOO·OON Personalized Keycaps - https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b), MediaItem(type=photo, media=https://img.zfrontier.com/post/FgzeTI3BGrS30otwz5EqQAsH3lff.jpg-cover360.webp, caption=), MediaItem(type=photo, media=https://img.zfrontier.com/post/FjMTnpOa2nMXK8FjzTqVNDfHBNP2.jpg-cover360.webp, caption=)])
+2025-03-02 20:06:18 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:18 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:18 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Converted request body using io.ktor.serialization.kotlinx.KotlinxSerializationConverter@b5d1ce4 for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:18 TRACE [DefaultDispatcher-worker-2] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:18 TRACE [DefaultDispatcher-worker-2] i.k.c.plugins.defaultTransformers - Transformed with default transformers request body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup from class io.ktor.http.content.TextContent
+2025-03-02 20:06:18 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+METHOD: HttpMethod(value=POST)
+BODY Content-Type: application/json
+BODY START
+{"chat_id":"@TopreThoc","media":[{"type":"photo","media":"https://img.zfrontier.com/post/Fl3VLdhMzYgCBHsuf4yUH_d5bQq3.jpg-cover360.webp","caption":"[ZF] MOO·OON Personalized Keycaps - https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b"},{"type":"photo","media":"https://img.zfrontier.com/post/FgzeTI3BGrS30otwz5EqQAsH3lff.jpg-cover360.webp","caption":""},{"type":"photo","media":"https://img.zfrontier.com/post/FjMTnpOa2nMXK8FjzTqVNDfHBNP2.jpg-cover360.webp","caption":""}]}
+BODY END
+2025-03-02 20:06:19 TRACE [DefaultDispatcher-worker-6] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:19 TRACE [DefaultDispatcher-worker-6] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:19 INFO  [DefaultDispatcher-worker-2] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=POST)
+FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+BODY Content-Type: application/json
+BODY START
+{"ok":true,"result":[{"message_id":1852,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935180,"media_group_id":"13927481441983202","photo":[{"file_id":"AgACAgQAAxUHZ8SQDLIxL7zTNfLTRKOkxGAH9GEAAhS5MRustiVStm2XKNdDMW0BAAMCAANzAAM2BA","file_unique_id":"AQADFLkxG6y2JVJ4","file_size":1301,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ8SQDLIxL7zTNfLTRKOkxGAH9GEAAhS5MRustiVStm2XKNdDMW0BAAMCAANtAAM2BA","file_unique_id":"AQADFLkxG6y2JVJy","file_size":23996,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ8SQDLIxL7zTNfLTRKOkxGAH9GEAAhS5MRustiVStm2XKNdDMW0BAAMCAAN4AAM2BA","file_unique_id":"AQADFLkxG6y2JVJ9","file_size":27637,"width":360,"height":360}],"caption":"[ZF] MOO\u00b7OON Personalized Keycaps - https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b","caption_entities":[{"offset":36,"length":47,"type":"url"}]},{"message_id":1853,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935180,"media_group_id":"13927481441983202","photo":[{"file_id":"AgACAgQAAxUHZ8SQC0d6sP0pW5120GCKe0BKjgwAAmq3MRs5OyxSrzs6a2V1Ve8BAAMCAANzAAM2BA","file_unique_id":"AQADarcxGzk7LFJ4","file_size":1077,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ8SQC0d6sP0pW5120GCKe0BKjgwAAmq3MRs5OyxSrzs6a2V1Ve8BAAMCAANtAAM2BA","file_unique_id":"AQADarcxGzk7LFJy","file_size":20426,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ8SQC0d6sP0pW5120GCKe0BKjgwAAmq3MRs5OyxSrzs6a2V1Ve8BAAMCAAN4AAM2BA","file_unique_id":"AQADarcxGzk7LFJ9","file_size":23811,"width":360,"height":360}]},{"message_id":1854,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935180,"media_group_id":"13927481441983202","photo":[{"file_id":"AgACAgQAAxUHZ8SQDF3mtOt8U4mOSFHvW9hXRfcAAs24MRsDGCRSiDlNfnNRORwBAAMCAANzAAM2BA","file_unique_id":"AQADzbgxGwMYJFJ4","file_size":1177,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ8SQDF3mtOt8U4mOSFHvW9hXRfcAAs24MRsDGCRSiDlNfnNRORwBAAMCAANtAAM2BA","file_unique_id":"AQADzbgxGwMYJFJy","file_size":21436,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ8SQDF3mtOt8U4mOSFHvW9hXRfcAAs24MRsDGCRSiDlNfnNRORwBAAMCAAN4AAM2BA","file_unique_id":"AQADzbgxGwMYJFJ9","file_size":25018,"width":360,"height":360}]}]}
+BODY END
+2025-03-02 20:06:19 TRACE [DefaultDispatcher-worker-6] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup to class kotlinx.io.Source
+2025-03-02 20:06:19 INFO  [DefaultDispatcher-worker-6] c.t.services.ZFrontierCheckerService - Media group response: {"ok":true,"result":[{"message_id":1852,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935180,"media_group_id":"13927481441983202","photo":[{"file_id":"AgACAgQAAxUHZ8SQDLIxL7zTNfLTRKOkxGAH9GEAAhS5MRustiVStm2XKNdDMW0BAAMCAANzAAM2BA","file_unique_id":"AQADFLkxG6y2JVJ4","file_size":1301,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ8SQDLIxL7zTNfLTRKOkxGAH9GEAAhS5MRustiVStm2XKNdDMW0BAAMCAANtAAM2BA","file_unique_id":"AQADFLkxG6y2JVJy","file_size":23996,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ8SQDLIxL7zTNfLTRKOkxGAH9GEAAhS5MRustiVStm2XKNdDMW0BAAMCAAN4AAM2BA","file_unique_id":"AQADFLkxG6y2JVJ9","file_size":27637,"width":360,"height":360}],"caption":"[ZF] MOO\u00b7OON Personalized Keycaps - https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b","caption_entities":[{"offset":36,"length":47,"type":"url"}]},{"message_id":1853,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935180,"media_group_id":"13927481441983202","photo":[{"file_id":"AgACAgQAAxUHZ8SQC0d6sP0pW5120GCKe0BKjgwAAmq3MRs5OyxSrzs6a2V1Ve8BAAMCAANzAAM2BA","file_unique_id":"AQADarcxGzk7LFJ4","file_size":1077,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ8SQC0d6sP0pW5120GCKe0BKjgwAAmq3MRs5OyxSrzs6a2V1Ve8BAAMCAANtAAM2BA","file_unique_id":"AQADarcxGzk7LFJy","file_size":20426,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ8SQC0d6sP0pW5120GCKe0BKjgwAAmq3MRs5OyxSrzs6a2V1Ve8BAAMCAAN4AAM2BA","file_unique_id":"AQADarcxGzk7LFJ9","file_size":23811,"width":360,"height":360}]},{"message_id":1854,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935180,"media_group_id":"13927481441983202","photo":[{"file_id":"AgACAgQAAxUHZ8SQDF3mtOt8U4mOSFHvW9hXRfcAAs24MRsDGCRSiDlNfnNRORwBAAMCAANzAAM2BA","file_unique_id":"AQADzbgxGwMYJFJ4","file_size":1177,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ8SQDF3mtOt8U4mOSFHvW9hXRfcAAs24MRsDGCRSiDlNfnNRORwBAAMCAANtAAM2BA","file_unique_id":"AQADzbgxGwMYJFJy","file_size":21436,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ8SQDF3mtOt8U4mOSFHvW9hXRfcAAs24MRsDGCRSiDlNfnNRORwBAAMCAAN4AAM2BA","file_unique_id":"AQADzbgxGwMYJFJ9","file_size":25018,"width":360,"height":360}]}]}
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: insert into news ("name", originalname, source_id, link, "timestamp") values (?, ?, ?, ?, ?) 
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [[ZF]MOO·OON Personalized Keycaps(text), MOO·OON 个性键帽(text), 2(int), https://www.zfrontier.com/app/flow/mPmNMaQ3BO6b(text), 2025.02.28 20:06 UTC+3(text)]
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Effects: 1
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Generated Key: 9
+2025-03-02 20:06:19 INFO  [DefaultDispatcher-worker-6] com.thocc.services.NewsService - Check DB! News: [ZF]MOO·OON Personalized Keycaps must appeared
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [【截团提醒】Hydro 8X明日截团(text), 2(int), 1(int)]
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Results: 0
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [https://www.zfrontier.com/app/flow/ZBYpjdAy1x10(text), 1(int)]
+2025-03-02 20:06:19 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Results: 0
+2025-03-02 20:06:19 INFO  [DefaultDispatcher-worker-6] c.t.services.ZFrontierCheckerService - passed https://www.zfrontier.com/app/flow/ZBYpjdAy1x10
+2025-03-02 20:06:19 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2
+2025-03-02 20:06:19 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2
+2025-03-02 20:06:19 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2.
+2025-03-02 20:06:19 TRACE [DefaultDispatcher-worker-6] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2
+2025-03-02 20:06:19 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - REQUEST: https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:06:20 TRACE [DefaultDispatcher-worker-10] i.k.client.plugins.HttpCallValidator - Validating response for request https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2
+2025-03-02 20:06:20 TRACE [DefaultDispatcher-worker-10] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2
+2025-03-02 20:06:20 INFO  [DefaultDispatcher-worker-2] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2
+BODY Content-Type: application/json
+BODY START
+{"source-language": "zh-CN", "source-text": "\u3010\u622a\u56e2\u63d0\u9192\u3011Hydro 8X\u660e\u65e5\u622a\u56e2", "destination-language": "en", "destination-text": "[Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group", "pronunciation": {"source-text-phonetic": "[Ji\u00e9 tu\u00e1n t\u00edx\u01d0ng]Hydro 8X m\u00edngr\u00ec ji\u00e9 tu\u00e1n", "source-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=zh-CN&q=\u3010\u622a\u56e2\u63d0\u9192\u3011Hydro%208X\u660e\u65e5\u622a\u56e2", "destination-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=en&q=[Reminder%20for%20the%20Interception%20Group]%20Hydro%208X%20tomorrow's%20Interception%20Group"}, "translations": {"all-translations": null, "possible-translations": ["[Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group"], "possible-mistakes": null}, "definitions": null, "see-also": null}
+BODY END
+2025-03-02 20:06:20 TRACE [DefaultDispatcher-worker-10] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E6%88%AA%E5%9B%A2%E6%8F%90%E9%86%92%E3%80%91Hydro+8X%E6%98%8E%E6%97%A5%E6%88%AA%E5%9B%A2 to class kotlinx.io.Source
+2025-03-02 20:06:20 INFO  [DefaultDispatcher-worker-10] c.t.services.ZFrontierCheckerService - 【截团提醒】Hydro 8X明日截团 - https://www.zfrontier.com/app/flow/ZBYpjdAy1x10 - 2025.02.28 20:06 UTC+3
+2025-03-02 20:06:30 INFO  [DefaultDispatcher-worker-4] c.t.services.ZFrontierCheckerService - Sending media group: MediaGroupRequest(chat_id=@TopreThoc, media=[MediaItem(type=photo, media=https://img.zfrontier.com/post/lq3GUGbYmgMPhZyE9IWV3KJowgby.jpg-cover360.webp, caption=[ZF] [Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group - https://www.zfrontier.com/app/flow/ZBYpjdAy1x10), MediaItem(type=photo, media=https://img.zfrontier.com/post/lmXDJnw6qgKqxZ1QOwY9KnEAd6mD.jpg-cover360.webp, caption=), MediaItem(type=photo, media=https://img.zfrontier.com/post/lisnQW8AAWT1ICHMZNj4wQ3uGFss.jpg-cover360.webp, caption=)])
+2025-03-02 20:06:30 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:30 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:30 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Converted request body using io.ktor.serialization.kotlinx.KotlinxSerializationConverter@b5d1ce4 for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:30 TRACE [DefaultDispatcher-worker-4] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:30 TRACE [DefaultDispatcher-worker-4] i.k.c.plugins.defaultTransformers - Transformed with default transformers request body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup from class io.ktor.http.content.TextContent
+2025-03-02 20:06:30 INFO  [DefaultDispatcher-worker-1] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+METHOD: HttpMethod(value=POST)
+BODY Content-Type: application/json
+BODY START
+{"chat_id":"@TopreThoc","media":[{"type":"photo","media":"https://img.zfrontier.com/post/lq3GUGbYmgMPhZyE9IWV3KJowgby.jpg-cover360.webp","caption":"[ZF] [Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group - https://www.zfrontier.com/app/flow/ZBYpjdAy1x10"},{"type":"photo","media":"https://img.zfrontier.com/post/lmXDJnw6qgKqxZ1QOwY9KnEAd6mD.jpg-cover360.webp","caption":""},{"type":"photo","media":"https://img.zfrontier.com/post/lisnQW8AAWT1ICHMZNj4wQ3uGFss.jpg-cover360.webp","caption":""}]}
+BODY END
+2025-03-02 20:06:32 TRACE [DefaultDispatcher-worker-3] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:32 TRACE [DefaultDispatcher-worker-3] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:32 INFO  [DefaultDispatcher-worker-1] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=POST)
+FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+BODY Content-Type: application/json
+BODY START
+{"ok":true,"result":[{"message_id":1855,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935193,"media_group_id":"13927481545645730","photo":[{"file_id":"AgACAgQAAxUHZ8SQGE7xYBQK8gH8H--2yMe58gMAAuS4MRvmkCVSQiuG0VIpaXYBAAMCAANzAAM2BA","file_unique_id":"AQAD5LgxG-aQJVJ4","file_size":1660,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQGE7xYBQK8gH8H--2yMe58gMAAuS4MRvmkCVSQiuG0VIpaXYBAAMCAANtAAM2BA","file_unique_id":"AQAD5LgxG-aQJVJy","file_size":22204,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQGE7xYBQK8gH8H--2yMe58gMAAuS4MRvmkCVSQiuG0VIpaXYBAAMCAAN4AAM2BA","file_unique_id":"AQAD5LgxG-aQJVJ9","file_size":25219,"width":360,"height":240}],"caption":"[ZF] [Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group - https://www.zfrontier.com/app/flow/ZBYpjdAy1x10","caption_entities":[{"offset":84,"length":47,"type":"url"}]},{"message_id":1856,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935193,"media_group_id":"13927481545645730","photo":[{"file_id":"AgACAgQAAxUHZ8SQGeAAAU93pMMw7thFhhf1wa5eAAIhuTEbheAtUowFcTx5IKBIAQADAgADcwADNgQ","file_unique_id":"AQADIbkxG4XgLVJ4","file_size":1810,"width":66,"height":90},{"file_id":"AgACAgQAAxUHZ8SQGeAAAU93pMMw7thFhhf1wa5eAAIhuTEbheAtUowFcTx5IKBIAQADAgADbQADNgQ","file_unique_id":"AQADIbkxG4XgLVJy","file_size":24790,"width":234,"height":320},{"file_id":"AgACAgQAAxUHZ8SQGeAAAU93pMMw7thFhhf1wa5eAAIhuTEbheAtUowFcTx5IKBIAQADAgADeAADNgQ","file_unique_id":"AQADIbkxG4XgLVJ9","file_size":48279,"width":360,"height":493}]},{"message_id":1857,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935193,"media_group_id":"13927481545645730","photo":[{"file_id":"AgACAgQAAxUHZ8SQGOO3n2S8kzzW_xs4YOQrXR4AAgq5MRvzrSxST2lw-Op_gXgBAAMCAANzAAM2BA","file_unique_id":"AQADCrkxG_OtLFJ4","file_size":1652,"width":62,"height":90},{"file_id":"AgACAgQAAxUHZ8SQGOO3n2S8kzzW_xs4YOQrXR4AAgq5MRvzrSxST2lw-Op_gXgBAAMCAANtAAM2BA","file_unique_id":"AQADCrkxG_OtLFJy","file_size":23049,"width":222,"height":320},{"file_id":"AgACAgQAAxUHZ8SQGOO3n2S8kzzW_xs4YOQrXR4AAgq5MRvzrSxST2lw-Op_gXgBAAMCAAN4AAM2BA","file_unique_id":"AQADCrkxG_OtLFJ9","file_size":47483,"width":360,"height":519}]}]}
+BODY END
+2025-03-02 20:06:32 TRACE [DefaultDispatcher-worker-3] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup to class kotlinx.io.Source
+2025-03-02 20:06:32 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - Media group response: {"ok":true,"result":[{"message_id":1855,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935193,"media_group_id":"13927481545645730","photo":[{"file_id":"AgACAgQAAxUHZ8SQGE7xYBQK8gH8H--2yMe58gMAAuS4MRvmkCVSQiuG0VIpaXYBAAMCAANzAAM2BA","file_unique_id":"AQAD5LgxG-aQJVJ4","file_size":1660,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQGE7xYBQK8gH8H--2yMe58gMAAuS4MRvmkCVSQiuG0VIpaXYBAAMCAANtAAM2BA","file_unique_id":"AQAD5LgxG-aQJVJy","file_size":22204,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQGE7xYBQK8gH8H--2yMe58gMAAuS4MRvmkCVSQiuG0VIpaXYBAAMCAAN4AAM2BA","file_unique_id":"AQAD5LgxG-aQJVJ9","file_size":25219,"width":360,"height":240}],"caption":"[ZF] [Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group - https://www.zfrontier.com/app/flow/ZBYpjdAy1x10","caption_entities":[{"offset":84,"length":47,"type":"url"}]},{"message_id":1856,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935193,"media_group_id":"13927481545645730","photo":[{"file_id":"AgACAgQAAxUHZ8SQGeAAAU93pMMw7thFhhf1wa5eAAIhuTEbheAtUowFcTx5IKBIAQADAgADcwADNgQ","file_unique_id":"AQADIbkxG4XgLVJ4","file_size":1810,"width":66,"height":90},{"file_id":"AgACAgQAAxUHZ8SQGeAAAU93pMMw7thFhhf1wa5eAAIhuTEbheAtUowFcTx5IKBIAQADAgADbQADNgQ","file_unique_id":"AQADIbkxG4XgLVJy","file_size":24790,"width":234,"height":320},{"file_id":"AgACAgQAAxUHZ8SQGeAAAU93pMMw7thFhhf1wa5eAAIhuTEbheAtUowFcTx5IKBIAQADAgADeAADNgQ","file_unique_id":"AQADIbkxG4XgLVJ9","file_size":48279,"width":360,"height":493}]},{"message_id":1857,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935193,"media_group_id":"13927481545645730","photo":[{"file_id":"AgACAgQAAxUHZ8SQGOO3n2S8kzzW_xs4YOQrXR4AAgq5MRvzrSxST2lw-Op_gXgBAAMCAANzAAM2BA","file_unique_id":"AQADCrkxG_OtLFJ4","file_size":1652,"width":62,"height":90},{"file_id":"AgACAgQAAxUHZ8SQGOO3n2S8kzzW_xs4YOQrXR4AAgq5MRvzrSxST2lw-Op_gXgBAAMCAANtAAM2BA","file_unique_id":"AQADCrkxG_OtLFJy","file_size":23049,"width":222,"height":320},{"file_id":"AgACAgQAAxUHZ8SQGOO3n2S8kzzW_xs4YOQrXR4AAgq5MRvzrSxST2lw-Op_gXgBAAMCAAN4AAM2BA","file_unique_id":"AQADCrkxG_OtLFJ9","file_size":47483,"width":360,"height":519}]}]}
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: insert into news ("name", originalname, source_id, link, "timestamp") values (?, ?, ?, ?, ?) 
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[ZF][Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group(text), 【截团提醒】Hydro 8X明日截团(text), 2(int), https://www.zfrontier.com/app/flow/ZBYpjdAy1x10(text), 2025.02.28 20:06 UTC+3(text)]
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Effects: 1
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Generated Key: 10
+2025-03-02 20:06:32 INFO  [DefaultDispatcher-worker-3] com.thocc.services.NewsService - Check DB! News: [ZF][Reminder for the Interception Group] Hydro 8X tomorrow's Interception Group must appeared
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[GB]Haven 65+ 团购即将开启(text), 2(int), 1(int)]
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [https://www.zfrontier.com/app/flow/JrOJap3vXEGa(text), 1(int)]
+2025-03-02 20:06:32 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-03-02 20:06:32 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - passed https://www.zfrontier.com/app/flow/JrOJap3vXEGa
+2025-03-02 20:06:32 TRACE [DefaultDispatcher-worker-3] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF
+2025-03-02 20:06:32 TRACE [DefaultDispatcher-worker-3] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF
+2025-03-02 20:06:32 TRACE [DefaultDispatcher-worker-3] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF.
+2025-03-02 20:06:32 TRACE [DefaultDispatcher-worker-3] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF
+2025-03-02 20:06:32 INFO  [DefaultDispatcher-worker-6] io.ktor.client.HttpClient - REQUEST: https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:06:33 TRACE [DefaultDispatcher-worker-7] i.k.client.plugins.HttpCallValidator - Validating response for request https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF
+2025-03-02 20:06:33 TRACE [DefaultDispatcher-worker-7] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF
+2025-03-02 20:06:33 INFO  [DefaultDispatcher-worker-3] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF
+BODY Content-Type: application/json
+BODY START
+{"source-language": "zh-CN", "source-text": "[GB]Haven 65+ \u56e2\u8d2d\u5373\u5c06\u5f00\u542f", "destination-language": "en", "destination-text": "[GB]Haven 65+ Group Purchase is about to start", "pronunciation": {"source-text-phonetic": "[GB]Haven 65+ tu\u00e1ng\u00f2u j\u00edji\u0101ng k\u0101iq\u01d0", "source-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=zh-CN&q=[GB]Haven%2065+%20\u56e2\u8d2d\u5373\u5c06\u5f00\u542f", "destination-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=en&q=[GB]Haven%2065+%20Group%20Purchase%20is%20about%20to%20start"}, "translations": {"all-translations": null, "possible-translations": ["[GB]Haven 65+ Group Purchase is about to start"], "possible-mistakes": ["[GB]<em>Haven65</em>+ \u56e2\u8d2d\u5373\u5c06\u5f00\u542f", "[GB]Haven65+ \u56e2\u8d2d\u5373\u5c06\u5f00\u542f", [1]]}, "definitions": null, "see-also": null}
+BODY END
+2025-03-02 20:06:33 TRACE [DefaultDispatcher-worker-7] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://ftapi.pythonanywhere.com/translate?dl=en&text=%5BGB%5DHaven+65%2B+%E5%9B%A2%E8%B4%AD%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF to class kotlinx.io.Source
+2025-03-02 20:06:33 INFO  [DefaultDispatcher-worker-7] c.t.services.ZFrontierCheckerService - [GB]Haven 65+ 团购即将开启 - https://www.zfrontier.com/app/flow/JrOJap3vXEGa - 2025.02.28 20:06 UTC+3
+2025-03-02 20:06:43 INFO  [DefaultDispatcher-worker-5] c.t.services.ZFrontierCheckerService - Sending media group: MediaGroupRequest(chat_id=@TopreThoc, media=[MediaItem(type=photo, media=https://img.zfrontier.com/post/lpIGtS1Kv9qjBKTizrROrDwvZ1EH.jpg-cover360.webp, caption=[ZF] [GB]Haven 65+ Group Purchase is about to start - https://www.zfrontier.com/app/flow/JrOJap3vXEGa), MediaItem(type=photo, media=https://img.zfrontier.com/post/lpChXWl6BYy6nPRnN6MJp9AMP1lN.png-cover360.webp, caption=), MediaItem(type=photo, media=https://img.zfrontier.com/post/lnnRQcJ7turz5lYy7wu_FAaSKKUO.jpg-cover360.webp, caption=)])
+2025-03-02 20:06:43 TRACE [DefaultDispatcher-worker-5] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:43 TRACE [DefaultDispatcher-worker-5] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:43 TRACE [DefaultDispatcher-worker-5] i.k.c.p.c.ContentNegotiation - Converted request body using io.ktor.serialization.kotlinx.KotlinxSerializationConverter@b5d1ce4 for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:43 TRACE [DefaultDispatcher-worker-5] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:43 TRACE [DefaultDispatcher-worker-5] i.k.c.plugins.defaultTransformers - Transformed with default transformers request body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup from class io.ktor.http.content.TextContent
+2025-03-02 20:06:43 INFO  [DefaultDispatcher-worker-4] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+METHOD: HttpMethod(value=POST)
+BODY Content-Type: application/json
+BODY START
+{"chat_id":"@TopreThoc","media":[{"type":"photo","media":"https://img.zfrontier.com/post/lpIGtS1Kv9qjBKTizrROrDwvZ1EH.jpg-cover360.webp","caption":"[ZF] [GB]Haven 65+ Group Purchase is about to start - https://www.zfrontier.com/app/flow/JrOJap3vXEGa"},{"type":"photo","media":"https://img.zfrontier.com/post/lpChXWl6BYy6nPRnN6MJp9AMP1lN.png-cover360.webp","caption":""},{"type":"photo","media":"https://img.zfrontier.com/post/lnnRQcJ7turz5lYy7wu_FAaSKKUO.jpg-cover360.webp","caption":""}]}
+BODY END
+2025-03-02 20:06:47 TRACE [DefaultDispatcher-worker-9] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:47 TRACE [DefaultDispatcher-worker-9] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:47 INFO  [DefaultDispatcher-worker-7] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=POST)
+FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+BODY Content-Type: application/json
+BODY START
+{"ok":true,"result":[{"message_id":1858,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935207,"media_group_id":"13927481661910738","photo":[{"file_id":"AgACAgQAAxUHZ8SQJfke9sAZbg1kqWdCcfH8l9AAAre4MRvyryxSbw9SHFwiD_IBAAMCAANzAAM2BA","file_unique_id":"AQADt7gxG_KvLFJ4","file_size":1017,"width":90,"height":51},{"file_id":"AgACAgQAAxUHZ8SQJfke9sAZbg1kqWdCcfH8l9AAAre4MRvyryxSbw9SHFwiD_IBAAMCAANtAAM2BA","file_unique_id":"AQADt7gxG_KvLFJy","file_size":9097,"width":320,"height":180},{"file_id":"AgACAgQAAxUHZ8SQJfke9sAZbg1kqWdCcfH8l9AAAre4MRvyryxSbw9SHFwiD_IBAAMCAAN4AAM2BA","file_unique_id":"AQADt7gxG_KvLFJ9","file_size":10664,"width":360,"height":203}],"caption":"[ZF] [GB]Haven 65+ Group Purchase is about to start - https://www.zfrontier.com/app/flow/JrOJap3vXEGa","caption_entities":[{"offset":54,"length":47,"type":"url"}]},{"message_id":1859,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935207,"media_group_id":"13927481661910738","photo":[{"file_id":"AgACAgQAAxUHZ8SQJfJLW1wzZIout3JL1mGJMV4AA7kxG2-IJFJARM_gKuRfcAEAAwIAA3MAAzYE","file_unique_id":"AQAEuTEbb4gkUng","file_size":1343,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQJfJLW1wzZIout3JL1mGJMV4AA7kxG2-IJFJARM_gKuRfcAEAAwIAA20AAzYE","file_unique_id":"AQAEuTEbb4gkUnI","file_size":15369,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQJfJLW1wzZIout3JL1mGJMV4AA7kxG2-IJFJARM_gKuRfcAEAAwIAA3gAAzYE","file_unique_id":"AQAEuTEbb4gkUn0","file_size":17555,"width":360,"height":240}]},{"message_id":1860,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935207,"media_group_id":"13927481661910738","photo":[{"file_id":"AgACAgQAAxUHZ8SQJwACQXlszAFhysixGTRHl7YAAtC4MRswGiRSGjO5vd7GmAIBAAMCAANzAAM2BA","file_unique_id":"AQAD0LgxGzAaJFJ4","file_size":948,"width":90,"height":51},{"file_id":"AgACAgQAAxUHZ8SQJwACQXlszAFhysixGTRHl7YAAtC4MRswGiRSGjO5vd7GmAIBAAMCAANtAAM2BA","file_unique_id":"AQAD0LgxGzAaJFJy","file_size":8038,"width":320,"height":180},{"file_id":"AgACAgQAAxUHZ8SQJwACQXlszAFhysixGTRHl7YAAtC4MRswGiRSGjO5vd7GmAIBAAMCAAN4AAM2BA","file_unique_id":"AQAD0LgxGzAaJFJ9","file_size":9304,"width":360,"height":203}]}]}
+BODY END
+2025-03-02 20:06:47 TRACE [DefaultDispatcher-worker-6] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup to class kotlinx.io.Source
+2025-03-02 20:06:47 INFO  [DefaultDispatcher-worker-6] c.t.services.ZFrontierCheckerService - Media group response: {"ok":true,"result":[{"message_id":1858,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935207,"media_group_id":"13927481661910738","photo":[{"file_id":"AgACAgQAAxUHZ8SQJfke9sAZbg1kqWdCcfH8l9AAAre4MRvyryxSbw9SHFwiD_IBAAMCAANzAAM2BA","file_unique_id":"AQADt7gxG_KvLFJ4","file_size":1017,"width":90,"height":51},{"file_id":"AgACAgQAAxUHZ8SQJfke9sAZbg1kqWdCcfH8l9AAAre4MRvyryxSbw9SHFwiD_IBAAMCAANtAAM2BA","file_unique_id":"AQADt7gxG_KvLFJy","file_size":9097,"width":320,"height":180},{"file_id":"AgACAgQAAxUHZ8SQJfke9sAZbg1kqWdCcfH8l9AAAre4MRvyryxSbw9SHFwiD_IBAAMCAAN4AAM2BA","file_unique_id":"AQADt7gxG_KvLFJ9","file_size":10664,"width":360,"height":203}],"caption":"[ZF] [GB]Haven 65+ Group Purchase is about to start - https://www.zfrontier.com/app/flow/JrOJap3vXEGa","caption_entities":[{"offset":54,"length":47,"type":"url"}]},{"message_id":1859,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935207,"media_group_id":"13927481661910738","photo":[{"file_id":"AgACAgQAAxUHZ8SQJfJLW1wzZIout3JL1mGJMV4AA7kxG2-IJFJARM_gKuRfcAEAAwIAA3MAAzYE","file_unique_id":"AQAEuTEbb4gkUng","file_size":1343,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQJfJLW1wzZIout3JL1mGJMV4AA7kxG2-IJFJARM_gKuRfcAEAAwIAA20AAzYE","file_unique_id":"AQAEuTEbb4gkUnI","file_size":15369,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQJfJLW1wzZIout3JL1mGJMV4AA7kxG2-IJFJARM_gKuRfcAEAAwIAA3gAAzYE","file_unique_id":"AQAEuTEbb4gkUn0","file_size":17555,"width":360,"height":240}]},{"message_id":1860,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935207,"media_group_id":"13927481661910738","photo":[{"file_id":"AgACAgQAAxUHZ8SQJwACQXlszAFhysixGTRHl7YAAtC4MRswGiRSGjO5vd7GmAIBAAMCAANzAAM2BA","file_unique_id":"AQAD0LgxGzAaJFJ4","file_size":948,"width":90,"height":51},{"file_id":"AgACAgQAAxUHZ8SQJwACQXlszAFhysixGTRHl7YAAtC4MRswGiRSGjO5vd7GmAIBAAMCAANtAAM2BA","file_unique_id":"AQAD0LgxGzAaJFJy","file_size":8038,"width":320,"height":180},{"file_id":"AgACAgQAAxUHZ8SQJwACQXlszAFhysixGTRHl7YAAtC4MRswGiRSGjO5vd7GmAIBAAMCAAN4AAM2BA","file_unique_id":"AQAD0LgxGzAaJFJ9","file_size":9304,"width":360,"height":203}]}]}
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: insert into news ("name", originalname, source_id, link, "timestamp") values (?, ?, ?, ?, ?) 
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [[ZF][GB]Haven 65+ Group Purchase is about to start(text), [GB]Haven 65+ 团购即将开启(text), 2(int), https://www.zfrontier.com/app/flow/JrOJap3vXEGa(text), 2025.02.28 20:06 UTC+3(text)]
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Effects: 1
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Generated Key: 11
+2025-03-02 20:06:47 INFO  [DefaultDispatcher-worker-6] com.thocc.services.NewsService - Check DB! News: [ZF][GB]Haven 65+ Group Purchase is about to start must appeared
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [【补货通知】 3月1日晚八点 沧澜轴V3补货上架(text), 2(int), 1(int)]
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Results: 0
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Parameters: [https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw(text), 1(int)]
+2025-03-02 20:06:47 DEBUG [DefaultDispatcher-worker-6] org.ktorm.database - Results: 0
+2025-03-02 20:06:47 INFO  [DefaultDispatcher-worker-6] c.t.services.ZFrontierCheckerService - passed https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw
+2025-03-02 20:06:47 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6
+2025-03-02 20:06:47 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6
+2025-03-02 20:06:47 TRACE [DefaultDispatcher-worker-6] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6.
+2025-03-02 20:06:47 TRACE [DefaultDispatcher-worker-6] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6
+2025-03-02 20:06:47 INFO  [DefaultDispatcher-worker-4] io.ktor.client.HttpClient - REQUEST: https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:06:48 TRACE [DefaultDispatcher-worker-1] i.k.client.plugins.HttpCallValidator - Validating response for request https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6
+2025-03-02 20:06:48 TRACE [DefaultDispatcher-worker-1] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6
+2025-03-02 20:06:48 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6
+BODY Content-Type: application/json
+BODY START
+{"source-language": "zh-CN", "source-text": "\u3010\u8865\u8d27\u901a\u77e5\u3011 3\u67081\u65e5\u665a\u516b\u70b9 \u6ca7\u6f9c\u8f74V3\u8865\u8d27\u4e0a\u67b6", "destination-language": "en", "destination-text": "[Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st", "pronunciation": {"source-text-phonetic": "[B\u01d4 hu\u00f2 t\u014dngzh\u012b] 3 yu\u00e8 1 r\u00ec w\u01cen b\u0101 di\u01cen c\u0101ng l\u00e1n zh\u00f3u V3 b\u01d4 hu\u00f2 sh\u00e0ngji\u00e0", "source-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=zh-CN&q=\u3010\u8865\u8d27\u901a\u77e5\u3011%203\u67081\u65e5\u665a\u516b\u70b9%20\u6ca7\u6f9c\u8f74V3\u8865\u8d27\u4e0a\u67b6", "destination-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=en&q=[Replenishment%20Notice]%20Canglan%20Axis%20V3%20will%20be%20replenished%20at%208%20pm%20on%20March%201st"}, "translations": {"all-translations": null, "possible-translations": ["[Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st"], "possible-mistakes": null}, "definitions": null, "see-also": null}
+BODY END
+2025-03-02 20:06:48 TRACE [DefaultDispatcher-worker-1] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90%E8%A1%A5%E8%B4%A7%E9%80%9A%E7%9F%A5%E3%80%91+3%E6%9C%881%E6%97%A5%E6%99%9A%E5%85%AB%E7%82%B9+%E6%B2%A7%E6%BE%9C%E8%BD%B4V3%E8%A1%A5%E8%B4%A7%E4%B8%8A%E6%9E%B6 to class kotlinx.io.Source
+2025-03-02 20:06:48 INFO  [DefaultDispatcher-worker-1] c.t.services.ZFrontierCheckerService - 【补货通知】 3月1日晚八点 沧澜轴V3补货上架 - https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw - 2025.02.28 20:06 UTC+3
+2025-03-02 20:06:55 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:06:55 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:06:55 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss.
+2025-03-02 20:06:55 TRACE [DefaultDispatcher-worker-7] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:06:55 INFO  [DefaultDispatcher-worker-6] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:06:56 TRACE [DefaultDispatcher-worker-8] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:06:56 TRACE [DefaultDispatcher-worker-8] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:06:56 INFO  [DefaultDispatcher-worker-8] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
+BODY START
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Interest Checks</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title>Re: [IC] GMK MTNU Skyriter</title>
+			<link>https://geekhack.org/index.php?topic=123732.msg3200735#msg3200735</link>
+			<description>
+<![CDATA[GB in March incoming? <br />]]>
+			</description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123732.0</comments>
+			<pubDate>Sun, 02 Mar 2025 11:35:58 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123732.msg3200735#msg3200735</guid>
+		</item>
+		<item>
+			<title>Re: [IC] GMK CYL Black &amp; Gold | GB live! 20th Feb to Mar - New deskmats added</title>
+			<link>https://geekhack.org/index.php?topic=123619.msg3200734#msg3200734</link>
+			<description><![CDATA[I think i have an idea for a cable&nbsp; <img src="https://cdn.geekhack.org/Smileys/solosmileys/cheesy.gif" alt="&#58;D" title="Cheesy" class="smiley" />]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123619.0</comments>
+			<pubDate>Sun, 02 Mar 2025 09:59:25 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123619.msg3200734#msg3200734</guid>
+		</item>
+		<item>
+			<title>Re: [IC] GMK MTNU Dashboard- New Renders, Expanded Base Kit, Final Novelties.</title>
+			<link>https://geekhack.org/index.php?topic=124083.msg3200733#msg3200733</link>
+			<description><![CDATA[Love the novelties! Will be following this closely, thanks!]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124083.0</comments>
+			<pubDate>Sun, 02 Mar 2025 09:34:42 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124083.msg3200733#msg3200733</guid>
+		</item>
+		<item>
+			<title>Re: [IC] GMK MTNU Dashboard- New Renders, Expanded Base Kit, Final Novelties.</title>
+			<link>https://geekhack.org/index.php?topic=124083.msg3200731#msg3200731</link>
+			<description>
+<![CDATA[<div class="quoteheader"><div class="topslice_quote"><a href="https://geekhack.org/index.php?topic=124083.msg3200680#msg3200680">Quote from: AerosolFNTM on Fri, 28 February 2025, 16:51:13</a></div></div><blockquote class="bbc_standard_quote">Love the theme here! I will definitely be purchasing when this goes live. Great design.<br /></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br />Thank you for that! I hope to have some good news regarding its availabi...]]>
+			</description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124083.0</comments>
+			<pubDate>Sun, 02 Mar 2025 04:32:19 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124083.msg3200731#msg3200731</guid>
+		</item>
+		<item>
+			<title>Re: [IC] KAT Space Cadet R2 - Now Doubleshot!</title>
+			<link>https://geekhack.org/index.php?topic=123230.msg3200718#msg3200718</link>
+			<description>
+<![CDATA[Is this still happening? No update in over 6 months...<br /><br />]]>
+			</description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123230.0</comments>
+			<pubDate>Sat, 01 Mar 2025 20:37:32 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123230.msg3200718#msg3200718</guid>
+		</item>
+	</channel>
+</rss>
+BODY END
+2025-03-02 20:06:56 TRACE [DefaultDispatcher-worker-8] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss to class kotlinx.io.Source
+2025-03-02 20:06:56 TRACE [DefaultDispatcher-worker-8] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:06:56 TRACE [DefaultDispatcher-worker-8] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:06:56 TRACE [DefaultDispatcher-worker-8] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss.
+2025-03-02 20:06:56 TRACE [DefaultDispatcher-worker-8] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:06:56 INFO  [DefaultDispatcher-worker-10] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:06:57 TRACE [DefaultDispatcher-worker-5] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:06:57 INFO  [DefaultDispatcher-worker-8] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
+BODY START
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Group Buys and Preorders</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title>Re: [GB] Dolch TKL is back!</title>
+			<link>https://geekhack.org/index.php?topic=124572.msg3200732#msg3200732</link>
+			<description><![CDATA[is the PCB standard, like can we use any JST H87 or derivatives?]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124572.0</comments>
+			<pubDate>Sun, 02 Mar 2025 06:38:45 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124572.msg3200732#msg3200732</guid>
+		</item>
+		<item>
+			<title>Re: [GB] GMK Blue Alert R2 [COMPLETE]</title>
+			<link>https://geekhack.org/index.php?topic=123626.msg3200720#msg3200720</link>
+			<description>
+<![CDATA[A couple of ongoing raffles for Blue Alert caps!<br /><br />Sodie Caps<br />raffle link: <a href="https://forms.gle/ARcmuRnaouZuvjZt9" class="bbc_link" target="_blank">https://forms.gle/ARcmuRnaouZuvjZt9</a><br /><br /><a  href="https://i.imgur.com/4G5QyZP.jpeg" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3200720' })"><img src="https://i.imgur.com/4G5QyZP.jpeg" alt="" width="640" height="640" align="" class="bbc_img" /></a><br /><br />Keysense<br />raffle link: <a href="https://docs.google.com/forms/d/e/1FAIpQLSelSbmKQHdIQVPL" class="bbc_link" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSelSbmKQHdIQVPL</a>...]]>
+			</description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123626.0</comments>
+			<pubDate>Sat, 01 Mar 2025 21:07:28 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123626.msg3200720#msg3200720</guid>
+		</item>
+		<item>
+			<title>Re: Beam Spring 104+SSK+122+62 Reproduction Project! Round 1 now shipping</title>
+			<link>https://geekhack.org/index.php?topic=114105.msg3200715#msg3200715</link>
+			<description><![CDATA[Is the font of the F122 different? Pretty sure the F and M font is Helvetica.]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=114105.0</comments>
+			<pubDate>Sat, 01 Mar 2025 19:31:59 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=114105.msg3200715#msg3200715</guid>
+		</item>
+		<item>
+			<title>Re: [GB] Modern Dasher D60 (firmware is updated)</title>
+			<link>https://geekhack.org/index.php?topic=97763.msg3200713#msg3200713</link>
+			<description>
+<![CDATA[yep. regret selling mine.<br /><br />my first GB board. Would love to get a R2 in MX HHKB layout.<br /><br />Even if only 30 are cut like first time. hehe. ]]>
+			</description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=97763.0</comments>
+			<pubDate>Sat, 01 Mar 2025 19:02:50 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=97763.msg3200713#msg3200713</guid>
+		</item>
+		<item>
+			<title>Re: [GB] Modern Dasher D60 (firmware is updated)</title>
+			<link>https://geekhack.org/index.php?topic=97763.msg3200712#msg3200712</link>
+			<description><![CDATA[I would be 100% in even if this was resurrected as-is! This keyboard is such a beast.]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=97763.0</comments>
+			<pubDate>Sat, 01 Mar 2025 18:17:05 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=97763.msg3200712#msg3200712</guid>
+		</item>
+	</channel>
+</rss>
+BODY END
+2025-03-02 20:06:57 TRACE [DefaultDispatcher-worker-5] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:06:57 TRACE [DefaultDispatcher-worker-5] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss to class kotlinx.io.Source
+2025-03-02 20:06:58 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - Sending media group: MediaGroupRequest(chat_id=@TopreThoc, media=[MediaItem(type=photo, media=https://img.zfrontier.com/post/lrE33NQG_iPckKYjBRRW_vyWO2Gh.JPG-cover360.webp, caption=[ZF] [Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st - https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw), MediaItem(type=photo, media=https://img.zfrontier.com/post/lo9AgijNCX7uIONKnxdorUQ2jwse.JPG-cover360.webp, caption=), MediaItem(type=photo, media=https://img.zfrontier.com/post/luKKR6Tkb5yOh21KHtUJeUeTdizr.JPG-cover360.webp, caption=)])
+2025-03-02 20:06:58 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:58 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:58 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Converted request body using io.ktor.serialization.kotlinx.KotlinxSerializationConverter@b5d1ce4 for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:58 TRACE [DefaultDispatcher-worker-2] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:58 TRACE [DefaultDispatcher-worker-2] i.k.c.plugins.defaultTransformers - Transformed with default transformers request body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup from class io.ktor.http.content.TextContent
+2025-03-02 20:06:58 INFO  [DefaultDispatcher-worker-10] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+METHOD: HttpMethod(value=POST)
+BODY Content-Type: application/json
+BODY START
+{"chat_id":"@TopreThoc","media":[{"type":"photo","media":"https://img.zfrontier.com/post/lrE33NQG_iPckKYjBRRW_vyWO2Gh.JPG-cover360.webp","caption":"[ZF] [Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st - https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw"},{"type":"photo","media":"https://img.zfrontier.com/post/lo9AgijNCX7uIONKnxdorUQ2jwse.JPG-cover360.webp","caption":""},{"type":"photo","media":"https://img.zfrontier.com/post/luKKR6Tkb5yOh21KHtUJeUeTdizr.JPG-cover360.webp","caption":""}]}
+BODY END
+2025-03-02 20:06:59 TRACE [DefaultDispatcher-worker-6] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:59 TRACE [DefaultDispatcher-worker-6] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+2025-03-02 20:06:59 INFO  [DefaultDispatcher-worker-3] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=POST)
+FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
+BODY Content-Type: application/json
+BODY START
+{"ok":true,"result":[{"message_id":1861,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935220,"media_group_id":"13927481760381386","photo":[{"file_id":"AgACAgQAAxUHZ8SQMzbJzufZr9ZhXgABszfnZJ7tAAJIuDEbO5ElUgbFydvqJMNLAQADAgADcwADNgQ","file_unique_id":"AQADSLgxGzuRJVJ4","file_size":693,"width":60,"height":90},{"file_id":"AgACAgQAAxUHZ8SQMzbJzufZr9ZhXgABszfnZJ7tAAJIuDEbO5ElUgbFydvqJMNLAQADAgADbQADNgQ","file_unique_id":"AQADSLgxGzuRJVJy","file_size":5427,"width":214,"height":320},{"file_id":"AgACAgQAAxUHZ8SQMzbJzufZr9ZhXgABszfnZJ7tAAJIuDEbO5ElUgbFydvqJMNLAQADAgADeAADNgQ","file_unique_id":"AQADSLgxGzuRJVJ9","file_size":11582,"width":360,"height":539}],"caption":"[ZF] [Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st - https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw","caption_entities":[{"offset":87,"length":47,"type":"url"}]},{"message_id":1862,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935220,"media_group_id":"13927481760381386","photo":[{"file_id":"AgACAgQAAxUHZ8SQM4txWxJbnz3utR4r27WhXTkAApm4MRteuiVSqyr4dua-wBcBAAMCAANzAAM2BA","file_unique_id":"AQADmbgxG166JVJ4","file_size":689,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQM4txWxJbnz3utR4r27WhXTkAApm4MRteuiVSqyr4dua-wBcBAAMCAANtAAM2BA","file_unique_id":"AQADmbgxG166JVJy","file_size":5657,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQM4txWxJbnz3utR4r27WhXTkAApm4MRteuiVSqyr4dua-wBcBAAMCAAN4AAM2BA","file_unique_id":"AQADmbgxG166JVJ9","file_size":6615,"width":360,"height":240}]},{"message_id":1863,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935220,"media_group_id":"13927481760381386","photo":[{"file_id":"AgACAgQAAxUHZ8SQM4n5rVEXXNKh_42vkE2KvggAAhS5MRtgDCVSKMrPu_0TkZkBAAMCAANzAAM2BA","file_unique_id":"AQADFLkxG2AMJVJ4","file_size":1131,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQM4n5rVEXXNKh_42vkE2KvggAAhS5MRtgDCVSKMrPu_0TkZkBAAMCAANtAAM2BA","file_unique_id":"AQADFLkxG2AMJVJy","file_size":10156,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQM4n5rVEXXNKh_42vkE2KvggAAhS5MRtgDCVSKMrPu_0TkZkBAAMCAAN4AAM2BA","file_unique_id":"AQADFLkxG2AMJVJ9","file_size":11352,"width":360,"height":240}]}]}
+BODY END
+2025-03-02 20:06:59 TRACE [DefaultDispatcher-worker-1] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup to class kotlinx.io.Source
+2025-03-02 20:06:59 INFO  [DefaultDispatcher-worker-1] c.t.services.ZFrontierCheckerService - Media group response: {"ok":true,"result":[{"message_id":1861,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935220,"media_group_id":"13927481760381386","photo":[{"file_id":"AgACAgQAAxUHZ8SQMzbJzufZr9ZhXgABszfnZJ7tAAJIuDEbO5ElUgbFydvqJMNLAQADAgADcwADNgQ","file_unique_id":"AQADSLgxGzuRJVJ4","file_size":693,"width":60,"height":90},{"file_id":"AgACAgQAAxUHZ8SQMzbJzufZr9ZhXgABszfnZJ7tAAJIuDEbO5ElUgbFydvqJMNLAQADAgADbQADNgQ","file_unique_id":"AQADSLgxGzuRJVJy","file_size":5427,"width":214,"height":320},{"file_id":"AgACAgQAAxUHZ8SQMzbJzufZr9ZhXgABszfnZJ7tAAJIuDEbO5ElUgbFydvqJMNLAQADAgADeAADNgQ","file_unique_id":"AQADSLgxGzuRJVJ9","file_size":11582,"width":360,"height":539}],"caption":"[ZF] [Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st - https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw","caption_entities":[{"offset":87,"length":47,"type":"url"}]},{"message_id":1862,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935220,"media_group_id":"13927481760381386","photo":[{"file_id":"AgACAgQAAxUHZ8SQM4txWxJbnz3utR4r27WhXTkAApm4MRteuiVSqyr4dua-wBcBAAMCAANzAAM2BA","file_unique_id":"AQADmbgxG166JVJ4","file_size":689,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQM4txWxJbnz3utR4r27WhXTkAApm4MRteuiVSqyr4dua-wBcBAAMCAANtAAM2BA","file_unique_id":"AQADmbgxG166JVJy","file_size":5657,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQM4txWxJbnz3utR4r27WhXTkAApm4MRteuiVSqyr4dua-wBcBAAMCAAN4AAM2BA","file_unique_id":"AQADmbgxG166JVJ9","file_size":6615,"width":360,"height":240}]},{"message_id":1863,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1740935220,"media_group_id":"13927481760381386","photo":[{"file_id":"AgACAgQAAxUHZ8SQM4n5rVEXXNKh_42vkE2KvggAAhS5MRtgDCVSKMrPu_0TkZkBAAMCAANzAAM2BA","file_unique_id":"AQADFLkxG2AMJVJ4","file_size":1131,"width":90,"height":60},{"file_id":"AgACAgQAAxUHZ8SQM4n5rVEXXNKh_42vkE2KvggAAhS5MRtgDCVSKMrPu_0TkZkBAAMCAANtAAM2BA","file_unique_id":"AQADFLkxG2AMJVJy","file_size":10156,"width":320,"height":213},{"file_id":"AgACAgQAAxUHZ8SQM4n5rVEXXNKh_42vkE2KvggAAhS5MRtgDCVSKMrPu_0TkZkBAAMCAAN4AAM2BA","file_unique_id":"AQADFLkxG2AMJVJ9","file_size":11352,"width":360,"height":240}]}]}
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - SQL: insert into news ("name", originalname, source_id, link, "timestamp") values (?, ?, ?, ?, ?) 
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - Parameters: [[ZF][Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st(text), 【补货通知】 3月1日晚八点 沧澜轴V3补货上架(text), 2(int), https://www.zfrontier.com/app/flow/p1LaGQ5wvwOw(text), 2025.02.28 20:06 UTC+3(text)]
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - Effects: 1
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - Generated Key: 12
+2025-03-02 20:06:59 INFO  [DefaultDispatcher-worker-1] com.thocc.services.NewsService - Check DB! News: [ZF][Replenishment Notice] Canglan Axis V3 will be replenished at 8 pm on March 1st must appeared
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - Parameters: [【GB】mqm个性键帽(text), 2(int), 1(int)]
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - Results: 0
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - Parameters: [https://www.zfrontier.com/app/flow/JMmWQQvZ3qGK(text), 1(int)]
+2025-03-02 20:06:59 DEBUG [DefaultDispatcher-worker-1] org.ktorm.database - Results: 0
+2025-03-02 20:06:59 INFO  [DefaultDispatcher-worker-1] c.t.services.ZFrontierCheckerService - passed https://www.zfrontier.com/app/flow/JMmWQQvZ3qGK
+2025-03-02 20:06:59 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90GB%E3%80%91mqm%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:59 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90GB%E3%80%91mqm%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:59 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90GB%E3%80%91mqm%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD.
+2025-03-02 20:06:59 TRACE [DefaultDispatcher-worker-1] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90GB%E3%80%91mqm%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+2025-03-02 20:06:59 INFO  [DefaultDispatcher-worker-10] io.ktor.client.HttpClient - REQUEST: https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90GB%E3%80%91mqm%E4%B8%AA%E6%80%A7%E9%94%AE%E5%B8%BD
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END

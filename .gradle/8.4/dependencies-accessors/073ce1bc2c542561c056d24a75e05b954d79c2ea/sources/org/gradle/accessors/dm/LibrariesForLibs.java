@@ -547,7 +547,7 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
         public KotlinVersionAccessors(ProviderFactory providers, DefaultVersionCatalog config) { super(providers, config); }
 
             /**
-             * Returns the version associated to this alias: kotlin.version (2.0.0)
+             * Returns the version associated to this alias: kotlin.version (1.9.0)
              * If the version is a rich version and that its not expressible as a
              * single version string, then an empty string is returned.
              * This version was declared in catalog libs.versions.toml
@@ -561,7 +561,7 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
         public KtorVersionAccessors(ProviderFactory providers, DefaultVersionCatalog config) { super(providers, config); }
 
             /**
-             * Returns the version associated to this alias: ktor.version (3.0.1)
+             * Returns the version associated to this alias: ktor.version (3.0.3)
              * If the version is a rich version and that its not expressible as a
              * single version string, then an empty string is returned.
              * This version was declared in catalog libs.versions.toml

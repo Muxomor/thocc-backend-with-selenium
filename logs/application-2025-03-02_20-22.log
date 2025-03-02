@@ -1,0 +1,148 @@
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss.
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-1] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:22:01 INFO  [DefaultDispatcher-worker-2] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-7] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-7] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-02 20:22:01 INFO  [DefaultDispatcher-worker-9] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
+BODY START
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Interest Checks</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title>Re: [IC] Dolch tkl (GB open! 28/02/2025)</title>
+			<link>https://geekhack.org/index.php?topic=124363.msg3200750#msg3200750</link>
+			<description><![CDATA[&#44397;&#45236; &#44396;&#47588;&#45716; &#46609;&#44057;&#51008; <a href="https://bahmstudio.co.kr/" class="bbc_link" target="_blank">https://bahmstudio.co.kr/</a> &#50640;&#49436; &#54616;&#47732; &#46104;&#45208;&#50836;? GLWIC!]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124363.0</comments>
+			<pubDate>Sun, 02 Mar 2025 17:19:07 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124363.msg3200750#msg3200750</guid>
+		</item>
+		<item>
+			<title>Re: [IC] Blue Ridge HHKB (friction-fit mounted, with a hybrid MX/EC PCB) | Vendors!</title>
+			<link>https://geekhack.org/index.php?topic=123500.msg3200749#msg3200749</link>
+			<description><![CDATA[Would love to see more hybrid PCB boards out there.]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123500.0</comments>
+			<pubDate>Sun, 02 Mar 2025 17:17:14 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123500.msg3200749#msg3200749</guid>
+		</item>
+		<item>
+			<title>Re: [IC] GMK Black Cherry | CN AND SEA VENDOR ADDED!, Deskmat Design Changed</title>
+			<link>https://geekhack.org/index.php?topic=119779.msg3200748#msg3200748</link>
+			<description><![CDATA[Great colour choices. GLWIC!]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=119779.0</comments>
+			<pubDate>Sun, 02 Mar 2025 17:15:57 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=119779.msg3200748#msg3200748</guid>
+		</item>
+		<item>
+			<title>Re: [IC] GMK CYL Led Zep R2 | GB March 10th - April 10th</title>
+			<link>https://geekhack.org/index.php?topic=123909.msg3200746#msg3200746</link>
+			<description><![CDATA[I didn&#39;t see that the GB date was announced this is great! Definitely picking up a set.]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123909.0</comments>
+			<pubDate>Sun, 02 Mar 2025 17:13:24 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123909.msg3200746#msg3200746</guid>
+		</item>
+		<item>
+			<title>Re: [IC] DCS Hangul (updated 23/09/2024)</title>
+			<link>https://geekhack.org/index.php?topic=120991.msg3200745#msg3200745</link>
+			<description><![CDATA[Please revive! I didn&#39;t know I needed Gorton hangul until I saw this thread being necroposted in.]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=120991.0</comments>
+			<pubDate>Sun, 02 Mar 2025 17:12:46 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=120991.msg3200745#msg3200745</guid>
+		</item>
+	</channel>
+</rss>
+BODY END
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-7] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss to class kotlinx.io.Source
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss.
+2025-03-02 20:22:01 TRACE [DefaultDispatcher-worker-7] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:22:01 INFO  [DefaultDispatcher-worker-8] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-02 20:22:02 TRACE [DefaultDispatcher-worker-2] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:22:02 TRACE [DefaultDispatcher-worker-2] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-02 20:22:02 INFO  [DefaultDispatcher-worker-7] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
+BODY START
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Group Buys and Preorders</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title>Re: [GB] Dolch TKL is back!</title>
+			<link>https://geekhack.org/index.php?topic=124572.msg3200732#msg3200732</link>
+			<description><![CDATA[is the PCB standard, like can we use any JST H87 or derivatives?]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124572.0</comments>
+			<pubDate>Sun, 02 Mar 2025 06:38:45 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124572.msg3200732#msg3200732</guid>
+		</item>
+		<item>
+			<title>Re: [GB] GMK Blue Alert R2 [COMPLETE]</title>
+			<link>https://geekhack.org/index.php?topic=123626.msg3200720#msg3200720</link>
+			<description>
+<![CDATA[A couple of ongoing raffles for Blue Alert caps!<br /><br />Sodie Caps<br />raffle link: <a href="https://forms.gle/ARcmuRnaouZuvjZt9" class="bbc_link" target="_blank">https://forms.gle/ARcmuRnaouZuvjZt9</a><br /><br /><a  href="https://i.imgur.com/4G5QyZP.jpeg" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3200720' })"><img src="https://i.imgur.com/4G5QyZP.jpeg" alt="" width="640" height="640" align="" class="bbc_img" /></a><br /><br />Keysense<br />raffle link: <a href="https://docs.google.com/forms/d/e/1FAIpQLSelSbmKQHdIQVPL" class="bbc_link" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSelSbmKQHdIQVPL</a>...]]>
+			</description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123626.0</comments>
+			<pubDate>Sat, 01 Mar 2025 21:07:28 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123626.msg3200720#msg3200720</guid>
+		</item>
+		<item>
+			<title>Re: Beam Spring 104+SSK+122+62 Reproduction Project! Round 1 now shipping</title>
+			<link>https://geekhack.org/index.php?topic=114105.msg3200715#msg3200715</link>
+			<description><![CDATA[Is the font of the F122 different? Pretty sure the F and M font is Helvetica.]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=114105.0</comments>
+			<pubDate>Sat, 01 Mar 2025 19:31:59 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=114105.msg3200715#msg3200715</guid>
+		</item>
+		<item>
+			<title>Re: [GB] Modern Dasher D60 (firmware is updated)</title>
+			<link>https://geekhack.org/index.php?topic=97763.msg3200713#msg3200713</link>
+			<description>
+<![CDATA[yep. regret selling mine.<br /><br />my first GB board. Would love to get a R2 in MX HHKB layout.<br /><br />Even if only 30 are cut like first time. hehe. ]]>
+			</description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=97763.0</comments>
+			<pubDate>Sat, 01 Mar 2025 19:02:50 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=97763.msg3200713#msg3200713</guid>
+		</item>
+		<item>
+			<title>Re: [GB] Modern Dasher D60 (firmware is updated)</title>
+			<link>https://geekhack.org/index.php?topic=97763.msg3200712#msg3200712</link>
+			<description><![CDATA[I would be 100% in even if this was resurrected as-is! This keyboard is such a beast.]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=97763.0</comments>
+			<pubDate>Sat, 01 Mar 2025 18:17:05 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=97763.msg3200712#msg3200712</guid>
+		</item>
+	</channel>
+</rss>
+BODY END
+2025-03-02 20:22:02 TRACE [DefaultDispatcher-worker-2] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss to class kotlinx.io.Source
