@@ -12,7 +12,7 @@ services:
     depends_on:
       - selenium
     networks:
-      - ktor-network
+      - nginx-proxy-manager-postgresql_default
 
   selenium:
     image: selenium/standalone-firefox:latest
@@ -20,9 +20,9 @@ services:
       - "4444:4444"
       - "7900:7900"
     networks:
-      - ktor-network
+      - nginx-proxy-manager-postgresql_default
     shm_size: 2gb
 
 networks:
-  ktor-network:
-    driver: bridge
+  nginx-proxy-manager-postgresql_default:
+    external: true
