@@ -1,17 +1,4 @@
-FROM gradle:7.6-jdk17-jammy as builder
-
-WORKDIR /app
-COPY build.gradle.kts .
-COPY settings.gradle.kts .
-COPY gradlew .
-COPY gradle gradle
-COPY src src
-
-RUN ./gradlew build --no-daemon
-
-FROM openjdk:17-alpine
-WORKDIR /app
-COPY --from=builder /app/build/libs/thocc-project-backend-all.jar .
-
-EXPOSE 7895
-CMD ["java", "-jar", "thocc-project-backend-all.jar"]
+FROM openjdk:17-jdk-alpine3.14
+RUN mkdir /app
+COPY ./build/libs/thocc-project-backend-all.jar /app/app.jar
+ENTRYPOINT ["java","-jar","/app/app.jar"]
