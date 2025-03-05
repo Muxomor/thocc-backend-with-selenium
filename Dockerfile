@@ -1,32 +1,35 @@
-FROM arm64v8/eclipse-temurin:17-jdk-jammy
+# Используем базовый образ для ARM64
+FROM arm64v8/ubuntu:24.10
 
-# Добавляем необходимые репозитории
+# Устанавливаем OpenJDK 17
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    software-properties-common \
-    && add-apt-repository -y universe \
-    && apt-get update
-
-# Устанавливаем зависимости с явным указанием версий
-RUN apt-get install -y --no-install-recommends \
-    firefox-esr=115.12.0~mozillabinaries-0ubuntu0.22.04.1 \
-    xvfb=2:1.20.13-1ubuntu3~22.04.2 \
-    dbus-x11=1.12.20-2ubuntu4.1 \
-    fonts-noto-core \
-    fluxbox=1.3.7-4.1 \
-    libgl1-mesa-dri:arm64 \
-    libgl1-mesa-glx:arm64 \
-    libxt6:arm64 \
+    openjdk-17-jdk-headless \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-# Ручная установка geckodriver для ARM64
+# Устанавливаем зависимости для Firefox и GUI
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    firefox \
+    xvfb \
+    dbus-x11 \
+    fonts-noto-core \
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    libxt6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем Geckodriver
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-linux-arm64.tar.gz \
     && tar -xzf geckodriver-*.tar.gz \
     && mv geckodriver /usr/local/bin/ \
     && chmod +x /usr/local/bin/geckodriver \
     && rm geckodriver-*.tar.gz
 
+# Настраиваем рабочую директорию
 WORKDIR /app
 COPY build/libs/thocc-project-backend-all.jar app.jar
 
+# Запускаем приложение
 ENTRYPOINT ["java", "-jar", "app.jar"]
