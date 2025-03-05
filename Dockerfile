@@ -5,7 +5,10 @@ RUN apk add --no-cache \
     dbus \
     ttf-freefont \
     fluxbox \
-    mesa-dri-swrast
+    mesa-dri-swrast \
+    geckodriver \
+    udev
+
 RUN mkdir /app
 COPY ./build/libs/thocc-project-backend-all.jar /app/app.jar
 ENTRYPOINT ["java","-jar","/app/app.jar"]
