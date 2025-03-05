@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "7895:7895"
-    environment:
-      - SELENIUM_REMOTE_URL=http://selenium:4444/wd/hub
     depends_on:
       - selenium
     networks:
@@ -19,10 +17,6 @@ services:
     ports:
       - "4444:4444"
       - "7900:7900"
-    environment:
-      - SE_NODE_MAX_SESSIONS=5
-      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-      - SE_START_VNC=true
     networks:
       - nginx-proxy-manager-postgresql_default
     shm_size: 2gb
