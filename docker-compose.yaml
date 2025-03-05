@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "7895:7895"
+    networks:
+      - nginx-proxy-manager-postgresql_default
     depends_on:
       selenium:
         condition: service_healthy
@@ -17,6 +19,8 @@ services:
       - "4444:4444"
       - "7900:7900"
     shm_size: 2gb
+    networks:
+      - nginx-proxy-manager-postgresql_default
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:4444/wd/hub/status"]
       interval: 10s
@@ -24,5 +28,5 @@ services:
       retries: 5
 
 networks:
-  my_network:
-    driver: bridge
+  nginx-proxy-manager-postgresql_default:
+    external: true
