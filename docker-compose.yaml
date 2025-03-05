@@ -6,10 +6,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - http_proxy
+        - https_proxy
     environment:
       - DISPLAY=:99
-    ports:
-      - "7895:7895"
+      - MOZ_DISABLE_RDD_SANDBOX=1
     command: >
       sh -c "Xvfb :99 -screen 0 1024x768x16 & java -jar app.jar"
     networks:
