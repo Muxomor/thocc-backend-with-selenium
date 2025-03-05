@@ -14,7 +14,7 @@ services:
     command: >
       sh -c "Xvfb :99 -screen 0 1024x768x16 & java -jar app.jar"
     networks:
-      - nginx-proxy-manager-postgresql_default
+      - my_network
     depends_on:
       selenium:
         condition: service_healthy
@@ -26,7 +26,7 @@ services:
       - "4444:4444"
       - "7900:7900"
     networks:
-      - nginx-proxy-manager-postgresql_default
+      - my_network
     shm_size: 2gb
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:4444/wd/hub/status"]
@@ -35,5 +35,5 @@ services:
       retries: 5
 
 networks:
-  nginx-proxy-manager-postgresql_default:
-    external: true
+  my_network:
+    driver: bridge
