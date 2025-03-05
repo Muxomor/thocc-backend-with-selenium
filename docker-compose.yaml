@@ -15,7 +15,7 @@ services:
       - nginx-proxy-manager-postgresql_default
 
   selenium:
-    image: selenium/standalone-firefox:4.27.0-20240226
+    image: selenium/standalone-firefox:latest
     ports:
       - "4444:4444"
       - "7900:7900"
