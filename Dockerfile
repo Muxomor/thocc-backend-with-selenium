@@ -20,12 +20,12 @@ RUN apt-get update && \
         tar && \
     rm -rf /var/lib/apt/lists/*
 
-# Скачиваем и устанавливаем Geckodriver для ARM64
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-linux-arm64.tar.gz && \
-    tar -xzf geckodriver-v0.34.0-linux-arm64.tar.gz && \
+# Скачиваем и устанавливаем Geckodriver для ARM64 (правильное имя файла)
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-linux-aarch64.tar.gz && \
+    tar -xzf geckodriver-v0.34.0-linux-aarch64.tar.gz && \
     mv geckodriver /usr/local/bin/ && \
     chmod +x /usr/local/bin/geckodriver && \
-    rm geckodriver-v0.34.0-linux-arm64.tar.gz
+    rm geckodriver-v0.34.0-linux-aarch64.tar.gz
 
 WORKDIR /app
 COPY build/libs/thocc-project-backend-all.jar app.jar
