@@ -1,13 +1,17 @@
-FROM eclipse-temurin:17-jdk-alpine
-RUN apk add --no-cache \
-    firefox-esr \
+FROM eclipse-temurin:17-jdk-jammy
+
+# Устанавливаем зависимости для Firefox
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    firefox \
     xvfb \
     dbus \
-    ttf-freefont \
+    fonts-freefont-ttf \
     fluxbox \
-    mesa-dri-swrast \
-    geckodriver \
-    udev
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    geckodriver && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /app
 COPY ./build/libs/thocc-project-backend-all.jar /app/app.jar
