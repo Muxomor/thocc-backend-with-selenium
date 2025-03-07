@@ -47,9 +47,11 @@ val networkModule = module {
     single { GeekhackCheckerService(get(), get()) }
 }
 val seleniumModule = module {
-    val firefoxOptions = FirefoxOptions()
-    firefoxOptions.addArguments("-headless")
-    firefoxOptions.addPreference("permissions.default.image", 2)
+    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
+    val firefoxOptions = FirefoxOptions().apply {
+        addArguments("-headless")
+        addPreference("permissions.default.image", 2)
+    }
     single<FirefoxDriver> {
         FirefoxDriver(firefoxOptions).apply {
             logger.info("firefox starting...")
