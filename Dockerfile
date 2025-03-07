@@ -1,36 +1,28 @@
-# Stage 1: Сборка с использованием Gradle 8.4
+# Stage 1: Сборка приложения
 FROM gradle:8.4.0-jdk17 AS build
 
-# Альтернативный способ настройки DNS (без модификации resolv.conf)
-RUN mkdir -p /etc/resolvconf/resolv.conf.d && \
-    echo "nameserver 8.8.8.8" > /etc/resolvconf/resolv.conf.d/base && \
-    echo "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/base
-
 WORKDIR /home/gradle/project
-COPY gradlew .
-COPY gradle gradle
-RUN chmod +x gradlew
-COPY build.gradle.kts .
-COPY settings.gradle.kts .
-COPY src src
+COPY . .
+RUN ./gradlew clean build --no-daemon --stacktrace
 
-# Сборка проекта с явным указанием DNS
-RUN ./gradlew clean build --no-daemon --stacktrace \
-    -Dorg.gradle.jvmargs='-Xmx2048m'
+# Stage 2: Финальный образ для ARM64
+FROM debian:bookworm-slim
 
-# Stage 2: Финальный образ
-FROM eclipse-temurin:17-jre-jammy
-
-# Установка Firefox и geckodriver через пакетные менеджеры
-RUN apt-get update && \
+# Настройка репозиториев для arm64 и установка firefox-esr
+RUN echo "deb http://deb.debian.org/debian sid main non-free contrib" > /etc/apt/sources.list && \
+    apt-get update -o Acquire::Check-Valid-Until=false && \
     apt-get install -y --no-install-recommends \
-    firefox-esr \
+    ca-certificates \
     wget \
-    ca-certificates && \
+    firefox-esr \
+    openjdk-17-jre-headless && \
     rm -rf /var/lib/apt/lists/*
 
-# Установка geckodriver через официальный пакет
-RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux-aarch64.tar.gz" -O /tmp/geckodriver.tar.gz \
+# Установка geckodriver для ARM64
+RUN ARCH=$(dpkg --print-architecture) && \
+    [ "$ARCH" = "arm64" ] && \
+    wget -O /tmp/geckodriver.tar.gz \
+    https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux-aarch64.tar.gz && \
     tar -C /usr/local/bin -xzf /tmp/geckodriver.tar.gz && \
     chmod +x /usr/local/bin/geckodriver && \
     rm /tmp/geckodriver.tar.gz
