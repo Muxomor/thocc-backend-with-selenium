@@ -1,22 +1,28 @@
-# Stage 1: сборка приложения с помощью Gradle
+# Stage 1: Сборка приложения с помощью Gradle
 FROM gradle:8.2.1-jdk17 AS build
 WORKDIR /home/gradle/project
 COPY . .
 RUN gradle clean build --no-daemon
 
-# Stage 2: запуск приложения на базе Ubuntu для arm64
-FROM ubuntu:22.04
+# Stage 2: Запуск приложения на базе Debian (sid)
+FROM debian:sid
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Устанавливаем openjdk-17, Firefox ESR и firefox-geckodriver
+# Обновляем пакеты и устанавливаем openjdk-17 и firefox-esr
 RUN apt-get update && apt-get install -y \
     openjdk-17-jre-headless \
     firefox-esr \
-    firefox-geckodriver \
+    wget \
     && rm -rf /var/lib/apt/lists/*
 
+# Скачиваем и устанавливаем geckodriver для arm64 (укажите актуальную версию)
+RUN wget -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux-aarch64.tar.gz \
+    && tar -C /usr/local/bin -xzvf /tmp/geckodriver.tar.gz \
+    && chmod +x /usr/local/bin/geckodriver \
+    && rm /tmp/geckodriver.tar.gz
+
 WORKDIR /app
-# Копируем fat jar, который включает все зависимости
+# Копируем fat jar, содержащий все зависимости
 COPY --from=build /home/gradle/project/build/libs/thocc-project-backend-all.jar app.jar
 
 EXPOSE 7895
