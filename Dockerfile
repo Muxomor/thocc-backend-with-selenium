@@ -1,13 +1,13 @@
 # Stage 1: Сборка с использованием Gradle 8.4
 FROM gradle:8.4.0-jdk17 AS build
 
-# Фикс DNS для контейнера (обход проблем с resolv.conf)
+# Фикс DNS для контейнера
 RUN echo "nameserver 8.8.8.8" | tee /etc/resolv.conf && \
     echo "nameserver 1.1.1.1" | tee -a /etc/resolv.conf
 
 WORKDIR /home/gradle/project
 
-# Копируем только необходимые файлы для кэширования
+# Копируем файлы сборки с кэшированием
 COPY gradle gradle
 COPY gradlew .
 COPY build.gradle.kts .
@@ -19,11 +19,12 @@ RUN ls -la && \
     ls -l build.gradle.kts && \
     ./gradlew --version
 
-# Сборка с кэшированием зависимостей
+# Сборка проекта (исправлен синтаксис многострочной команды)
 RUN ./gradlew clean build --no-daemon --stacktrace --info \
     --refresh-dependencies \
-    -Dorg.gradle.jvmargs='-Xmx2048m -XX:MaxMetaspaceSize=512m' \
+    -Dorg.gradle.jvmargs='-Xmx2048m -XX:MaxMetaspaceSize=512m'
 
+# Stage 2: Финальный образ
 FROM debian:sid
 ENV DEBIAN_FRONTEND=noninteractive
 
