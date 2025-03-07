@@ -1,46 +1,38 @@
 # Stage 1: Сборка с использованием Gradle 8.4
 FROM gradle:8.4.0-jdk17 AS build
 
-# Фикс DNS для контейнера
-RUN echo "nameserver 8.8.8.8" | tee /etc/resolv.conf && \
-    echo "nameserver 1.1.1.1" | tee -a /etc/resolv.conf
+# Альтернативный способ настройки DNS (без модификации resolv.conf)
+RUN mkdir -p /etc/resolvconf/resolv.conf.d && \
+    echo "nameserver 8.8.8.8" > /etc/resolvconf/resolv.conf.d/base && \
+    echo "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/base
 
 WORKDIR /home/gradle/project
+COPY . .
 
-# Копируем файлы сборки с кэшированием
-COPY gradle gradle
-COPY gradlew .
-COPY build.gradle.kts .
-COPY settings.gradle.kts .
-COPY src src
-
-# Проверка структуры
-RUN ls -la && \
-    ls -l build.gradle.kts && \
-    ./gradlew --version
-
-# Сборка проекта (исправлен синтаксис многострочной команды)
-RUN ./gradlew clean build --no-daemon --stacktrace --info \
-    --refresh-dependencies \
-    -Dorg.gradle.jvmargs='-Xmx2048m -XX:MaxMetaspaceSize=512m'
+# Сборка проекта с явным указанием DNS
+RUN ./gradlew clean build --no-daemon --stacktrace \
+    -Dorg.gradle.jvmargs='-Xmx2048m' \
+    -Djava.net.preferIPv4Stack=true
 
 # Stage 2: Финальный образ
-FROM debian:sid
-ENV DEBIAN_FRONTEND=noninteractive
+FROM eclipse-temurin:17-jre-jammy
 
-RUN apt-get update && apt-get install -y \
-    openjdk-17-jre-headless \
+# Установка Firefox и geckodriver через пакетные менеджеры
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
     firefox-esr \
     wget \
-    && rm -rf /var/lib/apt/lists/*
+    ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN wget -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux-aarch64.tar.gz \
-    && tar -C /usr/local/bin -xzvf /tmp/geckodriver.tar.gz \
-    && chmod +x /usr/local/bin/geckodriver \
-    && rm /tmp/geckodriver.tar.gz
+# Установка geckodriver через официальный пакет
+RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux-aarch64.tar.gz" -O /tmp/geckodriver.tar.gz \
+    tar -C /usr/local/bin -xzf /tmp/geckodriver.tar.gz && \
+    chmod +x /usr/local/bin/geckodriver && \
+    rm /tmp/geckodriver.tar.gz
 
 WORKDIR /app
-COPY --from=build /home/gradle/project/build/libs/thocc-project-backend-all.jar app.jar
+COPY --from=build /home/gradle/project/build/libs/*-all.jar app.jar
 
 EXPOSE 7895
 CMD ["java", "-jar", "app.jar"]

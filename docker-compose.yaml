@@ -6,7 +6,9 @@ services:
       dockerfile: Dockerfile
     dns:
       - 8.8.8.8
-      - 8.8.4.4
+      - 1.1.1.1
+    environment:
+      - JAVA_OPTS=-Djava.net.preferIPv4Stack=true
     ports:
       - "7895:7895"
     networks:
