@@ -2,7 +2,8 @@
 FROM gradle:8.2.1-jdk17 AS build
 WORKDIR /home/gradle/project
 COPY . .
-RUN gradle clean build --no-daemon
+RUN ls -l  # Добавьте эту строку для проверки файлов
+RUN gradle clean build --no-daemon --stacktrace  # Добавьте --stacktrace для подробного вывода
 
 # Stage 2: Запуск приложения на базе Debian (sid)
 FROM debian:sid
