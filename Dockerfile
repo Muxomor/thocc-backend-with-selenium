@@ -1,37 +1,26 @@
-FROM arm64v8/ubuntu:20.04
+# Stage 1: Сборка приложения с помощью Gradle
+FROM gradle:8.2.1-jdk17 AS build
+WORKDIR /home/gradle/project
+# Копируем исходный код в контейнер
+COPY . .
+# Сборка проекта; fat jar обычно генерируется задачей shadowJar
+RUN gradle clean build --no-daemon
 
-ENV DEBIAN_FRONTEND=noninteractive
-ENV DISPLAY=:99
-ENV MOZ_ENABLE_WAYLAND=0
-
-# Устанавливаем зависимости: OpenJDK, Firefox, Xvfb, wget, tar и прочее
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        openjdk-17-jdk-headless \
-        ca-certificates \
-        firefox \
-        xvfb \
-        dbus-x11 \
-        fonts-noto-core \
-        libgl1-mesa-dri \
-        libgl1-mesa-glx \
-        libxt6 \
-        wget \
-        tar && \
-    rm -rf /var/lib/apt/lists/*
-
-# Скачиваем и устанавливаем Geckodriver для ARM64 (правильное имя файла)
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-linux-aarch64.tar.gz && \
-    tar -xzf geckodriver-v0.34.0-linux-aarch64.tar.gz && \
-    mv geckodriver /usr/local/bin/ && \
-    chmod +x /usr/local/bin/geckodriver && \
-    rm geckodriver-v0.34.0-linux-aarch64.tar.gz
-
+# Stage 2: Запуск приложения
+FROM openjdk:17-slim
 WORKDIR /app
-COPY build/libs/thocc-project-backend-all.jar app.jar
 
-# Копируем скрипт запуска
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+# Обновляем пакеты и устанавливаем Firefox ESR и firefox-geckodriver для arm64
+RUN apt-get update && apt-get install -y \
+    firefox-esr \
+    firefox-geckodriver \
+    && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Копируем fat jar из предыдущего этапа
+COPY --from=build /home/gradle/project/build/libs/thocc-project-backend-all.jar app.jar
+
+# Открываем порт, на котором будет работать приложение
+EXPOSE 7895
+
+# Запуск приложения
+CMD ["java", "-jar", "app.jar"]
