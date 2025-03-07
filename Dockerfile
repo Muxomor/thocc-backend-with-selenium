@@ -7,12 +7,16 @@ RUN mkdir -p /etc/resolvconf/resolv.conf.d && \
     echo "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/base
 
 WORKDIR /home/gradle/project
-COPY . .
+COPY gradlew .
+COPY gradle gradle
+RUN chmod +x gradlew
+COPY build.gradle.kts .
+COPY settings.gradle.kts .
+COPY src src
 
 # Сборка проекта с явным указанием DNS
 RUN ./gradlew clean build --no-daemon --stacktrace \
-    -Dorg.gradle.jvmargs='-Xmx2048m' \
-    -Djava.net.preferIPv4Stack=true
+    -Dorg.gradle.jvmargs='-Xmx2048m'
 
 # Stage 2: Финальный образ
 FROM eclipse-temurin:17-jre-jammy
