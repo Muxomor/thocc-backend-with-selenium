@@ -1,26 +1,23 @@
-# Stage 1: Сборка приложения с помощью Gradle
+# Stage 1: сборка приложения с помощью Gradle
 FROM gradle:8.2.1-jdk17 AS build
 WORKDIR /home/gradle/project
-# Копируем исходный код в контейнер
 COPY . .
-# Сборка проекта; fat jar обычно генерируется задачей shadowJar
 RUN gradle clean build --no-daemon
 
-# Stage 2: Запуск приложения
-FROM openjdk:17-slim
-WORKDIR /app
+# Stage 2: запуск приложения на базе Ubuntu для arm64
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Обновляем пакеты и устанавливаем Firefox ESR и firefox-geckodriver для arm64
+# Устанавливаем openjdk-17, Firefox ESR и firefox-geckodriver
 RUN apt-get update && apt-get install -y \
+    openjdk-17-jre-headless \
     firefox-esr \
     firefox-geckodriver \
     && rm -rf /var/lib/apt/lists/*
 
-# Копируем fat jar из предыдущего этапа
+WORKDIR /app
+# Копируем fat jar, который включает все зависимости
 COPY --from=build /home/gradle/project/build/libs/thocc-project-backend-all.jar app.jar
 
-# Открываем порт, на котором будет работать приложение
 EXPOSE 7895
-
-# Запуск приложения
 CMD ["java", "-jar", "app.jar"]
