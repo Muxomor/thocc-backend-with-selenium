@@ -13,10 +13,6 @@ services:
       - "7895:7895"
     networks:
       - nginx-proxy-manager-postgresql_default
-      - bridge
 networks:
   nginx-proxy-manager-postgresql_default:
     external: true
-  bridge:
-    external:
-      name: bridge
