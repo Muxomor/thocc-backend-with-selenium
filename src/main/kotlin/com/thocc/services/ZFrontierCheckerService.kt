@@ -20,13 +20,16 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.time.LocalDate
 import java.time.LocalTime
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 import java.util.concurrent.ConcurrentHashMap
 
 private const val BASE_URL = "https://www.zfrontier.com"
 
 private var json = Json { ignoreUnknownKeys = true }
 
-private const val JOB_INTERVAL_2_H = 2 * 60 * 60 * 1000L
+private const val JOB_INTERVAL_2_H = 1 * 60 * 60 * 1000L
 
 class ZFrontierCheckerService(
     private val newsService: NewsService,
@@ -61,9 +64,16 @@ class ZFrontierCheckerService(
         logger.info("main function receiver answer from ZF")
         val listOfElements = document.select("div.right").toList()
         for (item in listOfElements) {
-            var name = item.selectFirst("div.article-title.f-16.fw-b")?.ownText()?.trim() ?: "Error"
+            var name = item.selectFirst("div.article-title.f-16.fw-b")
+                ?.ownText()
+                ?.trim()
+                ?.take(200)
+                ?: "Error"
             if(name == "Error"){
-                name = item.selectFirst("div.f-15.fw-b.ellipsis_4.short-flow-article")?.ownText()?.trim() ?: "Error"
+                name = item.selectFirst("div.f-15.fw-b.ellipsis_4.short-flow-article")?.ownText()
+                    ?.trim()
+                    ?.take(200)
+                    ?: "Error"
             }
             val link =
                 (BASE_URL + item.selectFirst("div.right > a")?.attr("href")?.trim())
@@ -108,7 +118,7 @@ class ZFrontierCheckerService(
             } catch (e: Exception) {
                 logger.error("some error has occurred in ZF checker: $e")
             }
-            logger.info("job done, waiting for 2 hours")
+            logger.info("job done, waiting for 1 hour")
             delay(JOB_INTERVAL_2_H)
         }
     }
@@ -136,24 +146,13 @@ class ZFrontierCheckerService(
     }
 
     private fun convertRawTimeToDateTime(input: String): String {
-        var currentDate = LocalDate.now()
-        var currentTimeInMoscow = LocalTime.now()
-        var dateTime = input
-        if (dateTime.contains("小时前")) {
-            dateTime = dateTime.replace(Regex("[^0-9]"), "")
-            currentTimeInMoscow = currentTimeInMoscow.minusHours(dateTime.toLong())
-        } else if (dateTime.contains("分钟前")) {
-            dateTime = dateTime.replace(Regex("[^0-9]"), "")
-            currentTimeInMoscow = currentTimeInMoscow.minusMinutes(dateTime.toLong())
-        } else if (dateTime == "Error") {
-            return "Error"
-        } else {
-            dateTime = dateTime.replace(Regex("[^0-9]"), "")
-            currentDate = currentDate.minusDays(dateTime.toLong())
-        }
-        return "${currentDate.toString().replace(Regex("-"), ".")} ${
-            currentTimeInMoscow.toString().substring(0, 5)
-        } UTC+3"
+        val moscowZone = ZoneId.of("Europe/Moscow")
+        val currentDateTime = ZonedDateTime.now(moscowZone)
+
+        return currentDateTime.format(
+            DateTimeFormatter
+                .ofPattern("yyyy.MM.dd HH:mm 'UTC+3'")
+                .withZone(moscowZone))
     }
 
     private suspend fun translateString(nameToTranslate: String): String {

@@ -1,0 +1,208 @@
+2025-03-03 14:38:24 INFO  [main] io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-03-03 14:38:24 INFO  [main] [Koin] - Started 6 definitions in 1.2581 ms
+2025-03-03 14:38:25 INFO  [main] org.ktorm.database - Connected to jdbc:postgresql://localhost:5432/postgres, productName: PostgreSQL, productVersion: 17.4, logger: org.ktorm.logging.Slf4jLoggerAdapter@70e3f36f, dialect: org.ktorm.support.postgresql.PostgreSqlDialect@49601f82
+2025-03-03 14:38:26 INFO  [DefaultDispatcher-worker-1] i.k.server.application.Application - geekhack checker background job started!
+2025-03-03 14:38:26 INFO  [DefaultDispatcher-worker-6] i.k.server.application.Application - zfrontier checker background job started!
+2025-03-03 14:38:26 INFO  [main] io.ktor.server.Application - Application started in 2.355 seconds.
+2025-03-03 14:38:26 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-03 14:38:26 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-03 14:38:26 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss.
+2025-03-03 14:38:26 TRACE [DefaultDispatcher-worker-1] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-03 14:38:26 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-03 14:38:27 INFO  [DefaultDispatcher-worker-4] io.ktor.server.Application - Responding at http://127.0.0.1:7895
+2025-03-03 14:38:29 TRACE [DefaultDispatcher-worker-4] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-03 14:38:29 TRACE [DefaultDispatcher-worker-4] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+2025-03-03 14:38:29 INFO  [DefaultDispatcher-worker-3] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
+BODY START
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Interest Checks</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title>Re: [IC]Introducing Danse Macabre Keycaps:A Tribute to Life's Fragility</title>
+			<link>https://geekhack.org/index.php?topic=124547.msg3200792#msg3200792</link>
+			<description><![CDATA[The website already has reviews for this and there&#39;s no IC form, what&#39;s going on here?]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124547.0</comments>
+			<pubDate>Mon, 03 Mar 2025 10:52:56 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124547.msg3200792#msg3200792</guid>
+		</item>
+		<item>
+			<title>Re: [IC] GMK MTNU Skyriter</title>
+			<link>https://geekhack.org/index.php?topic=123732.msg3200788#msg3200788</link>
+			<description><![CDATA[Did the int kit make it? &#129310;]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123732.0</comments>
+			<pubDate>Mon, 03 Mar 2025 08:04:54 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123732.msg3200788#msg3200788</guid>
+		</item>
+		<item>
+			<title>Re: [IC] WS Endpoint</title>
+			<link>https://geekhack.org/index.php?topic=122993.msg3200785#msg3200785</link>
+			<description>
+<![CDATA[<span style="font-size: 14pt;" class="bbc_size">Update:<br /><br />Okay so, a lot of vendors aren&#39;t interested because they are simply just aren&#39;t interested, or they have to many in-stock stuff so they hesitate on picking up another GB.<br /><br />To counteract this, i need to show that people really want thi...</span>]]>
+			</description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=122993.0</comments>
+			<pubDate>Mon, 03 Mar 2025 06:28:49 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=122993.msg3200785#msg3200785</guid>
+		</item>
+		<item>
+			<title>Digitizing for Embroidery: An Essential Art</title>
+			<link>https://geekhack.org/index.php?topic=124593.msg3200784#msg3200784</link>
+			<description><![CDATA[Digitizing for embroidery is the process of converting artwork, logos, or designs into a digital format that embroidery machines can interpret. This intricate process involves mapping out the design&#39;s stitches, directions, and densities to create a sea...]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124593.0</comments>
+			<pubDate>Mon, 03 Mar 2025 06:05:31 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124593.msg3200784#msg3200784</guid>
+		</item>
+		<item>
+			<title>Re: &#12304;IC&#12305;Polygon-7 keyboard by Daringrun</title>
+			<link>https://geekhack.org/index.php?topic=124153.msg3200783#msg3200783</link>
+			<description><![CDATA[Nice info!]]></description>
+			<category><![CDATA[Interest Checks]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124153.0</comments>
+			<pubDate>Mon, 03 Mar 2025 04:47:23 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124153.msg3200783#msg3200783</guid>
+		</item>
+	</channel>
+</rss>
+BODY END
+2025-03-03 14:38:29 TRACE [DefaultDispatcher-worker-7] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss to class kotlinx.io.Source
+2025-03-03 14:38:30 DEBUG [DefaultDispatcher-worker-7] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-03-03 14:38:30 DEBUG [DefaultDispatcher-worker-7] org.ktorm.database - Parameters: [Digitizing for Embroidery: An Essential Art(text), 1(int), 1(int)]
+2025-03-03 14:38:30 DEBUG [DefaultDispatcher-worker-7] org.ktorm.database - Results: 0
+2025-03-03 14:38:30 INFO  [DefaultDispatcher-worker-7] c.t.services.GeekhackCheckerService - found new GH thread: Digitizing for Embroidery: An Essential Art
+2025-03-03 14:38:30 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784
+2025-03-03 14:38:30 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784
+2025-03-03 14:38:30 TRACE [DefaultDispatcher-worker-7] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784.
+2025-03-03 14:38:30 TRACE [DefaultDispatcher-worker-7] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784
+2025-03-03 14:38:30 INFO  [DefaultDispatcher-worker-4] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784
+METHOD: HttpMethod(value=POST)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-9] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-9] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-4] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784 to class kotlinx.io.Source
+2025-03-03 14:38:31 INFO  [DefaultDispatcher-worker-1] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=POST)
+FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage?chat_id=%40TopreThoc&text=%5BGH%5D+Digitizing+for+Embroidery%3A+An+Essential+Art+-+https%3A%2F%2Fgeekhack.org%2Findex.php%3Ftopic%3D124593.msg3200784%23msg3200784
+BODY Content-Type: application/json
+BODY START
+{"ok":true,"result":{"message_id":1868,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1741001911,"text":"[GH] Digitizing for Embroidery: An Essential Art - https://geekhack.org/index.php?topic=124593.msg3200784#msg3200784","entities":[{"offset":51,"length":65,"type":"url"}],"link_preview_options":{"url":"https://geekhack.org/index.php?topic=124593.msg3200784#msg3200784"}}}
+BODY END
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true.
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-4] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true
+2025-03-03 14:38:31 INFO  [DefaultDispatcher-worker-4] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true
+METHOD: HttpMethod(value=POST)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-2] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true
+2025-03-03 14:38:31 TRACE [DefaultDispatcher-worker-2] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true
+2025-03-03 14:38:31 INFO  [DefaultDispatcher-worker-4] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=POST)
+FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage?chat_id=%40TopreThoc&message_id=1868&disable_notification=true
+BODY Content-Type: application/json
+BODY START
+{"ok":true,"result":true}
+BODY END
+2025-03-03 14:38:32 DEBUG [DefaultDispatcher-worker-4] org.ktorm.database - SQL: insert into news ("name", originalname, source_id, link, "timestamp") values (?, ?, ?, ?, ?) 
+2025-03-03 14:38:32 DEBUG [DefaultDispatcher-worker-4] org.ktorm.database - Parameters: [[GH]Digitizing for Embroidery: An Essential Art(text), Digitizing for Embroidery: An Essential Art(text), 1(int), https://geekhack.org/index.php?topic=124593.msg3200784#msg3200784(text), 03.03.2025 09:05 UTC+3(text)]
+2025-03-03 14:38:32 DEBUG [DefaultDispatcher-worker-4] org.ktorm.database - Effects: 1
+2025-03-03 14:38:32 DEBUG [DefaultDispatcher-worker-4] org.ktorm.database - Generated Key: 15
+2025-03-03 14:38:32 INFO  [DefaultDispatcher-worker-4] com.thocc.services.NewsService - Check DB! News: [GH]Digitizing for Embroidery: An Essential Art must appeared
+2025-03-03 14:38:32 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-03 14:38:32 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-03 14:38:32 TRACE [DefaultDispatcher-worker-4] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss.
+2025-03-03 14:38:32 TRACE [DefaultDispatcher-worker-4] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-03 14:38:32 INFO  [DefaultDispatcher-worker-4] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
+BODY START
+
+BODY END
+2025-03-03 14:38:33 TRACE [DefaultDispatcher-worker-5] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-03 14:38:33 TRACE [DefaultDispatcher-worker-5] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+2025-03-03 14:38:33 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
+BODY START
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Group Buys and Preorders</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title>Re: [GB] GMK Umbra | Completed | Nov. 1 - Dec. 16, 2019</title>
+			<link>https://geekhack.org/index.php?topic=103209.msg3200786#msg3200786</link>
+			<description><![CDATA[I would love an R2 as well. The PBTFans version just isn&#39;t as good as the original. I really regret not having the money to buy this set when it was in group buy.]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=103209.0</comments>
+			<pubDate>Mon, 03 Mar 2025 07:48:56 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=103209.msg3200786#msg3200786</guid>
+		</item>
+		<item>
+			<title>Re: [GB] Dolch TKL is back!</title>
+			<link>https://geekhack.org/index.php?topic=124572.msg3200761#msg3200761</link>
+			<description>
+<![CDATA[<div class="quoteheader"><div class="topslice_quote"><a href="https://geekhack.org/index.php?topic=124572.msg3200732#msg3200732">Quote from: mr_foggy on Sun, 02 March 2025, 00:38:45</a></div></div><blockquote class="bbc_standard_quote">is the PCB standard, like can we use any JST H87 or derivatives?<br /></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br />Appears to use the Mechlovin infinity87-hs<br /><br /><a href="https://mechlovin.studio/products/mechlovin-infinity-87" class="bbc_link" target="_blank">https://mechlovin.studio/products/mechlovin-infinity-87</a>...]]>
+			</description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124572.0</comments>
+			<pubDate>Sun, 02 Mar 2025 19:46:49 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124572.msg3200761#msg3200761</guid>
+		</item>
+		<item>
+			<title>Re: [GB] Fearless: a 65% dedicated to Chaewon | 02/28-03/09</title>
+			<link>https://geekhack.org/index.php?topic=124587.msg3200757#msg3200757</link>
+			<description><![CDATA[Reserved for updates.]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124587.0</comments>
+			<pubDate>Sun, 02 Mar 2025 17:58:55 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124587.msg3200757#msg3200757</guid>
+		</item>
+		<item>
+			<title>Re: [GB] Dolch TKL is back!</title>
+			<link>https://geekhack.org/index.php?topic=124572.msg3200732#msg3200732</link>
+			<description><![CDATA[is the PCB standard, like can we use any JST H87 or derivatives?]]></description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=124572.0</comments>
+			<pubDate>Sun, 02 Mar 2025 06:38:45 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124572.msg3200732#msg3200732</guid>
+		</item>
+		<item>
+			<title>Re: [GB] GMK Blue Alert R2 [COMPLETE]</title>
+			<link>https://geekhack.org/index.php?topic=123626.msg3200720#msg3200720</link>
+			<description>
+<![CDATA[A couple of ongoing raffles for Blue Alert caps!<br /><br />Sodie Caps<br />raffle link: <a href="https://forms.gle/ARcmuRnaouZuvjZt9" class="bbc_link" target="_blank">https://forms.gle/ARcmuRnaouZuvjZt9</a><br /><br /><a  href="https://i.imgur.com/4G5QyZP.jpeg" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3200720' })"><img src="https://i.imgur.com/4G5QyZP.jpeg" alt="" width="640" height="640" align="" class="bbc_img" /></a><br /><br />Keysense<br />raffle link: <a href="https://docs.google.com/forms/d/e/1FAIpQLSelSbmKQHdIQVPL" class="bbc_link" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSelSbmKQHdIQVPL</a>...]]>
+			</description>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<comments>https://geekhack.org/index.php?action=post;topic=123626.0</comments>
+			<pubDate>Sat, 01 Mar 2025 21:07:28 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=123626.msg3200720#msg3200720</guid>
+		</item>
+	</channel>
+</rss>
+BODY END
+2025-03-03 14:38:33 TRACE [DefaultDispatcher-worker-1] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss to class kotlinx.io.Source
+2025-03-03 14:38:35 INFO  [DefaultDispatcher-worker-6] [Koin] - firefox starting...
+2025-03-03 14:38:35 INFO  [DefaultDispatcher-worker-6] [Koin] - firefox initialized
+2025-03-03 14:38:35 INFO  [DefaultDispatcher-worker-6] c.t.services.ZFrontierCheckerService - zf checker page loading...
