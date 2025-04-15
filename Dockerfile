@@ -1,6 +1,11 @@
 # Stage 1: Сборка приложения
 FROM gradle:8.4.0-jdk17 AS build
 
+ENV TZ=Europe/Moscow
+RUN apt-get update && apt-get install -y tzdata && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone
+
 WORKDIR /home/gradle/project
 
 # Копирование Gradle Wrapper и установка прав

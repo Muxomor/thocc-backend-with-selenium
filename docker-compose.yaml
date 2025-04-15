@@ -1,6 +1,8 @@
 version: '3.7'
 services:
   app:
+    volumes:
+      - ./logs:/app/logs
     build:
       context: .
       dockerfile: Dockerfile

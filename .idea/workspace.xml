@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d0f5ff0-6512-4956-8436-028abb4d583b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/ZFrontierCheckerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/ZFrontierCheckerService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/di/ConfigureBackgroundJobs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/di/ConfigureBackgroundJobs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +204,8 @@
       <workItem from="1741366496260" duration="885000" />
       <workItem from="1741536144770" duration="1034000" />
       <workItem from="1741764608801" duration="1957000" />
-      <workItem from="1741799013155" duration="2375000" />
+      <workItem from="1741799013155" duration="3715000" />
+      <workItem from="1744698273918" duration="1613000" />
     </task>
     <servers />
   </component>
@@ -260,7 +263,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/thocc_project_backend$thocc_backend__build_.ic" NAME="thocc-backend [build] Coverage Results" MODIFIED="1741149430953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/thocc_project_backend$ApplicationKt.ic" NAME="ApplicationKt Coverage Results" MODIFIED="1734700061221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/thocc_project_backend$thocc_backend__build_.ic" NAME="thocc-backend [build] Coverage Results" MODIFIED="1741149430953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
