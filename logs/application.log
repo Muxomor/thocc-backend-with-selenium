@@ -1,151 +1,239 @@
-2025-03-12 20:42:16 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - zf page loaded!
-2025-03-12 20:42:16 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - navigating to google.com
-2025-03-12 20:42:21 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - main function receiver answer from ZF
-2025-03-12 20:42:21 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - skipped Error - https://www.zfrontier.comnull
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - Parameters: [【IC】STory100 客制化套件 很难不心动(text), 2(int), 1(int)]
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - Results: 1
-2025-03-12 20:42:21 TRACE [DefaultDispatcher-worker-2] org.ktorm.database - Entity: News(id=67, name=[ZF]【IC】STory100 customized kit is hard not to be moved, originalName=【IC】STory100 客制化套件 很难不心动, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/KKmvKqV6779P, timestamp=2025.03.12 12:00 UTC+3)
-2025-03-12 20:42:21 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - skipped 【IC】STory100 客制化套件 很难不心动 - https://www.zfrontier.com/app/flow/KKmvKqV6779P
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - Parameters: [【IC】莹海轴（Ocean switches）(text), 2(int), 1(int)]
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - Results: 0
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - Parameters: [https://www.zfrontier.com/app/flow/WlVpl3QLVvvM(text), 1(int)]
-2025-03-12 20:42:21 DEBUG [DefaultDispatcher-worker-2] org.ktorm.database - Results: 0
-2025-03-12 20:42:21 INFO  [DefaultDispatcher-worker-2] c.t.services.ZFrontierCheckerService - passed https://www.zfrontier.com/app/flow/WlVpl3QLVvvM
-2025-03-12 20:42:21 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89
-2025-03-12 20:42:21 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89
-2025-03-12 20:42:21 TRACE [DefaultDispatcher-worker-2] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89.
-2025-03-12 20:42:21 TRACE [DefaultDispatcher-worker-2] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89
-2025-03-12 20:42:21 INFO  [DefaultDispatcher-worker-3] io.ktor.client.HttpClient - REQUEST: https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89
+2025-04-17 10:04:17 INFO  [main] io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-04-17 10:04:17 INFO  [main] [Koin] - Started 4 definitions in 0.7689 ms
+2025-04-17 10:04:17 INFO  [main] org.ktorm.database - Connected to jdbc:postgresql://192.168.0.105:32770/postgres, productName: PostgreSQL, productVersion: 17.4 (Debian 17.4-1.pgdg120+2), logger: org.ktorm.logging.Slf4jLoggerAdapter@4a7761b1, dialect: org.ktorm.support.postgresql.PostgreSqlDialect@3e850122
+2025-04-17 10:04:18 INFO  [main] io.ktor.server.Application - Application started in 1.317 seconds.
+2025-04-17 10:04:17 INFO  [DefaultDispatcher-worker-1] i.k.server.application.Application - geekhack checker background job started!
+2025-04-17 10:04:18 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:18 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:18 TRACE [DefaultDispatcher-worker-1] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news.
+2025-04-17 10:04:18 TRACE [DefaultDispatcher-worker-1] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:18 INFO  [DefaultDispatcher-worker-3] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news
 METHOD: HttpMethod(value=GET)
 BODY Content-Type: null
 BODY START
 
 BODY END
-2025-03-12 20:42:22 TRACE [DefaultDispatcher-worker-5] i.k.client.plugins.HttpCallValidator - Validating response for request https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89
-2025-03-12 20:42:22 TRACE [DefaultDispatcher-worker-5] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89
-2025-03-12 20:42:22 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - RESPONSE: 200 OK
+2025-04-17 10:04:18 INFO  [DefaultDispatcher-worker-3] io.ktor.server.Application - Responding at http://127.0.0.1:7895
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-2] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-2] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:19 INFO  [DefaultDispatcher-worker-4] io.ktor.client.HttpClient - RESPONSE: 200 OK
 METHOD: HttpMethod(value=GET)
-FROM: https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89
-BODY Content-Type: application/json
+FROM: https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
 BODY START
-{"source-language": "zh-CN", "source-text": "\u3010IC\u3011\u83b9\u6d77\u8f74\uff08Ocean switches\uff09", "destination-language": "en", "destination-text": "\u3010IC\u3011Yanghai axis (Ocean switches)", "pronunciation": {"source-text-phonetic": "[IC] y\u00edng h\u01cei zh\u00f3u (Ocean switches)", "source-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=zh-CN&q=\u3010IC\u3011\u83b9\u6d77\u8f74\uff08Ocean%20switches\uff09", "destination-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=en&q=\u3010IC\u3011Yanghai%20axis%20(Ocean%20switches)"}, "translations": {"all-translations": null, "possible-translations": ["\u3010IC\u3011Yanghai axis (Ocean switches)"], "possible-mistakes": null}, "definitions": null, "see-also": null}
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Interest Checks</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title><![CDATA[Re: [IC]]>&#093;<![CDATA[Athena linear switch]]></title>
+			<link>https://geekhack.org/index.php?topic=125047.0</link>
+			<description>
+<![CDATA[<div align="center"><span style="font-size: 18pt;" class="bbc_size">Hello, this is Moyu.studio<br />This time we bring our new product from the Greek mythology series - Athena Switch.<br />Poseidon switch, Hades switch, Hades switch v2 are all works of this series.<br />This time, we collaborated with Keygeek to cr...</span></div>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=125047.0</comments>
+			<category><![CDATA[Interest Checks]]></category>
+			<pubDate>Tue, 15 Apr 2025 07:05:38 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=125047.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[IC]]>&#093;<![CDATA[ HELIOS 88]]></title>
+			<link>https://geekhack.org/index.php?topic=125042.0</link>
+			<description>
+<![CDATA[<div align="center">Helios 88<br />Designed by FE 21.3<br />IC form: <a href="https://forms.gle/519TDv38DkC4XTyr8" class="bbc_link" target="_blank">https://forms.gle/519TDv38DkC4XTyr8</a></div><div align="center"><img src="https://geekhack.org/index.php?action=dlattach;topic=125042.0;attach=313147;image" alt="" title="1.jpg" id="thumb_313147-0" style="width:640px;border:0;" /><br /><img src="https://geekhack.org/index.php?action=dlattach;topic=125042.0;attach=313149;image" alt="" title="2.jpg" id="thumb_313149-1" style="width:640px;border:0;" /><br /><img src="https://geekhack.org/index.php?action=dlattach;topic=125042.0;attach=313151;image" alt="" title="3.jpg" id="thumb_313151-2" style="width:640px;border:0;" /><br /><img src="https://geekhack.org/index.php?action=dlattach;topic=125042.0;attach=313153;image" alt="" title="4.jpg" id="thumb_313153-3" style="width:532px;border:0;" /><br /><img src="https://geekhack.org/index.php?action=dlattach;topic=125042.0;attach=313155;image" alt="" title="5.jpg" id="thumb_313155-4" style="width:532px;border:0;" /><br /><a href="https://geekhack.org/index.php?action=dlattach;topic=125042.0;attach=313182;image" id="link_313182-5" class="highslide" onclick="return hs.expand(this, { slideshowGroup: '3203177' })"><img src="https://geekhack.org/index.php?action=dlattach;topic=125042.0;attach=313182;image" alt="313182-5" title="NDT_3365.jpg" id="thumb_313182-5" style="width:640px;border:0;" /></a></div><div align="center">Hello everyone, I&#39;m happy to present my first keyb...</div>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=125042.0</comments>
+			<category><![CDATA[Interest Checks]]></category>
+			<pubDate>Mon, 14 Apr 2025 03:43:37 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=125042.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[IC]]>&#093;<![CDATA[ H2H - A HHKB pro 3 compatible aftermarket case - by Hannn.]]></title>
+			<link>https://geekhack.org/index.php?topic=125040.0</link>
+			<description>
+<![CDATA[<div align="center"><span style="font-size: 12pt;" class="bbc_size"><span style="font-family: courier;" class="bbc_font">Hello everyone! This is Hannn from China, a keyboard enthusiast (especially EC HHKB) and a freshman keyboard designer.<br />Previously, I collaborated with Sho on the S60v2  a compatible case for HHKB Pro 2.<br />And now, Im ha...</span></span></div>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=125040.0</comments>
+			<category><![CDATA[Interest Checks]]></category>
+			<pubDate>Sun, 13 Apr 2025 04:41:17 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=125040.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[IC]]>&#093;<![CDATA[ GMK CYL Nightowl]]></title>
+			<link>https://geekhack.org/index.php?topic=125035.0</link>
+			<description><![CDATA[<div align="center"><span style="color: #DE4042;" class="bbc_color"><span style="font-size: 25pt;" class="bbc_size">&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</span></span></div><div align="center"><span style="font-size: 45pt;" class="bbc_size"><strong><span style="color: #C792EA;" class="bbc_color">GMK</span> <span style="color: #7FDBCA;" class="bbc_color">CYL</span> <span style="color: #DFC877;" class="bbc_color">NIGHTOWL</span></strong></span></div><div align="center"><span style="color: #DE4042;" class="bbc_color"><span style="font-size: 25pt;" class="bbc_size">&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;...</span></span></div>]]></description>
+			<comments>https://geekhack.org/index.php?action=post;topic=125035.0</comments>
+			<category><![CDATA[Interest Checks]]></category>
+			<pubDate>Sat, 12 Apr 2025 17:05:56 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=125035.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[IC]]>&#093;<![CDATA[ SA Motorsport Selectric- Updated Colors and Rendors ]]></title>
+			<link>https://geekhack.org/index.php?topic=125015.0</link>
+			<description>
+<![CDATA[<a  href="https://i.imgur.com/HDAWxVf.jpeg" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3203017' })"><img src="https://i.imgur.com/HDAWxVf.jpeg" alt="" width="640" height="463" align="" class="bbc_img" /></a><br /><br /><span style="font-size: 24pt;" class="bbc_size"><span style="color: orange;" class="bbc_color">SA Motorsport Selectric</span></span><br /><br />This is a new set designed as an homage to classic motorsports. <br /><br /><span style="font-size: 24pt;" class="bbc_size"><a href="https://forms.gle/vaGupLdcsSoJCBiv7" class="bbc_link" target="_blank">Intere...</a></span>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=125015.0</comments>
+			<category><![CDATA[Interest Checks]]></category>
+			<pubDate>Thu, 10 Apr 2025 19:52:07 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=125015.0</guid>
+		</item>
+	</channel>
+</rss>
 BODY END
-2025-03-12 20:42:22 TRACE [DefaultDispatcher-worker-8] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://ftapi.pythonanywhere.com/translate?dl=en&text=%E3%80%90IC%E3%80%91%E8%8E%B9%E6%B5%B7%E8%BD%B4%EF%BC%88Ocean+switches%EF%BC%89 to class kotlinx.io.Source
-2025-03-12 20:42:22 INFO  [DefaultDispatcher-worker-8] c.t.services.ZFrontierCheckerService - 【IC】莹海轴（Ocean switches） - https://www.zfrontier.com/app/flow/WlVpl3QLVvvM - 2025.03.12 20:42 UTC+3
-2025-03-12 20:42:32 INFO  [DefaultDispatcher-worker-8] c.t.services.ZFrontierCheckerService - Sending media group: MediaGroupRequest(chat_id=@TopreThoc, media=[MediaItem(type=photo, media=https://img.zfrontier.com/post/lvAVjrPH04qcYfnnT9YSGH-V4LpW.jpg-cover360.webp, caption=[ZF] 【IC】Yanghai axis (Ocean switches) - https://www.zfrontier.com/app/flow/WlVpl3QLVvvM), MediaItem(type=photo, media=https://img.zfrontier.com/post/Fo3-MI91jaDSo8O-SAnSuwYovQVr.jpg-cover360.webp, caption=)])
-2025-03-12 20:42:32 TRACE [DefaultDispatcher-worker-8] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-2025-03-12 20:42:32 TRACE [DefaultDispatcher-worker-8] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-2025-03-12 20:42:32 TRACE [DefaultDispatcher-worker-8] i.k.c.p.c.ContentNegotiation - Converted request body using io.ktor.serialization.kotlinx.KotlinxSerializationConverter@11849593 for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-2025-03-12 20:42:32 TRACE [DefaultDispatcher-worker-8] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-2025-03-12 20:42:32 TRACE [DefaultDispatcher-worker-8] i.k.c.plugins.defaultTransformers - Transformed with default transformers request body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup from class io.ktor.http.content.TextContent
-2025-03-12 20:42:32 INFO  [DefaultDispatcher-worker-7] io.ktor.client.HttpClient - REQUEST: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-METHOD: HttpMethod(value=POST)
-BODY Content-Type: application/json
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news to class kotlinx.io.Source
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [[IC] HELIOS 88(text), 1(int), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 0
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=125042.0(text), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 0
+2025-04-17 10:04:19 INFO  [DefaultDispatcher-worker-5] c.t.services.GeekhackCheckerService - Found new GH thread: [IC] HELIOS 88 (https://geekhack.org/index.php?topic=125042.0)
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [[IC] H2H(text), 1(int), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 0
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=125040.0(text), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 0
+2025-04-17 10:04:19 INFO  [DefaultDispatcher-worker-5] c.t.services.GeekhackCheckerService - Found new GH thread: [IC] H2H (https://geekhack.org/index.php?topic=125040.0)
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [[IC] GMK CYL Nightowl(text), 1(int), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 1
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] org.ktorm.database - Entity: News(id=386, name=[GH][IC] GMK CYL Nightowl, originalName=[IC] GMK CYL Nightowl, sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=125035.0, timestamp=12.04.2025 20:05 UTC+3)
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=125035.0(text), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 1
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] org.ktorm.database - Entity: News(id=386, name=[GH][IC] GMK CYL Nightowl, originalName=[IC] GMK CYL Nightowl, sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=125035.0, timestamp=12.04.2025 20:05 UTC+3)
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] c.t.services.GeekhackCheckerService - Skipping duplicate: nameExists=true, guidExists=true ([IC] GMK CYL Nightowl / https://geekhack.org/index.php?topic=125035.0)
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [[IC] SA Motorsport Selectric(text), 1(int), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 1
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] org.ktorm.database - Entity: News(id=366, name=[GH][IC] SA Motorsport Selectric, originalName=[IC] SA Motorsport Selectric, sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=125015.0, timestamp=10.04.2025 22:52 UTC+3)
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=125015.0(text), 1(int)]
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] org.ktorm.database - Results: 1
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] org.ktorm.database - Entity: News(id=366, name=[GH][IC] SA Motorsport Selectric, originalName=[IC] SA Motorsport Selectric, sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=125015.0, timestamp=10.04.2025 22:52 UTC+3)
+2025-04-17 10:04:19 DEBUG [DefaultDispatcher-worker-5] c.t.services.GeekhackCheckerService - Skipping duplicate: nameExists=true, guidExists=true ([IC] SA Motorsport Selectric / https://geekhack.org/index.php?topic=125015.0)
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] i.k.c.p.c.ContentNegotiation - Adding Accept=application header for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] i.k.c.p.c.ContentNegotiation - Body type class io.ktor.client.utils.EmptyContent is in ignored types. Skipping ContentNegotiation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news.
+2025-04-17 10:04:19 TRACE [DefaultDispatcher-worker-5] i.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:19 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - REQUEST: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news
+METHOD: HttpMethod(value=GET)
+BODY Content-Type: null
 BODY START
-{"chat_id":"@TopreThoc","media":[{"type":"photo","media":"https://img.zfrontier.com/post/lvAVjrPH04qcYfnnT9YSGH-V4LpW.jpg-cover360.webp","caption":"[ZF] 【IC】Yanghai axis (Ocean switches) - https://www.zfrontier.com/app/flow/WlVpl3QLVvvM"},{"type":"photo","media":"https://img.zfrontier.com/post/Fo3-MI91jaDSo8O-SAnSuwYovQVr.jpg-cover360.webp","caption":""}]}
+
 BODY END
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] i.k.client.plugins.HttpCallValidator - Validating response for request https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-2] io.ktor.client.HttpClient - RESPONSE: 200 OK
-METHOD: HttpMethod(value=POST)
-FROM: https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup
-BODY Content-Type: application/json
+2025-04-17 10:04:20 TRACE [DefaultDispatcher-worker-7] i.k.client.plugins.HttpCallValidator - Validating response for request https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:20 TRACE [DefaultDispatcher-worker-7] i.k.c.p.DefaultResponseValidation - Skipping default response validation for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news
+2025-04-17 10:04:20 INFO  [DefaultDispatcher-worker-5] io.ktor.client.HttpClient - RESPONSE: 200 OK
+METHOD: HttpMethod(value=GET)
+FROM: https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news
+BODY Content-Type: application/rss+xml; charset=ISO-8859-1
 BODY START
-{"ok":true,"result":[{"message_id":2051,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1741801355,"media_group_id":"13934410845293362","photo":[{"file_id":"AgACAgQAAxUHZ9HHi4LQzpcHyYnJzsQFQeOTd88AAva3MRtDHpVSEyb4oFy2ho0BAAMCAANzAAM2BA","file_unique_id":"AQAD9rcxG0MelVJ4","file_size":2171,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ9HHi4LQzpcHyYnJzsQFQeOTd88AAva3MRtDHpVSEyb4oFy2ho0BAAMCAANtAAM2BA","file_unique_id":"AQAD9rcxG0MelVJy","file_size":30069,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ9HHi4LQzpcHyYnJzsQFQeOTd88AAva3MRtDHpVSEyb4oFy2ho0BAAMCAAN4AAM2BA","file_unique_id":"AQAD9rcxG0MelVJ9","file_size":33500,"width":360,"height":360}],"caption":"[ZF] \u3010IC\u3011Yanghai axis (Ocean switches) - https://www.zfrontier.com/app/flow/WlVpl3QLVvvM","caption_entities":[{"offset":41,"length":47,"type":"url"}]},{"message_id":2052,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1741801355,"media_group_id":"13934410845293362","photo":[{"file_id":"AgACAgQAAxUHZ9HHi04FJNs5Db06XlxwvUS13dUAAgS3MRvGW5VSNtxGGR77KmsBAAMCAANzAAM2BA","file_unique_id":"AQADBLcxG8ZblVJ4","file_size":1630,"width":90,"height":67},{"file_id":"AgACAgQAAxUHZ9HHi04FJNs5Db06XlxwvUS13dUAAgS3MRvGW5VSNtxGGR77KmsBAAMCAANtAAM2BA","file_unique_id":"AQADBLcxG8ZblVJy","file_size":27949,"width":320,"height":240},{"file_id":"AgACAgQAAxUHZ9HHi04FJNs5Db06XlxwvUS13dUAAgS3MRvGW5VSNtxGGR77KmsBAAMCAAN4AAM2BA","file_unique_id":"AQADBLcxG8ZblVJ9","file_size":32105,"width":360,"height":270}]}]}
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.92" xml:lang="en-US">
+	<channel>
+		<title>geekhack - Group Buys and Preorders</title>
+		<link>https://geekhack.org/index.php</link>
+		<description><![CDATA[Live information from geekhack]]></description>
+		<item>
+			<title><![CDATA[[GB]]>&#093;<![CDATA[ GMK CYL HyperBeige | April 18th - May 16th]]></title>
+			<link>https://geekhack.org/index.php?topic=125048.0</link>
+			<description>
+<![CDATA[<div align="center"><a  href="https://i.imgur.com/DOAuzJu.png" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3203226' })"><img src="https://i.imgur.com/DOAuzJu.png" alt="" width="640" height="192" align="" class="bbc_img" /></a><br /><br /><span style="font-size: 14pt;" class="bbc_size"><strong>Remember what they took from us? Its back in Beige and stronger than ever. </strong></span><br /><span style="font-size: 10pt;" class="bbc_size"><em>- A balding (and malding) boomer</em></span><br /><br /><hr /><br /><strong>[size=14pt...</strong></div>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=125048.0</comments>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<pubDate>Tue, 15 Apr 2025 08:47:39 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=125048.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[GB]]>&#093;<![CDATA[ DCD Yolk - Get some more egg in your diet!]]></title>
+			<link>https://geekhack.org/index.php?topic=124740.0</link>
+			<description>
+<![CDATA[<div align="center"><span style="font-size: 32pt;" class="bbc_size"><span style="color: orange;" class="bbc_color">DCD Yolk</span></span></div><br /><br /><br /><div align="center"><span style="font-size: 32pt;" class="bbc_size"><span style="color: orange;" class="bbc_color">Insipration</span></span></div><br /><div align="center"><span style="font-size: 20pt;" class="bbc_size">Egg.</span></div><br /><br /><br /><div align="center"><span style="font-size: 32pt;" class="bbc_size"><span style="color: orange;" class="bbc_color">Kitting</span></span></div><br /><div align="center">[img...</div>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=124740.0</comments>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<pubDate>Tue, 01 Apr 2025 15:28:30 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124740.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[GB]]>&#093;<![CDATA[ PBS Goblin Mode | Live 4/4/2025]]></title>
+			<link>https://geekhack.org/index.php?topic=124726.0</link>
+			<description>
+<![CDATA[<div align="center"><strong><span style="font-size: 20pt;" class="bbc_size">PBS Goblin Mode</span></strong><br /><span style="font-size: 16pt;" class="bbc_size">A goblin inspired uniform profile PBT set!<br /><br /><strong><span style="font-size: 16pt;" class="bbc_size">The Kits</span></strong><br /><a  href="https://i.imgur.com/6jSu3PC.png" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3202233' })"><img src="https://i.imgur.com/6jSu3PC.png" alt="" width="640" height="419" align="" class="bbc_img" /></a><br /><span style="font-size: 10pt;" class="bbc_size">Everything you&#39;ll need in your inventory. PBS ...</span></span></div>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=124726.0</comments>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<pubDate>Sun, 30 Mar 2025 18:57:20 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124726.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[GB]]>&#093;<![CDATA[ Caerdroia TKL by AKB (GB live!)]]></title>
+			<link>https://geekhack.org/index.php?topic=124709.0</link>
+			<description>
+<![CDATA[<a  href="https://i.imgur.com/1mx0J2g.png" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3202011' })"><img src="https://i.imgur.com/1mx0J2g.png" alt="" width="640" height="91" align="" class="bbc_img" /></a><br /><br /><a  href="https://i.imgur.com/g5AAThe.jpeg" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3202011' })"><img src="https://i.imgur.com/g5AAThe.jpeg" alt="" width="640" height="360" align="" class="bbc_img" /></a><br /><br /><hr /><br /><span style="font-family: verdana;" class="bbc_font"><span style="font-size: 16pt;" class="bbc_size"><strong><em>Links:</em></strong></span></span><br /><br /><span style="color: yellow;" class="bbc_color"><a href="https://alchemistkeyboards.com" class="bbc_link" target="_blank"><strong>[shado...</strong></a></span>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=124709.0</comments>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<pubDate>Wed, 26 Mar 2025 18:08:54 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124709.0</guid>
+		</item>
+		<item>
+			<title><![CDATA[[GB]]>&#093;<![CDATA[ GMK CYL Prussian Blue | Preorder Mar 21 - Apr 20]]></title>
+			<link>https://geekhack.org/index.php?topic=124674.0</link>
+			<description>
+<![CDATA[<div align="center"><a  href="https://i.imgur.com/izGd32j.jpg" class="highslide " onclick="return hs.expand(this, { slideshowGroup: '3201637' })"><img src="https://i.imgur.com/izGd32j.jpg" alt="" width="640" height="480" align="" class="bbc_img" /></a><br /><span style="font-size: 10pt;" class="bbc_size"><em>Polycarbonate Amano by Amano Studio. Render by Beesley.</em> (<a href="https://nopunin10did.com/wp-content/uploads/2024/08/gmk_prussian_blue_amano_view03.jpg" class="bbc_link" target="_blank">Full Size[/ur...</span></a></div>]]>
+			</description>
+			<comments>https://geekhack.org/index.php?action=post;topic=124674.0</comments>
+			<category><![CDATA[Group Buys and Preorders]]></category>
+			<pubDate>Wed, 19 Mar 2025 20:31:24 GMT</pubDate>
+			<guid>https://geekhack.org/index.php?topic=124674.0</guid>
+		</item>
+	</channel>
+</rss>
 BODY END
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup to class kotlinx.io.Source
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - Media group response: {"ok":true,"result":[{"message_id":2051,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1741801355,"media_group_id":"13934410845293362","photo":[{"file_id":"AgACAgQAAxUHZ9HHi4LQzpcHyYnJzsQFQeOTd88AAva3MRtDHpVSEyb4oFy2ho0BAAMCAANzAAM2BA","file_unique_id":"AQAD9rcxG0MelVJ4","file_size":2171,"width":90,"height":90},{"file_id":"AgACAgQAAxUHZ9HHi4LQzpcHyYnJzsQFQeOTd88AAva3MRtDHpVSEyb4oFy2ho0BAAMCAANtAAM2BA","file_unique_id":"AQAD9rcxG0MelVJy","file_size":30069,"width":320,"height":320},{"file_id":"AgACAgQAAxUHZ9HHi4LQzpcHyYnJzsQFQeOTd88AAva3MRtDHpVSEyb4oFy2ho0BAAMCAAN4AAM2BA","file_unique_id":"AQAD9rcxG0MelVJ9","file_size":33500,"width":360,"height":360}],"caption":"[ZF] \u3010IC\u3011Yanghai axis (Ocean switches) - https://www.zfrontier.com/app/flow/WlVpl3QLVvvM","caption_entities":[{"offset":41,"length":47,"type":"url"}]},{"message_id":2052,"sender_chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"chat":{"id":-1002295418276,"title":"Thocc News","username":"TopreThoc","type":"channel"},"date":1741801355,"media_group_id":"13934410845293362","photo":[{"file_id":"AgACAgQAAxUHZ9HHi04FJNs5Db06XlxwvUS13dUAAgS3MRvGW5VSNtxGGR77KmsBAAMCAANzAAM2BA","file_unique_id":"AQADBLcxG8ZblVJ4","file_size":1630,"width":90,"height":67},{"file_id":"AgACAgQAAxUHZ9HHi04FJNs5Db06XlxwvUS13dUAAgS3MRvGW5VSNtxGGR77KmsBAAMCAANtAAM2BA","file_unique_id":"AQADBLcxG8ZblVJy","file_size":27949,"width":320,"height":240},{"file_id":"AgACAgQAAxUHZ9HHi04FJNs5Db06XlxwvUS13dUAAgS3MRvGW5VSNtxGGR77KmsBAAMCAAN4AAM2BA","file_unique_id":"AQADBLcxG8ZblVJ9","file_size":32105,"width":360,"height":270}]}]}
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: insert into news ("name", originalname, source_id, link, "timestamp") values (?, ?, ?, ?, ?) 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[ZF]【IC】Yanghai axis (Ocean switches)(text), 【IC】莹海轴（Ocean switches）(text), 2(int), https://www.zfrontier.com/app/flow/WlVpl3QLVvvM(text), 2025.03.12 20:42 UTC+3(text)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Effects: 1
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Generated Key: 68
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] com.thocc.services.NewsService - Check DB! News: [ZF]【IC】Yanghai axis (Ocean switches) must appeared
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【IC】THOK Resin/Metal Galaxy 金属树脂银河艺术个性键帽(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=66, name=[ZF]【IC】THOK Resin/Metal Galaxy Metal Resin Galaxy Art Personal Keycap, originalName=【IC】THOK Resin/Metal Galaxy 金属树脂银河艺术个性键帽, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/BzGv1aLLONz7, timestamp=2025.03.12 09:57 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【IC】THOK Resin/Metal Galaxy 金属树脂银河艺术个性键帽 - https://www.zfrontier.com/app/flow/BzGv1aLLONz7
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【GB】GIFT BOX junior个性键帽架(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=62, name=[ZF]【GB】GIFT BOX Junior Personalized Keycap Rack, originalName=【GB】GIFT BOX junior个性键帽架, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/Lr1nLl9GjxjZ, timestamp=2025.03.12 08:39 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【GB】GIFT BOX junior个性键帽架 - https://www.zfrontier.com/app/flow/Lr1nLl9GjxjZ
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [上新【花子君】系列个性主题键帽(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=63, name=[ZF]New [Hanoko] series of personalized theme keycaps, originalName=上新【花子君】系列个性主题键帽, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/wA7ABq8M7oyp, timestamp=2025.03.12 03:55 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 上新【花子君】系列个性主题键帽 - https://www.zfrontier.com/app/flow/wA7ABq8M7oyp
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[GB]SOULCAT×SPM 绿箭轴 0.9元入门客制化轴体(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=64, name=[ZF][GB]SOULCAT×SPM Green Arrow Shaft 0.9 yuan entry-level customized shaft body, originalName=[GB]SOULCAT×SPM 绿箭轴 0.9元入门客制化轴体, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/gZ73lJrkPBg1, timestamp=2025.03.12 03:55 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped [GB]SOULCAT×SPM 绿箭轴 0.9元入门客制化轴体 - https://www.zfrontier.com/app/flow/gZ73lJrkPBg1
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【GB】 LANWI 单晶铜磁轴航插线(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=59, name=[ZF]【GB】 LANWI single crystal copper magnetic shaft navigation cable, originalName=【GB】 LANWI 单晶铜磁轴航插线, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/Bkm1Mp3RzGml, timestamp=2025.03.12 03:52 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【GB】 LANWI 单晶铜磁轴航插线 - https://www.zfrontier.com/app/flow/Bkm1Mp3RzGml
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【GB】禄星轴 线性闷响 3.18开售(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=60, name=[ZF]【GB】Lu Xingxi axis Linear muffled sound 3.18 on sale, originalName=【GB】禄星轴 线性闷响 3.18开售, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/zy7YYkBnjj09, timestamp=2025.03.12 03:52 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【GB】禄星轴 线性闷响 3.18开售 - https://www.zfrontier.com/app/flow/zy7YYkBnjj09
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【GB】QK Alice Duo(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=56, name=[ZF]【GB】 QK Alice Duo, originalName=【GB】QK Alice Duo, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/OxLLb9mOjWvK, timestamp=2025.03.12 02:02 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【GB】QK Alice Duo - https://www.zfrontier.com/app/flow/OxLLb9mOjWvK
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【补货&抽奖】HMX雪花轴第二批次补货(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=58, name=[ZF]【Replenishment & Lottery】HMX Snowflake Shaft Recharge Second Batch Replenishment, originalName=【补货&抽奖】HMX雪花轴第二批次补货, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/9rz9P9lrlKkN, timestamp=2025.03.12 20:51 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【补货&抽奖】HMX雪花轴第二批次补货 - https://www.zfrontier.com/app/flow/9rz9P9lrlKkN
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【GB】 财源滚滚福利到(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=53, name=[ZF]【GB】 Wealth and benefits are coming, originalName=【GB】 财源滚滚福利到, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/wOWGrpWjGn3p, timestamp=2025.03.11 09:44 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【GB】 财源滚滚福利到 - https://www.zfrontier.com/app/flow/wOWGrpWjGn3p
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [Purple Ecstasy Bella和Tiramisu Bella抽奖销售(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=54, name=[ZF]Purple Ecstasy Bella and Tiramisu Bella Sweepstakes Sales, originalName=Purple Ecstasy Bella和Tiramisu Bella抽奖销售, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/a5xz9Olrky61, timestamp=2025.03.11 10:45 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped Purple Ecstasy Bella和Tiramisu Bella抽奖销售 - https://www.zfrontier.com/app/flow/a5xz9Olrky61
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[ Ic ] THOK Enter 225u Snow Mountain Enter雪山河流金属键帽(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=55, name=[ZF][ Ic ] THOK Enter 225u Snow Mountain Enter Snow Mountain River Metal Keycap, originalName=[ Ic ] THOK Enter 225u Snow Mountain Enter雪山河流金属键帽, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/VawogpxMbLNx, timestamp=2025.03.11 09:45 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped [ Ic ] THOK Enter 225u Snow Mountain Enter雪山河流金属键帽 - https://www.zfrontier.com/app/flow/VawogpxMbLNx
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [每次使用都感觉自己在汲取太阳的能量！ 点亮你的桌面，感受太阳的温暖与力量~ 带你领略光与热的魅力。(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=51, name=[ZF]Every time I use it, I feel like I am absorbing the energy of the sun! Light up your desktop and feel the warmth and power of the sun~ Take you to appreciate the charm of light and heat., originalName=每次使用都感觉自己在汲取太阳的能量！ 点亮你的桌面，感受太阳的温暖与力量~ 带你领略光与热的魅力。, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/LwkjwRApZnM3, timestamp=2025.03.11 09:41 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 每次使用都感觉自己在汲取太阳的能量！ 点亮你的桌面，感受太阳的温暖与力量~ 带你领略光与热的魅力。 - https://www.zfrontier.com/app/flow/LwkjwRApZnM3
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [{GB} 一起翻开福尔摩斯的演绎法：贝克街221B的密码本(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=52, name=[ZF]{GB} Let's open Sherlock Holmes's deduction: the cryptobook of 221B on Baker Street, originalName={GB} 一起翻开福尔摩斯的演绎法：贝克街221B的密码本, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/BvZ3VYaJWdjj, timestamp=2025.03.11 08:41 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped {GB} 一起翻开福尔摩斯的演绎法：贝克街221B的密码本 - https://www.zfrontier.com/app/flow/BvZ3VYaJWdjj
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [【这是一个总价值超1万的纯福利贴】厂高版-“月背文明”键帽(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=48, name=[ZF]【This is a pure welfare note with a total value of over 10,000】 Factory high-end version-"Moonback Civilization" keycap, originalName=【这是一个总价值超1万的纯福利贴】厂高版-“月背文明”键帽, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/nA6pNAAw6NPo, timestamp=2025.03.11 08:13 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 【这是一个总价值超1万的纯福利贴】厂高版-“月背文明”键帽 - https://www.zfrontier.com/app/flow/nA6pNAAw6NPo
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[ IC ] THOK Enter 225u Gold Dragon金龙黄铜金属(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=49, name=[ZF][IC] THOK Enter 225u Gold Dragon Brass Metal, originalName=[ IC ] THOK Enter 225u Gold Dragon金龙黄铜金属, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/VRArNg5aqLoz, timestamp=2025.03.11 07:39 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped [ IC ] THOK Enter 225u Gold Dragon金龙黄铜金属 - https://www.zfrontier.com/app/flow/VRArNg5aqLoz
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [上新【葫芦山】七彩峰个性主题键帽(text), 2(int), 1(int)]
-2025-03-12 20:42:34 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
-2025-03-12 20:42:34 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=50, name=[ZF]New 【Hulushan】Seven Colorful Peak Personalized Theme Keycap, originalName=上新【葫芦山】七彩峰个性主题键帽, sourceId=NewsSourceEntity(id=2, name=ZF), link=https://www.zfrontier.com/app/flow/VmvRdxqmx6Br, timestamp=2025.03.11 07:39 UTC+3)
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped 上新【葫芦山】七彩峰个性主题键帽 - https://www.zfrontier.com/app/flow/VmvRdxqmx6Br
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped Error - https://www.zfrontier.comnull
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped Error - https://www.zfrontier.comnull
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped Error - https://www.zfrontier.comnull
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - skipped Error - https://www.zfrontier.comnull
-2025-03-12 20:42:34 INFO  [DefaultDispatcher-worker-3] c.t.services.ZFrontierCheckerService - job done, waiting for 2 hours
-2025-03-12 20:42:47 ERROR [DefaultDispatcher-worker-4] i.k.server.application.Application - some error appeared in background job:Job was cancelled
+2025-04-17 10:04:20 TRACE [DefaultDispatcher-worker-3] i.k.c.plugins.defaultTransformers - Transformed with default transformers response body for https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news to class kotlinx.io.Source
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[GB] GMK CYL HyperBeige | April 18th(text), 1(int), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=125048.0(text), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-04-17 10:04:20 INFO  [DefaultDispatcher-worker-3] c.t.services.GeekhackCheckerService - Found new GH thread: [GB] GMK CYL HyperBeige | April 18th (https://geekhack.org/index.php?topic=125048.0)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[GB] DCD Yolk(text), 1(int), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=124740.0(text), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
+2025-04-17 10:04:20 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=262, name=[GH][GB] DCD Yolk - Get some more egg in your diet!, originalName=[GB] DCD Yolk - Get some more egg in your diet!, sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=124740.0, timestamp=01.04.2025 18:28 UTC+3)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] c.t.services.GeekhackCheckerService - Skipping duplicate: nameExists=false, guidExists=true ([GB] DCD Yolk / https://geekhack.org/index.php?topic=124740.0)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[GB] PBS Goblin Mode | Live 4/4/2025(text), 1(int), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
+2025-04-17 10:04:20 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=230, name=[GH][GB] PBS Goblin Mode | Live 4/4/2025, originalName=[GB] PBS Goblin Mode | Live 4/4/2025, sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=124726.msg3202233#msg3202233, timestamp=30.03.2025 21:57 UTC+3)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=124726.0(text), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] c.t.services.GeekhackCheckerService - Skipping duplicate: nameExists=true, guidExists=false ([GB] PBS Goblin Mode | Live 4/4/2025 / https://geekhack.org/index.php?topic=124726.0)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[GB] Caerdroia TKL by AKB (GB live!)(text), 1(int), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=124709.0(text), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
+2025-04-17 10:04:20 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=198, name=[GH][GB] Caerdroia TKL by AKB (GB live on April 15th), originalName=[GB] Caerdroia TKL by AKB (GB live on April 15th), sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=124709.0, timestamp=26.03.2025 21:08 UTC+3)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] c.t.services.GeekhackCheckerService - Skipping duplicate: nameExists=false, guidExists=true ([GB] Caerdroia TKL by AKB (GB live!) / https://geekhack.org/index.php?topic=124709.0)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where (news.originalname = ?) and (news.source_id = ?) limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [[GB] GMK CYL Prussian Blue | Preorder Mar 21(text), 1(int), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 0
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - SQL: select news.id as news_id, news."name" as news_name, news.originalname as news_originalname, news.source_id as news_source_id, news.link as news_link, news."timestamp" as news_timestamp, _ref0.id as _ref0_id, _ref0."name" as _ref0_name from news left join newssource as _ref0 on news.source_id = _ref0.id where news.link = ? limit ? 
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Parameters: [https://geekhack.org/index.php?topic=124674.0(text), 1(int)]
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] org.ktorm.database - Results: 1
+2025-04-17 10:04:20 TRACE [DefaultDispatcher-worker-3] org.ktorm.database - Entity: News(id=452, name=GMK CYL Prussian Blue, originalName=GMK CYL Prussian Blue, sourceId=NewsSourceEntity(id=1, name=GH), link=https://geekhack.org/index.php?topic=124674.0, timestamp=fuck this)
+2025-04-17 10:04:20 DEBUG [DefaultDispatcher-worker-3] c.t.services.GeekhackCheckerService - Skipping duplicate: nameExists=false, guidExists=true ([GB] GMK CYL Prussian Blue | Preorder Mar 21 / https://geekhack.org/index.php?topic=124674.0)

@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
+import org.jsoup.parser.Parser
 
 
 class GeekhackCheckerService(private val newsService: NewsService, private val client: HttpClient) {
@@ -33,6 +34,7 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
             throw e
         }
     }
+
     private suspend fun sendNewDataToTelegram(newsRequest: NewsRequest){
         val json = Json{ignoreUnknownKeys = true}
         val response = client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage") {
@@ -60,7 +62,7 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
                 ?: item.selectFirst("link")?.text()
                 ?: continue
 
-            val existsByName = newsService.findNewsByName(title, /* sourceId= */1) != null
+            val existsByName = newsService.findNewsByName(title, 1) != null
             val existsByGuid = newsService.findNewsByLink(guid) != null
             if (existsByName || existsByGuid) {
                 logger.debug("Skipping duplicate: nameExists=$existsByName, guidExists=$existsByGuid ($title / $guid)")
@@ -113,15 +115,33 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
         val outputFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm 'UTC+3'")
         return targetedTimeZone.format(outputFormat)
     }
-    private fun cleanTitle(raw: String?): String? {
-        val title = raw?.trim() ?: return null
-        if (title.startsWith("Re:", ignoreCase = true)) return null
-        val normalizedBrackets = title
-            .replace(Regex("\\[IC\\]\\]+"), "[IC]")
-            .replace(Regex("\\[GB\\]\\]+"), "[GB]")
-            .replace("]]", "]")
 
-        return normalizedBrackets
+    private fun cleanTitle(raw: String?): String? {
+        if (raw.isNullOrBlank()) {
+            logger.info("Title is null or blank! Skipping")
+            return null
+        }
+
+        var title = raw
+            .replace(Regex("<!\\[CDATA\\["), "")
+            .replace(Regex("]]>"), "")
+            .let { Parser.unescapeEntities(it, false) }
+            .trim()
+
+        if (title.startsWith("Re:", ignoreCase = true)) return null
+
+        title = title
+            .replace(Regex("\\[IC\\]]+"), "[IC]")
+            .replace(Regex("\\[GB\\]]+"), "[GB]")
+            .replace(Regex("]]"), "]")
+
+        title = title.replace(Regex("(\\[(?:IC|GB)\\])\\s*"), "$1 ")
+
+        if (title.contains("-")) {
+            title = title.substringBefore("-").trim()
+        }
+
+        return title
     }
 }
 
