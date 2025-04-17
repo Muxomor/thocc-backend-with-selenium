@@ -51,27 +51,42 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
 
     private suspend fun geekhackRssChecker(rssUrl: String, boardType: String) {
         val rss = getRssDataFromUrl(rssUrl)
-        for (rssItem in rss.select("rss>channel>item")) {
-            if (checkItemTitle(rssItem.selectFirst("title")?.text())) {
-                val news = NewsRequest(
-                    name = rssItem.selectFirst("title")?.text()?.trim() ?: "Error",
-                    originalName = rssItem.selectFirst("title")?.text()?.trim() ?: "Error",
-                    link = rssItem.selectFirst("guid")?.ownText()?.trim() ?: "Error",
-                    sourceId = 1,
-                    timestamp = convertDateToOtherFormat(
-                        rssItem.selectFirst("pubDate")?.text()?.trim() ?: "Error"
-                    ),
-                )
-                logger.info("found new GH thread: ${rssItem.selectFirst("title")?.text()?.trim()}")
-                sendNewDataToTelegram(news)
-                newsService.createNews(news)
+
+        for (item in rss.select("rss>channel>item")) {
+            val rawTitle = item.selectFirst("title")?.text()
+            val title = cleanTitle(rawTitle) ?: continue
+
+            val guid = item.selectFirst("guid")?.ownText()
+                ?: item.selectFirst("link")?.text()
+                ?: continue
+
+            val existsByName = newsService.findNewsByName(title, /* sourceId= */1) != null
+            val existsByGuid = newsService.findNewsByLink(guid) != null
+            if (existsByName || existsByGuid) {
+                logger.debug("Skipping duplicate: nameExists=$existsByName, guidExists=$existsByGuid ($title / $guid)")
+                continue
             }
+
+            val pubDate = item.selectFirst("pubDate")?.text()?.trim() ?: ""
+            val formattedDate = convertDateToOtherFormat(pubDate)
+
+            val news = NewsRequest(
+                name = title,
+                originalName = rawTitle!!.trim(),
+                link = guid.trim(),
+                sourceId = 1,
+                timestamp = formattedDate
+            )
+
+            logger.info("Found new GH thread: $title ($guid)")
+            sendNewDataToTelegram(news)
+            newsService.createNews(news)
         }
     }
 
     suspend fun checkGeekhackFeeds() {
-        geekhackRssChecker("https://geekhack.org/index.php?board=132.0;action=.xml;type=rss", "IC")
-        geekhackRssChecker("https://geekhack.org/index.php?board=70.0;action=.xml;type=rss", "GB")
+        geekhackRssChecker("https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news", "IC")
+        geekhackRssChecker("https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news", "GB")
     }
 
     private fun checkItemTitle(title: String?): Boolean {
@@ -97,6 +112,16 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
         val targetedTimeZone = parsedDate.withZoneSameInstant(ZoneId.of("UTC+3"))
         val outputFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm 'UTC+3'")
         return targetedTimeZone.format(outputFormat)
+    }
+    private fun cleanTitle(raw: String?): String? {
+        val title = raw?.trim() ?: return null
+        if (title.startsWith("Re:", ignoreCase = true)) return null
+        val normalizedBrackets = title
+            .replace(Regex("\\[IC\\]\\]+"), "[IC]")
+            .replace(Regex("\\[GB\\]\\]+"), "[GB]")
+            .replace("]]", "]")
+
+        return normalizedBrackets
     }
 }
 

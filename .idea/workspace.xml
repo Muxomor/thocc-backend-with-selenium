@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d0f5ff0-6512-4956-8436-028abb4d583b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/GeekhackCheckerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/GeekhackCheckerService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +201,8 @@
       <workItem from="1741536144770" duration="1034000" />
       <workItem from="1741764608801" duration="1957000" />
       <workItem from="1741799013155" duration="3715000" />
-      <workItem from="1744698273918" duration="4036000" />
+      <workItem from="1744698273918" duration="6279000" />
+      <workItem from="1744862481826" duration="2100000" />
     </task>
     <servers />
   </component>
