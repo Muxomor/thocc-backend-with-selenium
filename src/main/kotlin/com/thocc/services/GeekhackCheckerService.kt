@@ -51,44 +51,43 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
         }
     }
 
-    private suspend fun geekhackRssChecker(rssUrl: String, boardType: String) {
+    private suspend fun geekhackRssChecker(rssUrl: String, sourceId: Int) {
         val rss = getRssDataFromUrl(rssUrl)
-
         for (item in rss.select("rss>channel>item")) {
-            val rawTitle = item.selectFirst("title")?.text()
+            val rawTitle = item.selectFirst("title")?.text() ?: continue
             val title = cleanTitle(rawTitle) ?: continue
 
             val guid = item.selectFirst("guid")?.ownText()
                 ?: item.selectFirst("link")?.text()
                 ?: continue
 
-            val existsByName = newsService.findNewsByName(title, 1) != null
-            val existsByGuid = newsService.findNewsByLink(guid) != null
-            if (existsByName || existsByGuid) {
-                logger.debug("Skipping duplicate: nameExists=$existsByName, guidExists=$existsByGuid ($title / $guid)")
+            if (newsService.findNewsByName(title, sourceId) != null ||
+                newsService.findNewsByLink(guid)         != null
+            ) {
+                logger.debug("skip duplicate: $title / $guid")
                 continue
             }
 
-            val pubDate = item.selectFirst("pubDate")?.text()?.trim() ?: ""
-            val formattedDate = convertDateToOtherFormat(pubDate)
+            val pub = item.selectFirst("pubDate")?.text()?.trim() ?: ""
+            val timestamp = convertDateToOtherFormat(pub)
 
             val news = NewsRequest(
                 name = title,
-                originalName = rawTitle!!.trim(),
+                originalName = rawTitle.trim(),
                 link = guid.trim(),
-                sourceId = 1,
-                timestamp = formattedDate
+                sourceId = sourceId,
+                timestamp = timestamp
             )
 
-            logger.info("Found new GH thread: $title ($guid)")
+            logger.info("new post: $title ($guid)")
             sendNewDataToTelegram(news)
             newsService.createNews(news)
         }
     }
 
     suspend fun checkGeekhackFeeds() {
-        geekhackRssChecker("https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news", "IC")
-        geekhackRssChecker("https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news", "GB")
+        geekhackRssChecker("https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news", 1)
+        geekhackRssChecker("https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news", 1)
     }
 
     private fun checkItemTitle(title: String?): Boolean {
@@ -117,31 +116,19 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
     }
 
     private fun cleanTitle(raw: String?): String? {
-        if (raw.isNullOrBlank()) {
-            logger.info("Title is null or blank! Skipping")
-            return null
-        }
+        if (raw.isNullOrBlank()) return null
 
-        var title = raw
-            .replace(Regex("<!\\[CDATA\\["), "")
-            .replace(Regex("]]>"), "")
+        val unescaped = raw
+            .replace("<![CDATA[", "")
+            .replace("]]>", "")
             .let { Parser.unescapeEntities(it, false) }
             .trim()
 
-        if (title.startsWith("Re:", ignoreCase = true)) return null
+        val collapsed = unescaped.replace(Regex("]]+"), "]")
 
-        title = title
-            .replace(Regex("\\[IC\\]]+"), "[IC]")
-            .replace(Regex("\\[GB\\]]+"), "[GB]")
-            .replace(Regex("]]"), "]")
+        if (collapsed.startsWith("Re:", ignoreCase = true)) return null
 
-        title = title.replace(Regex("(\\[(?:IC|GB)\\])\\s*"), "$1 ")
-
-        if (title.contains("-")) {
-            title = title.substringBefore("-").trim()
-        }
-
-        return title
+        return collapsed
     }
 }
 
