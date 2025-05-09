@@ -29,6 +29,11 @@ private var json = Json { ignoreUnknownKeys = true }
 
 private const val JOB_INTERVAL_1_H = 1 * 60 * 60 * 1000L
 
+private const val TELEGRAM_BOT_TOKEN = "7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ"
+private const val TELEGRAM_API_BASE_URL = "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN"
+private const val TELEGRAM_CHAT_ID = "@TopreThoc"
+
+
 class ZFrontierCheckerService(
     private val newsService: NewsService,
     private val client: HttpClient,
@@ -36,6 +41,12 @@ class ZFrontierCheckerService(
 ) {
     companion object {
         const val CACHE_CLEAR_INTERVAL_HOURS = 4 * 24
+
+        private val TELEGRAM_MEDIA_FETCH_ERRORS = listOf(
+            "WEBPAGE_MEDIA_EMPTY",
+            "WEBPAGE_CURL_FAILED",
+            "Failed to get HTTP URL content" // Еще одна возможная ошибка
+        )
     }
 
     private val cache = ConcurrentHashMap.newKeySet<String>()
@@ -172,14 +183,12 @@ class ZFrontierCheckerService(
     }
 
     private suspend fun postNewsToTelegramm(newsRequest: NewsRequest, photosList: List<String>) {
-        val chatId = "@TopreThoc"
         val baseCaptionText = "[ZF] ${newsRequest.originalName.ifEmpty { newsRequest.name }}"
         val fullCaption = "$baseCaptionText - ${newsRequest.link}"
 
-        // Очищаем URL и фильтруем только валидные http/https URL
         val cleanedPhotoUrls = photosList
-            .map { cleanImageUrl(it) }
-            .filter { it.startsWith("http://") || it.startsWith("https://") }
+            .map { cleanImageUrl(it) } // Убеждаемся, что очистка применяется
+            .filter { it.startsWith("http://", ignoreCase = true) || it.startsWith("https://", ignoreCase = true) }
             .distinct()
 
         when {
@@ -193,20 +202,20 @@ class ZFrontierCheckerService(
                 }
 
                 if (mediaItems.size < 2) {
-                    logger.warn("Not enough photos for a media group (${mediaItems.size}). Attempting to send as single photo or text.")
+                    logger.warn("Not enough photos for a media group (${mediaItems.size}) after cleaning/filtering. Attempting to send as single photo or text.")
                     if (mediaItems.isNotEmpty()) {
-                        sendSinglePhoto(chatId, mediaItems.first().media, fullCaption, newsRequest.link)
+                        sendSinglePhoto(TELEGRAM_CHAT_ID, mediaItems.first().media, fullCaption)
                     } else {
-                        sendAsTextMessage(chatId, fullCaption)
+                        sendAsTextMessage(TELEGRAM_CHAT_ID, fullCaption)
                     }
                     return
                 }
 
-                val requestBody = MediaGroupRequest(chat_id = chatId, media = mediaItems)
-                logger.info("Attempting to send media group. Chat ID: $chatId, Photos: ${mediaItems.size}, First photo URL: ${mediaItems.firstOrNull()?.media}")
+                val requestBody = MediaGroupRequest(chat_id = TELEGRAM_CHAT_ID, media = mediaItems)
+                logger.info("Attempting to send media group. Chat ID: $TELEGRAM_CHAT_ID, Photos: ${mediaItems.size}, First photo URL: ${mediaItems.firstOrNull()?.media}")
 
                 try {
-                    val response: HttpResponse = client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMediaGroup") {
+                    val response: HttpResponse = client.post("$TELEGRAM_API_BASE_URL/sendMediaGroup") {
                         contentType(ContentType.Application.Json)
                         setBody(requestBody)
                     }
@@ -216,45 +225,57 @@ class ZFrontierCheckerService(
                         logger.info("Media group sent successfully. Response: $responseBodyText")
                     } else {
                         logger.error("Error sending media group. Status: ${response.status}, Response: $responseBodyText")
-                        if (response.status == HttpStatusCode.BadRequest && responseBodyText.contains("WEBPAGE_MEDIA_EMPTY", ignoreCase = true)) {
-                            logger.warn("Media group failed due to 'WEBPAGE_MEDIA_EMPTY'. Sending as text message instead.")
-                            sendAsTextMessage(chatId, fullCaption)
+                        if (shouldFallbackToText(response.status, responseBodyText)) {
+                            logger.warn("Media group failed due to Telegram media fetch error (e.g., WEBPAGE_CURL_FAILED). Sending as text message instead.")
+                            sendAsTextMessage(TELEGRAM_CHAT_ID, fullCaption)
                         } else {
+                            logger.warn("Media group failed with an unhandled error. Fallback to text not triggered for this specific error. Status: ${response.status}")
                         }
                     }
                 } catch (e: ClientRequestException) {
                     val errorResponseText = e.response.bodyAsText()
                     logger.error("ClientRequestException while sending media group. Status: ${e.response.status}, Response: $errorResponseText", e)
-                    if (e.response.status == HttpStatusCode.BadRequest && errorResponseText.contains("WEBPAGE_MEDIA_EMPTY", ignoreCase = true)) {
-                        logger.warn("Media group failed (ClientRequestException) due to 'WEBPAGE_MEDIA_EMPTY'. Sending as text message instead.")
-                        sendAsTextMessage(chatId, fullCaption)
+                    if (shouldFallbackToText(e.response.status, errorResponseText)) {
+                        logger.warn("Media group failed (ClientRequestException) due to Telegram media fetch error. Sending as text message instead.")
+                        sendAsTextMessage(TELEGRAM_CHAT_ID, fullCaption)
                     }
                 } catch (e: Exception) {
                     logger.error("Generic exception while sending media group: ${e.message}", e)
                     logger.warn("Unexpected error sending media group. Sending as text message instead.")
-                    sendAsTextMessage(chatId, fullCaption)
+                    sendAsTextMessage(TELEGRAM_CHAT_ID, fullCaption)
                 }
             }
             cleanedPhotoUrls.size == 1 -> {
-                sendSinglePhoto(chatId, cleanedPhotoUrls.first(), fullCaption, newsRequest.link)
+                sendSinglePhoto(TELEGRAM_CHAT_ID, cleanedPhotoUrls.first(), fullCaption)
             }
             else -> {
                 logger.info("No photos to send for '${newsRequest.name}'. Sending as text message.")
-                sendAsTextMessage(chatId, fullCaption)
+                sendAsTextMessage(TELEGRAM_CHAT_ID, fullCaption)
             }
         }
     }
 
+    private fun shouldFallbackToText(responseStatus: HttpStatusCode, responseBodyText: String): Boolean {
+        if (responseStatus == HttpStatusCode.BadRequest) {
+            for (errorMsg in TELEGRAM_MEDIA_FETCH_ERRORS) {
+                if (responseBodyText.contains(errorMsg, ignoreCase = true)) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
 
-    private suspend fun sendSinglePhoto(chatId: String, photoUrl: String, caption: String, originalLink: String) {
+
+    private suspend fun sendSinglePhoto(chatId: String, photoUrl: String, caption: String) {
         logger.info("Attempting to send single photo. Chat ID: $chatId, URL: $photoUrl")
         val requestBody = mapOf(
             "chat_id" to chatId,
             "photo" to photoUrl,
-            "caption" to caption.take(1024) // Ограничение caption для фото
+            "caption" to caption.take(1024)
         )
         try {
-            val response: HttpResponse = client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendPhoto") {
+            val response: HttpResponse = client.post("$TELEGRAM_API_BASE_URL/sendPhoto") {
                 contentType(ContentType.Application.Json)
                 setBody(requestBody)
             }
@@ -263,16 +284,18 @@ class ZFrontierCheckerService(
                 logger.info("Single photo sent successfully. Response: $responseBodyText")
             } else {
                 logger.error("Error sending single photo. Status: ${response.status}, Response: $responseBodyText")
-                if (response.status == HttpStatusCode.BadRequest && responseBodyText.contains("WEBPAGE_MEDIA_EMPTY", ignoreCase = true)) {
-                    logger.warn("Single photo failed due to 'WEBPAGE_MEDIA_EMPTY'. Sending as text message instead.")
+                if (shouldFallbackToText(response.status, responseBodyText)) {
+                    logger.warn("Single photo failed due to Telegram media fetch error. Sending as text message instead.")
                     sendAsTextMessage(chatId, caption)
+                } else {
+                    logger.warn("Single photo failed with an unhandled error. Fallback to text not triggered for this specific error. Status: ${response.status}")
                 }
             }
         } catch (e: ClientRequestException) {
             val errorResponseText = e.response.bodyAsText()
             logger.error("ClientRequestException while sending single photo. Status: ${e.response.status}, Response: $errorResponseText", e)
-            if (e.response.status == HttpStatusCode.BadRequest && errorResponseText.contains("WEBPAGE_MEDIA_EMPTY", ignoreCase = true)) {
-                logger.warn("Single photo failed (ClientRequestException) due to 'WEBPAGE_MEDIA_EMPTY'. Sending as text message instead.")
+            if (shouldFallbackToText(e.response.status, errorResponseText)) {
+                logger.warn("Single photo failed (ClientRequestException) due to Telegram media fetch error. Sending as text message instead.")
                 sendAsTextMessage(chatId, caption)
             }
         } catch (e: Exception) {
@@ -283,14 +306,16 @@ class ZFrontierCheckerService(
     }
 
     private suspend fun sendAsTextMessage(chatId: String, text: String) {
-        logger.info("Sending as text message. Chat ID: $chatId")
+        logger.info("Sending as text message. Chat ID: $chatId, Text: ${text.take(100)}...") // Логируем начало текста
         val requestBody = mapOf(
             "chat_id" to chatId,
             "text" to text.take(4096),
-            "parse_mode" to "HTML"
+            "parse_mode" to "HTML" // Используйте "MarkdownV2" или "HTML" если уверены в форматировании.
+            // "HTML" менее строгий к специальным символам чем "MarkdownV2".
+            // "disable_web_page_preview" to true // Можно добавить, если не хотите превью ссылок
         )
         try {
-            val response: HttpResponse = client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage") {
+            val response: HttpResponse = client.post("$TELEGRAM_API_BASE_URL/sendMessage") {
                 contentType(ContentType.Application.Json)
                 setBody(requestBody)
             }
@@ -306,6 +331,7 @@ class ZFrontierCheckerService(
             logger.error("Generic exception while sending text message: ${e.message}", e)
         }
     }
+
 
     private fun postNewsToDB(newsRequest: NewsRequest) {
         try {
