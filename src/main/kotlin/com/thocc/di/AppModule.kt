@@ -6,6 +6,7 @@ import com.thocc.services.NewsService
 import com.thocc.services.ZFrontierCheckerService
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
+import io.ktor.client.plugins.*
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.plugins.contentnegotiation.*
@@ -39,6 +40,12 @@ val networkModule = module {
                 xml(contentType = ContentType.parse("application/rss+xml"))
                 json()
             }
+            install(HttpTimeout) {
+                requestTimeoutMillis = 30000 // Таймаут на весь запрос (20 секунд)
+                connectTimeoutMillis = 20000 // Таймаут на установку соединения (10 секунд)
+                socketTimeoutMillis = 25000  // Таймаут на ожидание данных после соединения (15 секунд)
+            }
+
             install(JsoupPlugin) {
                 parsers[ContentType.Application.Rss] = Parser.xmlParser()
             }
