@@ -238,7 +238,7 @@ class ZFrontierCheckerService(
     }
 
     private suspend fun postNewsToTelegramm(newsRequest: NewsRequest, photosList: List<String>) {
-        val baseCaptionText = "[ZF] ${newsRequest.originalName.ifEmpty { newsRequest.name }}"
+        val baseCaptionText = "[ZF] ${newsRequest.name}"
         val fullCaption = "$baseCaptionText - ${newsRequest.link}"
 
         val cleanedPhotoUrls = photosList
