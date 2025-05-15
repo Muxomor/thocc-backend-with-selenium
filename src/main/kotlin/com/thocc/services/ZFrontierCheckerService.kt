@@ -157,7 +157,8 @@ class ZFrontierCheckerService(
     }
 
     private fun cleanImageUrl(url: String): String {
-        return url.replace("-cover360.webp", "")
+        //return url.replace("-cover360.webp", "")
+        return url
     }
 
     private suspend fun translateString(nameToTranslate: String): String {

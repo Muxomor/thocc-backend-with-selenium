@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d0f5ff0-6512-4956-8436-028abb4d583b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/Application.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/ZFrontierCheckerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/ZFrontierCheckerService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +91,7 @@
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
@@ -206,7 +208,9 @@
       <workItem from="1744878602065" duration="4941000" />
       <workItem from="1746781498064" duration="6411000" />
       <workItem from="1747118805886" duration="2926000" />
-      <workItem from="1747129199263" duration="274000" />
+      <workItem from="1747129199263" duration="490000" />
+      <workItem from="1747133201122" duration="2465000" />
+      <workItem from="1747293710258" duration="25000" />
     </task>
     <servers />
   </component>

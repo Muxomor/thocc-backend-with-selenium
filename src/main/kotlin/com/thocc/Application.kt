@@ -22,5 +22,3 @@ fun Application.module() {
     configureSerialization()
     configureFrameworks()
 }
-
-
