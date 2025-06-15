@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d0f5ff0-6512-4956-8436-028abb4d583b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/ZFrontierCheckerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/thocc/services/ZFrontierCheckerService.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0d0f5ff0-6512-4956-8436-028abb4d583b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,7 +206,7 @@
       <workItem from="1747118805886" duration="2926000" />
       <workItem from="1747129199263" duration="490000" />
       <workItem from="1747133201122" duration="2465000" />
-      <workItem from="1747293710258" duration="25000" />
+      <workItem from="1747293710258" duration="78000" />
     </task>
     <servers />
   </component>

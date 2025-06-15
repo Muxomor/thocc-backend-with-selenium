@@ -10,7 +10,6 @@ import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import kotlinx.coroutines.delay
-// Импорты для корутин
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.SerialName
@@ -30,7 +29,7 @@ import java.util.concurrent.ConcurrentLinkedQueue
 private const val BASE_URL = "https://www.zfrontier.com"
 private var json = Json { ignoreUnknownKeys = true }
 
-private const val JOB_INTERVAL_1_H = 1 * 60 * 60 * 1000L // 1 час для основной проверки ZF
+private const val JOB_INTERVAL_1_H = 1 * 60 * 60 * 1000L 
 
 private const val TELEGRAM_BOT_TOKEN = "7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ"
 private const val TELEGRAM_API_BASE_URL = "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN"
@@ -50,12 +49,11 @@ class ZFrontierCheckerService(
             "Failed to get HTTP URL content"
         )
 
-        private const val TELEGRAM_SEND_RETRY_INTERVAL_MINUTES = 15L // Интервал повтора для сообщения
+        private const val TELEGRAM_SEND_RETRY_INTERVAL_MINUTES = 15L 
         private const val TELEGRAM_SEND_RETRY_INTERVAL_MS = TELEGRAM_SEND_RETRY_INTERVAL_MINUTES * 60 * 1000L
         private const val MAX_TELEGRAM_RETRY_ATTEMPTS = 5
 
-        // Новая константа: как часто проверять очередь на наличие сообщений для повтора
-        private const val RETRY_PROCESSOR_POLL_INTERVAL_MINUTES = 1L // Проверять каждую минуту
+        private const val RETRY_PROCESSOR_POLL_INTERVAL_MINUTES = 1L 
         private const val RETRY_PROCESSOR_POLL_INTERVAL_MS = RETRY_PROCESSOR_POLL_INTERVAL_MINUTES * 60 * 1000L
     }
 
@@ -75,7 +73,6 @@ class ZFrontierCheckerService(
     private val cache = ConcurrentHashMap.newKeySet<String>()
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
-    // ... (getDocumentFromURL, zFrontierChecker, checkNameInCacheAndDB, checkLinkInDB, convertRawTimeToDateTime, cleanImageUrl, translateString без изменений) ...
     private suspend fun getDocumentFromURL(url: String): Document {
         try {
             logger.info("zf checker page loading...")
@@ -185,7 +182,7 @@ class ZFrontierCheckerService(
                 } catch (e: Exception) {
                     logger.error("Error in Telegram retry processor: ${e.message}", e)
                 }
-                delay(RETRY_PROCESSOR_POLL_INTERVAL_MS) // Опрашиваем очередь с коротким интервалом
+                delay(RETRY_PROCESSOR_POLL_INTERVAL_MS)
             }
         }
 
@@ -379,8 +376,6 @@ class ZFrontierCheckerService(
         if (failedMessagesQueue.isEmpty()) {
             return
         }
-        // На этот раз не выводим лог о количестве здесь, т.к. функция будет вызываться часто.
-        // Логирование будет при фактической попытке повтора.
 
         val processingQueue = ConcurrentLinkedQueue(failedMessagesQueue)
         failedMessagesQueue.clear()

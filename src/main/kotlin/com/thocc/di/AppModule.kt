@@ -23,7 +23,7 @@ import java.time.Duration
 val appModule = module {
     single {
         Database.connect(
-            url = "jdbc:postgresql://172.21.0.1:32770/postgres",
+            url = "jdbc:postgresql://172.21.0.1:32780/postgres",
             driver = "org.postgresql.Driver",
             user = "postgres",
             password = "postgres",
