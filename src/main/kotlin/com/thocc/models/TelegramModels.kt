@@ -23,6 +23,7 @@ data class MediaItem(
 )
 @Serializable
 data class SendMediaGroupRequest(
+    @SerialName("chat_id")
     val chatId: String,
     val media: List<MediaItem>
 )
