@@ -1,5 +1,6 @@
 package com.thocc.models
 
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -17,7 +18,7 @@ data class TelegramApiResponse<T>(
 
 @Serializable
 data class MediaItem(
-    val type: String = "photo",
+   @EncodeDefault val type: String = "photo",
     val media: String,
     val caption: String? = null
 )

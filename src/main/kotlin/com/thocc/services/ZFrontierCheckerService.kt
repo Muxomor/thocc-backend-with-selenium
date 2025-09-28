@@ -178,7 +178,6 @@ class ZFrontierCheckerService(
             }
         }
 
-
         if (!success) {
             if (photosList.isNotEmpty()) {
                 logger.warn("Failed to send media for '${newsRequest.name}' after all retries. Falling back to a text message.")
