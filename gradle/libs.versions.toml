@@ -32,7 +32,6 @@ ktorm-core = {module = "org.ktorm:ktorm-core", version.ref = "ktorm-version" }
 ktorm-support-postgres = {module = "org.ktorm:ktorm-support-postgresql", version.ref = "ktorm-version" }
 ktor-jsoup = {module= "com.tfowl.ktor:ktor-jsoup", version.ref = "jsoup-version"}
 selenium = {module="org.seleniumhq.selenium:selenium-java",version.ref="selenium-version"}
-dotenv = {module="io.github.cdimascio:java-dotenv", version.ref = "dotenv-version"}
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
