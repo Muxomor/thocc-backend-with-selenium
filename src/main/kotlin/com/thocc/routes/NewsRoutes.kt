@@ -19,7 +19,7 @@ import java.time.format.DateTimeFormatter
 
 fun Application.configureNewsRoutes(newsService: NewsService, httpClient: HttpClient) {
     routing {
-        route("/news") {
+        route("/") {
             createNews(newsService)
             createNewsWeb(newsService, httpClient)
             selectAllNews(newsService)

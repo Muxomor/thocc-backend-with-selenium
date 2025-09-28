@@ -1,9 +1,6 @@
 package com.thocc
 
-import com.thocc.di.appModule
-import com.thocc.di.configureBackgroundJobs
-import com.thocc.di.networkModule
-import com.thocc.di.seleniumModule
+import com.thocc.di.*
 import com.thocc.routes.configureNewsRoutes
 import com.thocc.services.NewsService
 import io.ktor.client.HttpClient
@@ -19,6 +16,7 @@ fun Application.configureFrameworks() {
         modules(
             appModule,
             networkModule,
+            telegreamModule,
             seleniumModule,
         )
     }

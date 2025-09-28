@@ -8,7 +8,7 @@ import org.ktorm.schema.timestamp
 import org.ktorm.schema.varchar
 import java.sql.Timestamp
 
-
+//i dont even know why this shit looks like that, random guy in guide said its correct
 interface News : Entity<News> {
     companion object : Entity.Factory<News>()
     var id:Int?

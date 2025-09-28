@@ -1,6 +1,7 @@
 package com.thocc.services
 
 import com.thocc.models.NewsRequest
+import com.thocc.models.TelegramConfig
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.bodyAsText
@@ -18,7 +19,7 @@ import java.time.format.DateTimeFormatter
 import org.jsoup.parser.Parser
 
 
-class GeekhackCheckerService(private val newsService: NewsService, private val client: HttpClient) {
+class GeekhackCheckerService(private val newsService: NewsService, private val client: HttpClient, private val telegramService: TelegramService) {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
@@ -35,21 +36,15 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
         }
     }
 
-    private suspend fun sendNewDataToTelegram(newsRequest: NewsRequest){
-        val json = Json{ignoreUnknownKeys = true}
-        val response = client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage") {
-            parameter("chat_id", "@TopreThoc")
-            parameter("text", "[GH] ${newsRequest.name} - ${newsRequest.link}")
-        }
-        val responseSerialized = json.decodeFromString<SendMessageResponse>(response.bodyAsText())
-        if(responseSerialized.ok){
-            client.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/pinChatMessage"){
-                parameter("chat_id", "@TopreThoc")
-                parameter("message_id",responseSerialized.result?.messageId)
-                parameter("disable_notification", true)
-            }
+    private suspend fun sendNewDataToTelegram(newsRequest: NewsRequest) {
+        val text = "[GH] ${newsRequest.name} - ${newsRequest.link}"
+        val messageId = telegramService.sendTextMessage(text)
+
+        messageId?.let {
+            telegramService.pinChatMessage(it)
         }
     }
+
 
     private suspend fun geekhackRssChecker(rssUrl: String, sourceId: Int) {
         val rss = getRssDataFromUrl(rssUrl)

@@ -1,9 +1,8 @@
 package com.thocc.di
 
 import com.tfowl.ktor.client.plugins.JsoupPlugin
-import com.thocc.services.GeekhackCheckerService
-import com.thocc.services.NewsService
-import com.thocc.services.ZFrontierCheckerService
+import com.thocc.models.TelegramConfig
+import com.thocc.services.*
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.*
@@ -23,10 +22,10 @@ import java.time.Duration
 val appModule = module {
     single {
         Database.connect(
-            url = "jdbc:postgresql://172.21.0.1:32768/postgres",
+            url = System.getenv("DB_URL"),
             driver = "org.postgresql.Driver",
-            user = "postgres",
-            password = "postgres",
+            user = System.getenv("DB_USER"),
+            password = System.getenv("DB_PASSWORD"),
         )
     }
     single { NewsService(get()) }
@@ -41,9 +40,10 @@ val networkModule = module {
                 json()
             }
             install(HttpTimeout) {
-                requestTimeoutMillis = 30000 // Таймаут на весь запрос (20 секунд)
-                connectTimeoutMillis = 20000 // Таймаут на установку соединения (10 секунд)
-                socketTimeoutMillis = 25000  // Таймаут на ожидание данных после соединения (15 секунд)
+                //cant remember why i have this hardcoded timeouts
+                requestTimeoutMillis = 30000
+                connectTimeoutMillis = 20000
+                socketTimeoutMillis = 25000
             }
 
             install(JsoupPlugin) {
@@ -51,7 +51,15 @@ val networkModule = module {
             }
         }
     }
-    single { GeekhackCheckerService(get(), get()) }
+    single { GeekhackCheckerService(get(), get(), get()) }
+}
+val telegreamModule = module {
+    single {
+        val botToken = System.getenv("BOT_TOKEN")
+        val chatId = System.getenv("CHAT_ID")
+        TelegramConfig(botToken, chatId)
+    }
+    single { TelegramService(get(), get()) }
 }
 val seleniumModule = module {
     System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
@@ -66,5 +74,5 @@ val seleniumModule = module {
             logger.info("firefox initialized")
         }
     }
-    single { ZFrontierCheckerService(get(), get(), get()) }
+    single { ZFrontierCheckerService(get(), get(), get(), get()) }
 }
