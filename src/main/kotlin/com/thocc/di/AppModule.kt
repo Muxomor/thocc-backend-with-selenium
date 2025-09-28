@@ -38,10 +38,10 @@ fun Application.configureDI() {
 fun appModule(config: ApplicationConfig) = module {
     single {
         Database.connect(
-            url = config.property("url").getString(),
+            url = config.property("db.url").getString(),
             driver = "org.postgresql.Driver",
-            user = config.property("user").getString(),
-            password = config.property("password").getString(),
+            user = config.property("db.user").getString(),
+            password = config.property("db.password").getString(),
         )
     }
     single { NewsService(get()) }
@@ -71,8 +71,8 @@ val networkModule = module {
 }
 fun telegramModule(config: ApplicationConfig) = module {
     single {
-        val botToken = config.property("token").getString()
-        val chatId = config.property("chatId").getString()
+        val botToken = config.property("telegram.token").getString()
+        val chatId = config.property("telegram.chatId").getString()
         TelegramConfig(botToken, chatId)
     }
     single { TelegramService(get(), get()) }
