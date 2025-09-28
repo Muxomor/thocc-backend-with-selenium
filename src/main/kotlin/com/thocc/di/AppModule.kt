@@ -12,20 +12,36 @@ import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.http.ContentType
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.serialization.kotlinx.xml.*
+import io.ktor.server.application.*
+import io.ktor.server.config.*
 import org.jsoup.parser.Parser
 import org.koin.dsl.module
 import org.ktorm.database.Database
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.firefox.FirefoxOptions
 import java.time.Duration
+import org.koin.ktor.plugin.Koin
+import org.koin.logger.slf4jLogger
 
-val appModule = module {
+fun Application.configureDI() {
+    install(Koin) {
+        slf4jLogger()
+        modules(
+            appModule(environment.config),
+            networkModule,
+            telegramModule(environment.config),
+            seleniumModule
+        )
+    }
+}
+
+fun appModule(config: ApplicationConfig) = module {
     single {
         Database.connect(
-            url = System.getenv("DB_URL"),
+            url = config.property("db.url").getString(),
             driver = "org.postgresql.Driver",
-            user = System.getenv("DB_USER"),
-            password = System.getenv("DB_PASSWORD"),
+            user = config.property("db.user").getString(),
+            password = config.property("db.password").getString(),
         )
     }
     single { NewsService(get()) }
@@ -53,10 +69,10 @@ val networkModule = module {
     }
     single { GeekhackCheckerService(get(), get(), get()) }
 }
-val telegreamModule = module {
+fun telegramModule(config: ApplicationConfig) = module {
     single {
-        val botToken = System.getenv("BOT_TOKEN")
-        val chatId = System.getenv("CHAT_ID")
+        val botToken = config.property("telegram.token").getString()
+        val chatId = config.property("telegram.chatId").getString()
         TelegramConfig(botToken, chatId)
     }
     single { TelegramService(get(), get()) }

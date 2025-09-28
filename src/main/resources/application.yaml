@@ -4,3 +4,11 @@ ktor:
             - com.thocc.ApplicationKt.module
     deployment:
         port: 7895
+db:
+    url: ${DB_URL}
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+telegram:
+    token: ${BOT_TOKEN}
+    chatId: ${CHAT_ID}

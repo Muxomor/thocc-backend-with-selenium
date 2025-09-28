@@ -1,5 +1,7 @@
 package com.thocc
 
+import com.thocc.di.configureBackgroundJobs
+import com.thocc.di.configureDI
 import com.thocc.plugins.configureSerialization
 import io.ktor.server.application.*
 import io.ktor.server.engine.embeddedServer
@@ -19,5 +21,7 @@ fun main(){
 
 fun Application.module() {
     configureSerialization()
-    configureFrameworks()
+    configureDI()
+    configureBackgroundJobs()
+    configureRouting()
 }
