@@ -1,9 +1,6 @@
 package com.thocc.services
 
-import com.thocc.models.MediaItem
-import com.thocc.models.TelegramApiResponse
-import com.thocc.models.TelegramConfig
-import com.thocc.models.TelegramMessageResult
+import com.thocc.models.*
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.*
@@ -82,10 +79,14 @@ class TelegramService(
         val mediaItems = photos.mapIndexed { index, url ->
             MediaItem(media = url, caption = if (index == 0) caption.take(1024) else null)
         }
+        val requestBody = SendMediaGroupRequest(
+            chatId = config.chatId,
+            media = mediaItems
+        )
         val response = withRetries {
             client.post("$baseUrl/sendMediaGroup") {
                 contentType(ContentType.Application.Json)
-                setBody(mapOf("chat_id" to config.chatId, "media" to mediaItems))
+                setBody(requestBody)
             }
         }
         return response?.status?.isSuccess() == true

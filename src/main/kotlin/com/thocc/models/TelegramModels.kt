@@ -21,7 +21,11 @@ data class MediaItem(
     val media: String,
     val caption: String? = null
 )
-
+@Serializable
+data class SendMediaGroupRequest(
+    val chatId: String,
+    val media: List<MediaItem>
+)
 data class TelegramConfig(
     val botToken: String,
     val chatId: String

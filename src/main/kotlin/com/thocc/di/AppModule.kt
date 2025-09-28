@@ -14,6 +14,7 @@ import io.ktor.serialization.kotlinx.json.json
 import io.ktor.serialization.kotlinx.xml.*
 import io.ktor.server.application.*
 import io.ktor.server.config.*
+import kotlinx.serialization.json.Json
 import org.jsoup.parser.Parser
 import org.koin.dsl.module
 import org.ktorm.database.Database
@@ -53,7 +54,13 @@ val networkModule = module {
             install(Logging) { level = LogLevel.BODY }
             install(ContentNegotiation) {
                 xml(contentType = ContentType.parse("application/rss+xml"))
-                json()
+                json(
+                    Json {
+                        prettyPrint = true
+                        isLenient = true
+                        ignoreUnknownKeys = true
+                    }
+                )
             }
             install(HttpTimeout) {
                 //cant remember why i have this hardcoded timeouts
