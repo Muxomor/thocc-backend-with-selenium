@@ -10,5 +10,5 @@ db:
     password: ${DB_PASSWORD}
 
 telegram:
-    token: ${BOT_TOKEN}
+    token: ${TELEGRAM_BOT_TOKEN}
     chatId: ${TELEGRAM_CHAT_ID}
