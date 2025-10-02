@@ -9,13 +9,12 @@ services:
     dns:
       - 8.8.8.8
       - 1.1.1.1
+    environment:
+      - JAVA_OPTS=-Djava.net.preferIPv4Stack=true
     ports:
       - "7895:7895"
     networks:
       - nginx-proxy-manager-postgresql_default
-
-    command: /usr/bin/env
-
 networks:
   nginx-proxy-manager-postgresql_default:
     external: true
