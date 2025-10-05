@@ -46,7 +46,7 @@ fun Route.createNews(newsService: NewsService) {
     }
 }
 
-fun Route.createNewsWeb(newsService: NewsService, httpClient: HttpClient) {
+fun Route.createNewsWeb(newsService: NewsService, httpClient: HttpClient, telegramService: TelegramService) {
     get("/createNews") {
         val now = LocalDateTime.now()
         val zoneId = ZoneId.of("UTC+3")
