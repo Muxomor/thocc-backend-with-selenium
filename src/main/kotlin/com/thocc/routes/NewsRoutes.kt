@@ -18,11 +18,11 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
-fun Application.configureNewsRoutes(newsService: NewsService, httpClient: HttpClient, telegramService: TelegramService) {
+fun Application.configureNewsRoutes(newsService: NewsService, telegramService: TelegramService) {
     routing {
         route("/") {
             createNews(newsService)
-            createNewsWeb(newsService, httpClient, telegramService)
+            createNewsWeb(newsService, telegramService)
             selectAllNews(newsService)
             selectNewsById(newsService)
             findNewsByName(newsService)
@@ -46,7 +46,7 @@ fun Route.createNews(newsService: NewsService) {
     }
 }
 
-fun Route.createNewsWeb(newsService: NewsService, httpClient: HttpClient, telegramService: TelegramService) {
+fun Route.createNewsWeb(newsService: NewsService, telegramService: TelegramService) {
     get("/createNews") {
         val now = LocalDateTime.now()
         val zoneId = ZoneId.of("UTC+3")

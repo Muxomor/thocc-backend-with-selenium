@@ -10,10 +10,9 @@ import org.koin.ktor.ext.get
 
 fun Application.configureRouting() {
     val newsService = get<NewsService>()
-    val httpClient = get<HttpClient>()
     val telegramService = get<TelegramService>()
 
     routing {
-        configureNewsRoutes(newsService, httpClient, telegramService)
+        configureNewsRoutes(newsService, telegramService)
     }
 }
