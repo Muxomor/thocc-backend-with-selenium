@@ -14,7 +14,7 @@ services:
     ports:
       - "7895:7895"
     env_file:
-      - ./.env
+      - ./stack.env
     networks:
       - nginx-proxy-manager-postgresql_default
 networks:
