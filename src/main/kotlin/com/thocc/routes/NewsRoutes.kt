@@ -5,6 +5,7 @@ import com.thocc.models.ErrorResponse
 import com.thocc.models.NewsRequest
 import com.thocc.models.NewsResponse
 import com.thocc.services.NewsService
+import com.thocc.services.TelegramService
 import io.ktor.client.*
 import io.ktor.client.request.parameter
 import io.ktor.client.request.post
@@ -17,11 +18,11 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
-fun Application.configureNewsRoutes(newsService: NewsService, httpClient: HttpClient) {
+fun Application.configureNewsRoutes(newsService: NewsService, httpClient: HttpClient, telegramService: TelegramService) {
     routing {
         route("/") {
             createNews(newsService)
-            createNewsWeb(newsService, httpClient)
+            createNewsWeb(newsService, httpClient, telegramService)
             selectAllNews(newsService)
             selectNewsById(newsService)
             findNewsByName(newsService)
@@ -73,10 +74,9 @@ fun Route.createNewsWeb(newsService: NewsService, httpClient: HttpClient) {
 
         val success = newsService.createNews(newsRequest = request)
         if (success) {
-            httpClient.post("https://api.telegram.org/bot7806136583:AAFZTO7ufHr6CUasULRAkCosEz-43lnOXnQ/sendMessage") {
-                parameter("chat_id", "@TopreThoc")
-                parameter("text", "[Other] ${request.originalName} - ${request.link}")
-            }
+            val messageText = "[Other] ${request.originalName} - ${request.link}"
+            telegramService.sendTextMessage(messageText)
+
             call.respond(HttpStatusCode.Created)
         } else {
             call.respond(HttpStatusCode.BadRequest, ErrorResponse(message = "Cannot create news"))
