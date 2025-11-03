@@ -135,6 +135,7 @@ class ZFrontierCheckerService(
     private suspend fun translateString(nameToTranslate: String): String {
         return try {
             val response = client.get("https://ftapi.pythonanywhere.com/translate") {
+                parameter("sl", "zh-cn")
                 parameter("dl", "en")
                 parameter("text", nameToTranslate)
             }
