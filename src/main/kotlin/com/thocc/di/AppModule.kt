@@ -93,7 +93,7 @@ val seleniumModule = module {
     single<FirefoxDriver> {
         FirefoxDriver(firefoxOptions).apply {
             logger.info("firefox starting...")
-            manage().timeouts().implicitlyWait(Duration.ofSeconds(30))
+            manage().timeouts().implicitlyWait(Duration.ofSeconds(120))
             logger.info("firefox initialized")
         }
     }
