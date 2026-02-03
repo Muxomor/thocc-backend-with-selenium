@@ -81,8 +81,8 @@ class GeekhackCheckerService(private val newsService: NewsService, private val c
     }
 
     suspend fun checkGeekhackFeeds() {
-        geekhackRssChecker("https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news", 1)
-        geekhackRssChecker("https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news", 1)
+        geekhackRssChecker("https://geekhack.org/index.php?board=132.0;action=.xml;type=rss;sa=news;limit=50", 1)
+        geekhackRssChecker("https://geekhack.org/index.php?board=70.0;action=.xml;type=rss;sa=news;limit=50", 1)
     }
 
     private fun checkItemTitle(title: String?): Boolean {
