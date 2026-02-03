@@ -46,9 +46,11 @@ class ZFrontierCheckerService(
 
     private suspend fun getDocumentFromURL(url: String): Document {
         try {
+            browser.get("https://www.zfrontier.com/v2/home/flow/list")
+            delay(60000L)
             logger.info("zf checker page loading...")
             browser.get(url)
-            delay(60000L)
+            delay(120000L)
             val response = browser.pageSource
             logger.info("zf page loaded!")
             logger.info("navigating to google.com to release resources")
